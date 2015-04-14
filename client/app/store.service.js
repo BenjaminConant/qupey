@@ -15,8 +15,13 @@ angular.module('qupeyApp')
     		return http.get('/api/stores/' + id).then(function(response){
     			return response.data;
     		})
-    	}
+    	}, 
 
+    	retrieveCustomers: function(id)
+				return http.get('/api/stores/' + id + '/customers').then(function(response){
+    			return response.data;
+    		})
+    	}
 
 
     }
