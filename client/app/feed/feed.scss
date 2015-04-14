@@ -1,5 +1,32 @@
-.botom-nav {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+.feed-item {
+	padding-top: 5px;
+	padding-bottom: 5px;
+	height: auto; 
+	border-bottom: 1px dotted grey;
+}
+
+.feed-item-container {
+	margin-top: 10px;
+}
+
+.feed-icon-image {
+	height: 45px; 
+	width: 45px; 
+	border-radius: 100%;
+}
+
+.feed-item-text {
+	padding-left: 10px;
+}
+
+.feed-item-image-container {
+	display: inline-block;
+	width: 10%;
+	vertical-align:top;
+}
+
+.feed-item-text {
+	display: inline-block;
+	width: 85%;
+	padding-left: 15px;
 }
