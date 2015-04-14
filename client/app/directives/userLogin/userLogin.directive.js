@@ -20,8 +20,6 @@ angular.module('qupeyApp')
 	    	$('.logo-image').css("width", "300px");
 	    }
 
-	    
-
 	    w.bind('resize', function () {
 		    var height = scope.getWindowDimensions().h;
 		    $(".user-login-container").height(height);
