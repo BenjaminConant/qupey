@@ -124,7 +124,7 @@ Qupey.find({}).remove(function() {
       discount: 30, 
       details: '30% off total purchase'
     },
-    expiration: ISODate("2015-06-13T22:20:55.910Z"), 
+    expiration: new Date("2015-07-02T20:45:00.000Z"), 
     shareable: true
   }, {
     name: 'Whole Foods Gold Qupey',
@@ -133,7 +133,7 @@ Qupey.find({}).remove(function() {
       discount: 50, 
       details: '50% off total purchase'
     },
-    expiration: ISODate("2015-06-13T22:20:55.910Z"), 
+    expiration: new Date("2015-07-02T20:45:00.000Z"), 
     shareable: false
   }, {
     name: 'Best Buy Default Qupey',
@@ -142,7 +142,7 @@ Qupey.find({}).remove(function() {
       discount: 20, 
       details: '20% off total purchase'
     },
-    expiration: ISODate("2015-06-13T22:20:55.910Z"), 
+    expiration: new Date("2015-07-02T20:45:00.000Z"), 
     shareable: true
   }, {
     name: 'Best Buy Gold Qupey',
@@ -151,7 +151,7 @@ Qupey.find({}).remove(function() {
       discount: 35, 
       details: '35% off total purchase'
     },
-    expiration: ISODate("2015-06-13T22:20:55.910Z"), 
+    expiration: new Date("2015-07-02T20:45:00.000Z"), 
     shareable: false
   }, {
     name: 'Trader Joe\'s Default Qupey',
@@ -160,7 +160,7 @@ Qupey.find({}).remove(function() {
       discount: 20, 
       details: '20% off total purchase'
     },
-    expiration: ISODate("2015-06-13T22:20:55.910Z"), 
+    expiration: new Date("2015-07-02T20:45:00.000Z"), 
     shareable: true
   }, {
     name: 'Trade Joe\'s Gold Qupey',
@@ -169,7 +169,7 @@ Qupey.find({}).remove(function() {
       discount: 45, 
       details: '45% off total purchase'
     },
-    expiration: ISODate("2015-06-13T22:20:55.910Z"), 
+    expiration: new Date("2015-07-02T20:45:00.000Z"), 
     shareable: false
   },function(){
     console.log('finished with qupeys')

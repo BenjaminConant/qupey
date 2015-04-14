@@ -24,7 +24,7 @@ var StoreSchema = new Schema({
   background_img: String,
   store_url: String,
   logo: String,  
-  category: [String]  
+  category: [String],  
   code: Number, 
   gold_qupey: { type: Schema.Types.ObjectId, ref: 'Qupey' },
   default_qupey: { type: Schema.Types.ObjectId, ref: 'Qupey' },
