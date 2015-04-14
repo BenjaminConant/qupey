@@ -12,6 +12,15 @@ angular.module('qupeyApp')
 	    };
 	    var height = scope.getWindowDimensions().h;
 	    $(".user-login-container").height(height);
+	    $('.logo-image').css("margin-top", height/4);
+
+	    if (height <= 700) {
+	    	$('.logo-image').css("width", "150px");
+	    } else {
+	    	$('.logo-image').css("width", "300px");
+	    }
+
+	    
 
 	    w.bind('resize', function () {
 		    var height = scope.getWindowDimensions().h;
