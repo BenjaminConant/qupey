@@ -22,7 +22,7 @@ var UserSchema = new Schema({
   twitter: {},
   google: {},
   github: {}
-});
+}, {collection: 'users'});
 
 /**
  * Virtuals

@@ -13,7 +13,10 @@ var percentageSchema = new Schema({
 var QupeySchema = new Schema({
  	name: String, 
  	status: { type: String, default: 'default', enum: statusStates},
-  type: percentageSchema,
+  type: {
+  	discount: Number, 
+  	details: String
+  },
   expiration: {type: Date},
   shareable: {type: Boolean, default: false},
   sender: { type: Schema.Types.ObjectId, ref: 'User' },

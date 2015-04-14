@@ -123,8 +123,8 @@ Qupey.find({}).remove(function() {
     type: {
       discount: 30, 
       details: '30% off total purchase'
-    }
-    expiration: new Date("2015-05-02T22:45:00.000Z"), 
+    },
+    expiration: ISODate("2015-06-13T22:20:55.910Z"), 
     shareable: true
   }, {
     name: 'Whole Foods Gold Qupey',
@@ -132,8 +132,8 @@ Qupey.find({}).remove(function() {
     type: {
       discount: 50, 
       details: '50% off total purchase'
-    }
-    expiration: new Date("2015-05-02T22:45:00.000Z"), 
+    },
+    expiration: ISODate("2015-06-13T22:20:55.910Z"), 
     shareable: false
   }, {
     name: 'Best Buy Default Qupey',
@@ -141,8 +141,8 @@ Qupey.find({}).remove(function() {
     type: {
       discount: 20, 
       details: '20% off total purchase'
-    }
-    expiration: new Date("2015-05-02T22:45:00.000Z"), 
+    },
+    expiration: ISODate("2015-06-13T22:20:55.910Z"), 
     shareable: true
   }, {
     name: 'Best Buy Gold Qupey',
@@ -150,8 +150,8 @@ Qupey.find({}).remove(function() {
     type: {
       discount: 35, 
       details: '35% off total purchase'
-    }
-    expiration: new Date("2015-05-02T22:45:00.000Z"), 
+    },
+    expiration: ISODate("2015-06-13T22:20:55.910Z"), 
     shareable: false
   }, {
     name: 'Trader Joe\'s Default Qupey',
@@ -159,17 +159,17 @@ Qupey.find({}).remove(function() {
     type: {
       discount: 20, 
       details: '20% off total purchase'
-    }
-    expiration: new Date("2015-05-02T22:45:00.000Z"), 
+    },
+    expiration: ISODate("2015-06-13T22:20:55.910Z"), 
     shareable: true
   }, {
     name: 'Trade Joe\'s Gold Qupey',
-    statys: 'gold', 
+    status: 'gold', 
     type: {
       discount: 45, 
       details: '45% off total purchase'
-    }
-    expiration: new Date("2015-05-02T22:45:00.000Z"), 
+    },
+    expiration: ISODate("2015-06-13T22:20:55.910Z"), 
     shareable: false
   },function(){
     console.log('finished with qupeys')
@@ -180,7 +180,7 @@ Owner.find({}).remove(function() {
   Owner.create({
     provider: 'local',
     firstName: 'Freddy',
-    lastName: 'Businessman'
+    lastName: 'Businessman',
     email: 'freddy@freddy.com',
     password: 'freddy'
   }, {
