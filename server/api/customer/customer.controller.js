@@ -11,6 +11,26 @@ exports.index = function(req, res) {
   });
 };
 
+// Get all of my stores
+exports.myStores = function(req, res) {
+  Customer.findById(req.params.id).populate('stores').exec()
+  .then(function (customers) {
+    return res.json(customers);
+  })
+  .then(null, handleError(res));
+};
+
+
+// Get all of my qupeys 
+exports.myQupeys = function(req, res) {
+  Customer.findById(req.params.id).populate('qupeys').exec()
+  .then(function (customers) {
+    return res.json(customers);
+  })
+  .then(null, handleError(res));
+};
+
+
 // Get a single customer
 exports.show = function(req, res) {
   Customer.findById(req.params.id, function (err, customer) {
@@ -54,6 +74,8 @@ exports.destroy = function(req, res) {
   });
 };
 
-function handleError(res, err) {
-  return res.send(500, err);
+function handleError(res) {
+  return function(err){
+    return res.status(500).json(err);
+  }
 }

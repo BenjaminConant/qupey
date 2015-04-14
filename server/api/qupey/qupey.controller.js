@@ -5,10 +5,11 @@ var Qupey = require('./qupey.model');
 
 // Get list of qupeys
 exports.index = function(req, res) {
-  Qupey.find(function (err, qupeys) {
-    if(err) { return handleError(res, err); }
-    return res.json(200, qupeys);
-  });
+  Qupey.find().exec()
+  .then(function (qupeys) {
+    return res.json(qupeys);
+  })
+  .then(null, handleError(res));
 };
 
 // Get a single qupey
@@ -18,6 +19,24 @@ exports.show = function(req, res) {
     if(!qupey) { return res.send(404); }
     return res.json(qupey);
   });
+};
+
+// Get qupeys by sender
+exports.sender = function(req, res) {
+  Qupey.find({sender: req.params.id}).exec()
+  .then(function (qupeys) {
+    return res.json(qupeys);
+  })
+  .then(null, handleError(res));
+};
+
+// Get qupeys by recipient
+exports.recipient = function(req, res) {
+  Qupey.find({recipient: req.params.id}).exec()
+  .then(function (qupeys) {
+    return res.json(qupeys);
+  })
+  .then(null, handleError(res));
 };
 
 // Creates a new qupey in the DB.
@@ -54,6 +73,8 @@ exports.destroy = function(req, res) {
   });
 };
 
-function handleError(res, err) {
-  return res.send(500, err);
+function handleError(res) {
+  return function(err){
+    return res.status(500).json(err);
+  }
 }

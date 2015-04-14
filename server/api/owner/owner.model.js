@@ -2,7 +2,7 @@
 
 var mongoose = require('mongoose'); 
 var Schema = mongoose.Schema;
-var baseUser = require('../user/user.model').schema; 
+var baseUser = ('../user/user.model').schema; 
 var extend = require('mongoose-schema-extend');
 
 var OwnerSchema = baseUser.extend({
