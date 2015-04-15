@@ -6,13 +6,11 @@ angular.module('qupeyApp')
     return {
     	// retrieves all stores in the database
     	retrieveQupeys: function(){
-    		return http.get('/api/qupeys').then(function(response){
-    			return response.data;
-    		})
+    		return $http.get('/api/qupeys');
     	}, 
 
     	singleStore: function(id){
-    		return http.get('/api/stores/' + id).then(function(response){
+    		$http.get('/api/stores/' + id).then(function(response){
     			return response.data;
     		})
     	}

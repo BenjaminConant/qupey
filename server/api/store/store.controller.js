@@ -23,7 +23,7 @@ exports.show = function(req, res) {
 
 // Get customers
 exports.customers = function(req, res) {
-  Store.findById(req.params.id).populate('customers')exec()
+  Store.findById(req.params.id).populate('customers').exec()
   .then(function (store) {
     return res.json(store);
   })

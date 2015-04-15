@@ -6,22 +6,24 @@ angular.module('qupeyApp')
     return {
     	// retrieves all stores in the database
     	retrieveStores: function(){
-    		return http.get('/api/stores').then(function(response){
-    			return response.data;
-    		})
+    		return $http.get('/api/stores');
     	}, 
 
     	singleStore: function(id){
-    		return http.get('/api/stores/' + id).then(function(response){
+    		$http.get('/api/stores/' + id).then(function(response){
     			return response.data;
     		})
     	}, 
 
-    	retrieveCustomers: function(id)
-				return http.get('/api/stores/' + id + '/customers').then(function(response){
+    	retrieveCustomers: function(id){
+	        $http.get('/api/stores/' + id + '/customers').then(function(response){
     			return response.data;
     		})
-    	}
+    	}, 
+
+        allUsers: function(){
+            return $http.get('/api/users/');
+        }
 
 
     }
