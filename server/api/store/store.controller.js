@@ -5,19 +5,29 @@ var Store = require('./store.model');
 
 // Get list of stores
 exports.index = function(req, res) {
-  Store.find(function (err, stores) {
-    if(err) { return handleError(res, err); }
-    return res.json(200, stores);
-  });
+  Store.find({}).exec()
+  .then(function (stores) {
+    return res.json(stores);
+  })
+  .then(null, handleError(res));
 };
 
 // Get a single store
 exports.show = function(req, res) {
-  Store.findById(req.params.id, function (err, store) {
-    if(err) { return handleError(res, err); }
-    if(!store) { return res.send(404); }
+  Store.findById(req.params.id).exec()
+  .then(function (store) {
     return res.json(store);
-  });
+  })
+  .then(null, handleError(res));
+};
+
+// Get customers
+exports.customers = function(req, res) {
+  Store.findById(req.params.id).populate('customers').exec()
+  .then(function (store) {
+    return res.json(store);
+  })
+  .then(null, handleError(res));
 };
 
 // Creates a new store in the DB.
@@ -54,6 +64,8 @@ exports.destroy = function(req, res) {
   });
 };
 
-function handleError(res, err) {
-  return res.send(500, err);
+function handleError(res) {
+  return function(err){
+    return res.status(500).json(err);
+  }
 }
