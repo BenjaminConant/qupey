@@ -12,10 +12,10 @@
 		<div class="store-detail-qupey-expires-in">
 			Expires in {{store.default_qupey.expiration | amDifference : null : 'days'}} days 
 		</div>
-		<div class="store-detail-qupey-use-myself">
+		<div class="store-detail-qupey-use-myself" ng-click="openUseMyselfModal()">
 			 | Use Myself
 		</div>
-		<div class="store-detail-qupey-share">
+		<div class="store-detail-qupey-share" ng-click="openShareModal()">
 			 | Share <span class="glyphicon glyphicon-share-alt"></span>
 		</div>
 		<br style="clear:both" />
