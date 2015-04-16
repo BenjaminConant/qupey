@@ -112,7 +112,7 @@ var traderJoes = new Store ({
     tagline: 'The poor mans Whole foods',
     description: 'an American privately held chain of specialty grocery stores headquartered in Monrovia, California, in Greater Los Angeles',
     icon: "http://chachingonashoestring.com/wp-content/uploads/2013/11/trader-joes.png",
-    background_img: "http://static1.1.sqspcdn.com/static/f/503827/12927311/1309201990223/Location-Icon.gif?token=NQD8OuQVNBT18jkpZGl%2FyUBkQT4%3D",
+    background_img: "http://www.gannett-cdn.com/media/WTSP/USATODAY/2014/03/20//1395357701000-South-Tampa-Trader-Joe-s-01.jpg",
     default_qupey: traderJoesDefaultQupey._id,
     gold_qupey: traderJoesGoldQupey._id
 })

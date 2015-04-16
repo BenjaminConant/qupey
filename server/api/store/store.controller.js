@@ -14,7 +14,10 @@ exports.index = function(req, res) {
 
 // Get a single store
 exports.show = function(req, res) {
-  Store.findById(req.params.id).exec()
+  Store.findById(req.params.id)
+  .populate('default_qupey')
+  .populate('gold_qupey')
+  .exec()
   .then(function (store) {
     return res.json(store);
   })
