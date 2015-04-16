@@ -6,7 +6,7 @@
 		{{store.default_qupey.type.details}}
 	</div>
 	<div class="store-detail-qupey-expires-in">
-		Expires in 
+		Expires in {{store.default_qupey.expiration | amDifference : null : 'days'}} days 
 	</div>
 	<div class="store-detail-qupey-use-myself">
 		Use Myself
