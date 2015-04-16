@@ -14,6 +14,11 @@ angular.module('qupeyApp')
       		$location.path('/myStuff')
       	}
 
+
+      	scope.goToFeed = function () {
+      		$location.path('/feed')
+      	}
+
       }
     };
   });
