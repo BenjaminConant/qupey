@@ -1,10 +1,12 @@
 .store-detail-col {
 	padding-left: 0px;
 	padding-right: 0px;
+	background-color: rgb(164, 197, 233);
+	height: 100vh;
 }
 
 .store-detail-container {
-	background-color: rgb(164, 197, 233);
+	// background-color: rgb(164, 197, 233);
 }
 
 .store-detail-background-image  {
@@ -27,8 +29,23 @@
 
 .store-detail-store-description {
 	font-style: italic;
+	padding-left: 30px;
+	padding-right: 30px; 
+	
 }
 
+.store-detail-line-break {
+	border-color: black;
+	width: 70%;
+}
+
+.store-detail-our-qupeys {
+	font-weight: bold;
+}
+
+.store-detail-our-qupeys-description {
+	font-style: italic;
+}
 
 
 
