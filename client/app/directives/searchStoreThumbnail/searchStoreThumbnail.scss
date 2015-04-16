@@ -1,0 +1,37 @@
+.search-store-thumbnail {
+	padding-top: 5px;
+	padding-bottom: 5px;
+	height: auto; 
+	border-bottom: 1px dotted grey;
+}
+
+.search-store-thumbnail-container {
+	margin-top: 10px;
+}
+
+.search-store-thumbnail-image {
+	height: 45px; 
+	width: 45px; 
+}
+
+
+
+.search-store-thumbnail-image-container {
+	display: inline-block;
+	width: 10%;
+	vertical-align:top;
+}
+
+.search-store-thumbnail-text-container {
+	display: inline-block;
+	width: 85%;
+	padding-left: 15px;
+}
+
+.search-store-thumbnail-text-title {
+	font-weight: bold;
+}
+
+.search-store-thumbnail-text-content {
+	font-style: italic;
+}

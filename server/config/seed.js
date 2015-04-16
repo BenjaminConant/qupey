@@ -61,10 +61,12 @@ Store.find({}).remove(function() {
       street: '308 Lincoln Road', 
       city: 'Brooklyn', 
       state: 'NY', 
-      postalcode: '11216', 
-      description: 'one stop shop for everything you need'
+      postalcode: '11216' 
     }, 
-    tagline: 'Buyer Be Happy'
+    tagline: 'Pleased to meet you', 
+    description: 'one stop shop for everything you need',
+    icon: "http://file.answcdn.com/answ-cld/image/upload/v1/tk/brand_image/cd4fe6a0/14c2f8f0a580c4c93ec51864c5c108e420934096.png",
+    background_img: "http://static3.businessinsider.com/image/51bcda1d69bedd1d5400002a/microsoft-plans-to-build-windows-stores-inside-hundreds-of-best-buys.jpg"
   }, {
     name: 'Trader Joe\'s', 
     contactInfo: {
@@ -72,10 +74,12 @@ Store.find({}).remove(function() {
       street: '130 Court Street', 
       city: 'Brooklyn', 
       state: 'NY', 
-      postalcode: '11210', 
-      description: 'an American privately held chain of specialty grocery stores headquartered in Monrovia, California, in Greater Los Angeles'
+      postalcode: '11210' 
     }, 
-    tagline: 'We sell overpriced mediocre food'
+    tagline: 'The poor mans Whole foods',
+    description: 'an American privately held chain of specialty grocery stores headquartered in Monrovia, California, in Greater Los Angeles',
+    icon: "http://chachingonashoestring.com/wp-content/uploads/2013/11/trader-joes.png",
+    background_img: "http://static1.1.sqspcdn.com/static/f/503827/12927311/1309201990223/Location-Icon.gif?token=NQD8OuQVNBT18jkpZGl%2FyUBkQT4%3D"
   }, {
     name: 'Whole Foods Market', 
     contactInfo: {
@@ -83,10 +87,12 @@ Store.find({}).remove(function() {
       street: '214 3rd Street', 
       city: 'Brooklyn', 
       state: 'NY', 
-      postalcode: '11215', 
-      description: 'Eco-minded chain with natural & organic grocery items, housewares & other products (most sell wine)'
+      postalcode: '11215' 
     }, 
-    tagline: 'We sell overpriced really good food'
+    tagline: 'We sell overpriced really good food',
+    description: 'Eco-minded chain with natural & organic grocery items, housewares & other products (most sell wine)',
+    icon: "https://pechemignonkitchen.files.wordpress.com/2014/10/whole-foods-market-logo.png",
+    background_img: "http://www.gaiahealthblog.com/wordpress1/wp-content/uploads/2013/08/whole-foods1.jpg"
   })
 }, function (){
   console.log('done with stores')
