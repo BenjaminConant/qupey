@@ -1,3 +1,12 @@
+.store-details {
+	padding-top: 10px;
+	font-weight: 200;
+}
+
+.less-right-padding {
+	padding-right: 0px;
+}
+
 .store-detail-col {
 	padding-left: 0px;
 	padding-right: 0px;
@@ -25,12 +34,14 @@
 .store-detail-store-name {
 	font-weight: bold;
 	font-size: 25px;
+	color: #002765;
 }
 
 .store-detail-store-description {
-	font-style: italic;
 	padding-left: 30px;
 	padding-right: 30px; 
+	color: white;
+	font-weight: 200;
 	
 }
 
@@ -41,10 +52,12 @@
 
 .store-detail-our-qupeys {
 	font-weight: bold;
+	color: #002765;
 }
 
 .store-detail-our-qupeys-description {
 	font-style: italic;
+	color: #002765;
 }
 
 
