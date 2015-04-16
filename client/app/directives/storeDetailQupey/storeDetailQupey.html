@@ -1,0 +1,23 @@
+<div class="store-detail-qupey-container">
+	<div class="store-detail-qupey-top-container">
+		<div class="store-detail-qupey-percent-container">
+			{{store.default_qupey.type.discount}}% off
+		</div>
+		<div class="store-detail-qupey-text-container">
+			{{store.default_qupey.type.details}}
+		</div>
+		<br style="clear:both" />
+	</div>
+	<div class="store-detail-qupey-bottom-container">
+		<div class="store-detail-qupey-expires-in">
+			Expires in {{store.default_qupey.expiration | amDifference : null : 'days'}} days 
+		</div>
+		<div class="store-detail-qupey-use-myself" ng-click="openUseMyselfModal()">
+			 | Use Myself
+		</div>
+		<div class="store-detail-qupey-share" ng-click="openShareModal()">
+			 | Share <span class="glyphicon glyphicon-share-alt"></span>
+		</div>
+		<br style="clear:both" />
+	</div>
+</div>

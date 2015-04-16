@@ -1,7 +1,10 @@
 'use strict';
 
 angular.module('qupeyApp')
-  .controller('StoreDetailCtrl', function ($scope, $stateParams, store) {
+  .controller('StoreDetailCtrl', function ($scope, $stateParams, store, $modal) {
+    
+
+
     console.log($stateParams);
     store.getOne($stateParams.id)
     	.success(function(s){
@@ -12,5 +15,16 @@ angular.module('qupeyApp')
     		console.log(err);
     	})
 
-    $scope.message = 'Hello';
+    $scope.openUseMyselfModal = function() {
+        console.log("got to open modal")
+        $modal.open({
+            template: '<p>This is the use myself modal</p>'
+        });
+    }
+
+    $scope.openShareModal = function() {
+        $modal.open({
+            template: '<p>This is the share modal</p>'
+        })
+    }
   });

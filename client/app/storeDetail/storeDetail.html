@@ -1,13 +1,16 @@
 <top-nav></top-nav>
-<div class="col-md-12">
-	<img class="store-detail-background-image" ng-src="{{store.background_img}}"/>
-	<div class="text-center store-detail-icon-image-container">
-		<img class="store-detail-icon-image" ng-src="{{store.icon}}"/>
+<div class="col-md-12 store-detail-col">
+	<div class="store-detail-container">
+		<img class="store-detail-background-image" ng-src="{{store.background_img}}"/>
+		<div class="text-center store-detail-icon-image-container">
+			<img class="store-detail-icon-image" ng-src="{{store.icon}}"/>
+		</div>
+		<div class="text-center">
+			<div class="store-detail-store-name">{{store.name}}</div>
+		</div>
+		<div class="text-center">
+			<div class="store-detail-store-description">{{store.description}}</div>
+		</div>
 	</div>
-	<div class="text-center">
-		<div class="store-detail-store-name">{{store.name}}</div>
-	</div>
-	<div class="text-center">
-		<div class="store-detail-store-description">{{store.description}}</div>
-	</div>
+	<store-detail-qupey></store-detail-qupey>
 </div>

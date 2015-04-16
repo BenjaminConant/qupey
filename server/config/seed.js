@@ -20,7 +20,7 @@ var bestBuyDefaultQupey = new Qupey ({
         discount: 10, 
         details: '10% off total purchase'
       },
-      expiration: new Date("2015-07-02T20:45:00.000Z"), 
+      expiration: new Date("2015-07-10T20:45:00.000Z"), 
       shareable: true
     });
 
@@ -31,7 +31,7 @@ var bestBuyGoldQupey = new Qupey ({
         discount: 70, 
         details: 'Thanks for sending people are way ... take 70% off your next purchase'
       },
-      expiration: new Date("2015-07-02T20:45:00.000Z"), 
+      expiration: new Date("2015-08-02T20:45:00.000Z"), 
       shareable: false
     });
     
@@ -43,7 +43,7 @@ var traderJoesDefaultQupey = new Qupey ({
         discount: 25, 
         details: '25% off total purchase'
       },
-      expiration: new Date("2015-07-02T20:45:00.000Z"), 
+      expiration: new Date("2015-07-05T20:45:00.000Z"), 
       shareable: true
       });
 
