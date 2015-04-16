@@ -13,6 +13,113 @@ var Qupey = require('../api/qupey/qupey.model');
 var Store = require('../api/store/store.model');
 
 
+var bestBuyDefaultQupey = new Qupey ({
+      name: 'Best Buy Default Qupey',
+      status: 'default', 
+      type: {
+        discount: 10, 
+        details: '10% off total purchase'
+      },
+      expiration: new Date("2015-07-02T20:45:00.000Z"), 
+      shareable: true
+    })
+    
+
+var traderJoesDefaultQupey = new Qupey ({
+      name: 'Trader Joes Default Qupey',
+      status: 'default', 
+      type: {
+        discount: 25, 
+        details: '25% off total purchase'
+      },
+      expiration: new Date("2015-07-02T20:45:00.000Z"), 
+      shareable: true
+      })
+   
+var wholeFoodsDefaultQupey = new Qupey ({
+        name: 'Whole Foods Default Qupey',
+        status: 'default', 
+        type: {
+          discount: 30, 
+          details: '30% off total purchase'
+        },
+        expiration: new Date("2015-07-02T20:45:00.000Z"), 
+        shareable: true
+      })
+
+console.log("___________ THIS IS THE QUPEY ", bestBuyDefaultQupey);
+
+
+var bestBuy = new Store ({
+  name: 'Best Buy', 
+  contactInfo: {
+    phone: '2222222222', 
+    street: '308 Lincoln Road', 
+    city: 'Brooklyn', 
+    state: 'NY', 
+    postalcode: '11216' 
+  }, 
+  tagline: 'Pleased to meet you', 
+  description: 'one stop shop for everything you need',
+  icon: "http://file.answcdn.com/answ-cld/image/upload/v1/tk/brand_image/cd4fe6a0/14c2f8f0a580c4c93ec51864c5c108e420934096.png",
+  background_img: "http://static3.businessinsider.com/image/51bcda1d69bedd1d5400002a/microsoft-plans-to-build-windows-stores-inside-hundreds-of-best-buys.jpg",
+  default_qupey: bestBuyDefaultQupey._id
+})
+
+var traderJoes = new Store ({
+    name: 'Trader Joe\'s', 
+    contactInfo: {
+      phone: '7182468460', 
+      street: '130 Court Street', 
+      city: 'Brooklyn', 
+      state: 'NY', 
+      postalcode: '11210' 
+    }, 
+    tagline: 'The poor mans Whole foods',
+    description: 'an American privately held chain of specialty grocery stores headquartered in Monrovia, California, in Greater Los Angeles',
+    icon: "http://chachingonashoestring.com/wp-content/uploads/2013/11/trader-joes.png",
+    background_img: "http://static1.1.sqspcdn.com/static/f/503827/12927311/1309201990223/Location-Icon.gif?token=NQD8OuQVNBT18jkpZGl%2FyUBkQT4%3D",
+    default_qupey: traderJoesDefaultQupey._id
+})
+
+
+var wholeFoods = new Store ({
+    name: 'Whole Foods Market', 
+    contactInfo: {
+      phone: '7189073622', 
+      street: '214 3rd Street', 
+      city: 'Brooklyn', 
+      state: 'NY', 
+      postalcode: '11215' 
+    }, 
+    tagline: 'We sell overpriced really good food',
+    description: 'Eco-minded chain with natural & organic grocery items, housewares & other products (most sell wine)',
+    icon: "https://pechemignonkitchen.files.wordpress.com/2014/10/whole-foods-market-logo.png",
+    background_img: "http://www.gaiahealthblog.com/wordpress1/wp-content/uploads/2013/08/whole-foods1.jpg",
+    default_qupey: wholeFoodsDefaultQupey._id
+})
+    
+
+
+
+Qupey.find({}).remove(function() {
+  bestBuyDefaultQupey.save();
+  traderJoesDefaultQupey.save();
+  wholeFoodsDefaultQupey.save();
+});
+
+Store.find({}).remove(function() {
+  bestBuy.save();
+  traderJoes.save();
+  wholeFoods.save();
+});
+
+
+
+
+
+
+
 
 
 Thing.find({}).remove(function() {
@@ -52,51 +159,60 @@ User.find({}).remove(function() {
   });
 });
 
+// Qupey.find({}).remove(function() {
+//   Store.find({}).remove(function() {
+  
+    
 
-Store.find({}).remove(function() {
-  Store.create({
-    name: 'Best Buy', 
-    contactInfo: {
-      phone: '2222222222', 
-      street: '308 Lincoln Road', 
-      city: 'Brooklyn', 
-      state: 'NY', 
-      postalcode: '11216' 
-    }, 
-    tagline: 'Pleased to meet you', 
-    description: 'one stop shop for everything you need',
-    icon: "http://file.answcdn.com/answ-cld/image/upload/v1/tk/brand_image/cd4fe6a0/14c2f8f0a580c4c93ec51864c5c108e420934096.png",
-    background_img: "http://static3.businessinsider.com/image/51bcda1d69bedd1d5400002a/microsoft-plans-to-build-windows-stores-inside-hundreds-of-best-buys.jpg"
-  }, {
-    name: 'Trader Joe\'s', 
-    contactInfo: {
-      phone: '7182468460', 
-      street: '130 Court Street', 
-      city: 'Brooklyn', 
-      state: 'NY', 
-      postalcode: '11210' 
-    }, 
-    tagline: 'The poor mans Whole foods',
-    description: 'an American privately held chain of specialty grocery stores headquartered in Monrovia, California, in Greater Los Angeles',
-    icon: "http://chachingonashoestring.com/wp-content/uploads/2013/11/trader-joes.png",
-    background_img: "http://static1.1.sqspcdn.com/static/f/503827/12927311/1309201990223/Location-Icon.gif?token=NQD8OuQVNBT18jkpZGl%2FyUBkQT4%3D"
-  }, {
-    name: 'Whole Foods Market', 
-    contactInfo: {
-      phone: '7189073622', 
-      street: '214 3rd Street', 
-      city: 'Brooklyn', 
-      state: 'NY', 
-      postalcode: '11215' 
-    }, 
-    tagline: 'We sell overpriced really good food',
-    description: 'Eco-minded chain with natural & organic grocery items, housewares & other products (most sell wine)',
-    icon: "https://pechemignonkitchen.files.wordpress.com/2014/10/whole-foods-market-logo.png",
-    background_img: "http://www.gaiahealthblog.com/wordpress1/wp-content/uploads/2013/08/whole-foods1.jpg"
-  })
-}, function (){
-  console.log('done with stores')
-})
+      
+//     //   Store.create({
+//     //     name: 'Best Buy', 
+//     //     contactInfo: {
+//     //       phone: '2222222222', 
+//     //       street: '308 Lincoln Road', 
+//     //       city: 'Brooklyn', 
+//     //       state: 'NY', 
+//     //       postalcode: '11216' 
+//     //     }, 
+//     //     tagline: 'Pleased to meet you', 
+//     //     description: 'one stop shop for everything you need',
+//     //     icon: "http://file.answcdn.com/answ-cld/image/upload/v1/tk/brand_image/cd4fe6a0/14c2f8f0a580c4c93ec51864c5c108e420934096.png",
+//     //     background_img: "http://static3.businessinsider.com/image/51bcda1d69bedd1d5400002a/microsoft-plans-to-build-windows-stores-inside-hundreds-of-best-buys.jpg",
+//     //     default_qupey: bestBuyQupey._id
+//     //   }, {
+//     //     name: 'Trader Joe\'s', 
+//     //     contactInfo: {
+//     //       phone: '7182468460', 
+//     //       street: '130 Court Street', 
+//     //       city: 'Brooklyn', 
+//     //       state: 'NY', 
+//     //       postalcode: '11210' 
+//     //     }, 
+//     //     tagline: 'The poor mans Whole foods',
+//     //     description: 'an American privately held chain of specialty grocery stores headquartered in Monrovia, California, in Greater Los Angeles',
+//     //     icon: "http://chachingonashoestring.com/wp-content/uploads/2013/11/trader-joes.png",
+//     //     background_img: "http://static1.1.sqspcdn.com/static/f/503827/12927311/1309201990223/Location-Icon.gif?token=NQD8OuQVNBT18jkpZGl%2FyUBkQT4%3D",
+//     //     default_qupey: traderJoesQupey._id
+//     //   }, {
+//     //     name: 'Whole Foods Market', 
+//     //     contactInfo: {
+//     //       phone: '7189073622', 
+//     //       street: '214 3rd Street', 
+//     //       city: 'Brooklyn', 
+//     //       state: 'NY', 
+//     //       postalcode: '11215' 
+//     //     }, 
+//     //     tagline: 'We sell overpriced really good food',
+//     //     description: 'Eco-minded chain with natural & organic grocery items, housewares & other products (most sell wine)',
+//     //     icon: "https://pechemignonkitchen.files.wordpress.com/2014/10/whole-foods-market-logo.png",
+//     //     background_img: "http://www.gaiahealthblog.com/wordpress1/wp-content/uploads/2013/08/whole-foods1.jpg",
+//     //     default_qupey: wholeFoodsQupey._id
+//     //   })
+//     // }, function (){
+//     //   console.log('done with stores')
+//     // })
+
+// });
 
 Customer.find({}).remove(function() {
   Customer.create({
@@ -122,65 +238,65 @@ Customer.find({}).remove(function() {
   });
 });
 
-Qupey.find({}).remove(function() {
-  Qupey.create({
-    name: 'Whole Foods Default Qupey',
-    status: 'default', 
-    type: {
-      discount: 30, 
-      details: '30% off total purchase'
-    },
-    expiration: new Date("2015-07-02T20:45:00.000Z"), 
-    shareable: true
-  }, {
-    name: 'Whole Foods Gold Qupey',
-    status: 'gold', 
-    type: {
-      discount: 50, 
-      details: '50% off total purchase'
-    },
-    expiration: new Date("2015-07-02T20:45:00.000Z"), 
-    shareable: false
-  }, {
-    name: 'Best Buy Default Qupey',
-    status: 'default', 
-    type: {
-      discount: 20, 
-      details: '20% off total purchase'
-    },
-    expiration: new Date("2015-07-02T20:45:00.000Z"), 
-    shareable: true
-  }, {
-    name: 'Best Buy Gold Qupey',
-    status: 'gold', 
-    type: {
-      discount: 35, 
-      details: '35% off total purchase'
-    },
-    expiration: new Date("2015-07-02T20:45:00.000Z"), 
-    shareable: false
-  }, {
-    name: 'Trader Joe\'s Default Qupey',
-    status: 'default', 
-    type: {
-      discount: 20, 
-      details: '20% off total purchase'
-    },
-    expiration: new Date("2015-07-02T20:45:00.000Z"), 
-    shareable: true
-  }, {
-    name: 'Trade Joe\'s Gold Qupey',
-    status: 'gold', 
-    type: {
-      discount: 45, 
-      details: '45% off total purchase'
-    },
-    expiration: new Date("2015-07-02T20:45:00.000Z"), 
-    shareable: false
-  },function(){
-    console.log('finished with qupeys')
-  });
-});
+// Qupey.find({}).remove(function() {
+//   Qupey.create({
+//     name: 'Whole Foods Default Qupey',
+//     status: 'default', 
+//     type: {
+//       discount: 30, 
+//       details: '30% off total purchase'
+//     },
+//     expiration: new Date("2015-07-02T20:45:00.000Z"), 
+//     shareable: true
+//   }, {
+//     name: 'Whole Foods Gold Qupey',
+//     status: 'gold', 
+//     type: {
+//       discount: 50, 
+//       details: '50% off total purchase'
+//     },
+//     expiration: new Date("2015-07-02T20:45:00.000Z"), 
+//     shareable: false
+//   }, {
+//     name: 'Best Buy Default Qupey',
+//     status: 'default', 
+//     type: {
+//       discount: 20, 
+//       details: '20% off total purchase'
+//     },
+//     expiration: new Date("2015-07-02T20:45:00.000Z"), 
+//     shareable: true
+//   }, {
+//     name: 'Best Buy Gold Qupey',
+//     status: 'gold', 
+//     type: {
+//       discount: 35, 
+//       details: '35% off total purchase'
+//     },
+//     expiration: new Date("2015-07-02T20:45:00.000Z"), 
+//     shareable: false
+//   }, {
+//     name: 'Trader Joe\'s Default Qupey',
+//     status: 'default', 
+//     type: {
+//       discount: 20, 
+//       details: '20% off total purchase'
+//     },
+//     expiration: new Date("2015-07-02T20:45:00.000Z"), 
+//     shareable: true
+//   }, {
+//     name: 'Trade Joe\'s Gold Qupey',
+//     status: 'gold', 
+//     type: {
+//       discount: 45, 
+//       details: '45% off total purchase'
+//     },
+//     expiration: new Date("2015-07-02T20:45:00.000Z"), 
+//     shareable: false
+//   },function(){
+//     console.log('finished with qupeys')
+//   });
+// });
 
 Owner.find({}).remove(function() {
   Owner.create({
