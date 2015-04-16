@@ -1,6 +1,7 @@
 'use strict';
 
 var User = require('./user.model');
+var Store = require('../store/store.model'); 
 var passport = require('passport');
 var config = require('../../config/environment');
 var jwt = require('jsonwebtoken');
@@ -19,6 +20,7 @@ exports.index = function(req, res) {
     res.json(200, users);
   });
 };
+
 
 /**
  * Creates a new user
