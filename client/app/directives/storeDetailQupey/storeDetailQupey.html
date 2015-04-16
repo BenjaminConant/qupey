@@ -1,3 +1,36 @@
+<div class="container store-detail-qupey-container">
+	<div class="row top">
+		<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+			<span class="percentage">{{store.default_qupey.type.discount}}%</span> <span class="off">OFF</span>
+		</div>
+		<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+			<div class="store-details">{{store.default_qupey.type.details}}</div>
+		</div>
+	</div>
+	<div class="row bottom">
+		<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 less-right-padding">
+			EXPIRES IN {{store.default_qupey.expiration | amDifference : null : 'days'}} DAYS
+		</div>
+		<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4" ng-click="openUseMyselfModal()">
+			<div class="text-center">| USE MYSELF</div>
+		</div>
+		<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4" ng-click="openShareModal()">
+			| <span class="glyphicon glyphicon-share-alt"></span> SHARE
+		</div>
+	</div>
+</div>
+
+
+
+
+
+<!-- 
+
+
+
+
+
+
 <div class="store-detail-qupey-container">
 	<div class="store-detail-qupey-top-container">
 		<div class="store-detail-qupey-percent-container">
@@ -20,4 +53,4 @@
 		</div>
 		<br style="clear:both" />
 	</div>
-</div>
+</div> -->

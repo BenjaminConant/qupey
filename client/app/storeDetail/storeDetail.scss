@@ -1,10 +1,21 @@
-.store-detail-col {
-	padding-left: 0px;
+.store-details {
+	padding-top: 10px;
+	font-weight: 200;
+}
+
+.less-right-padding {
 	padding-right: 0px;
 }
 
-.store-detail-container {
+.store-detail-col {
+	padding-left: 0px;
+	padding-right: 0px;
 	background-color: rgb(164, 197, 233);
+	height: 100vh;
+}
+
+.store-detail-container {
+	// background-color: rgb(164, 197, 233);
 }
 
 .store-detail-background-image  {
@@ -16,6 +27,8 @@
 }
 
 .store-detail-icon-image {
+	 border: 3px solid white;
+	 border-radius: 5px;
 	 width: 45px;
 	 height: 45px;
 }
@@ -23,12 +36,31 @@
 .store-detail-store-name {
 	font-weight: bold;
 	font-size: 25px;
+	color: #002765;
 }
 
 .store-detail-store-description {
-	font-style: italic;
+	padding-left: 30px;
+	padding-right: 30px; 
+	color: white;
+	font-weight: 200;
+	
 }
 
+.store-detail-line-break {
+	border-color: black;
+	width: 70%;
+}
+
+.store-detail-our-qupeys {
+	font-weight: bold;
+	color: #002765;
+}
+
+.store-detail-our-qupeys-description {
+	font-style: italic;
+	color: #002765;
+}
 
 
 
