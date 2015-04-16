@@ -8,7 +8,7 @@ angular.module('qupeyApp')
         return $http.get('/api/stores');
       },
       getOne: function (id) {
-        return $http.get('/api/stores/', + id);
+        return $http.get('/api/stores/' + id);
       }
     };
   });
