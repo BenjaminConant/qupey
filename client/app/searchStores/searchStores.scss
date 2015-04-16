@@ -14,9 +14,7 @@
 	width: 45px; 
 }
 
-.search-store-thumbnail-text {
-	padding-left: 10px;
-}
+
 
 .search-store-thumbnail-image-container {
 	display: inline-block;
@@ -24,8 +22,16 @@
 	vertical-align:top;
 }
 
-.search-store-thumbnail-text {
+.search-store-thumbnail-text-container {
 	display: inline-block;
 	width: 85%;
 	padding-left: 15px;
+}
+
+.search-store-thumbnail-text-title {
+	font-weight: bold;
+}
+
+.search-store-thumbnail-text-content {
+	font-style: italic;
 }
