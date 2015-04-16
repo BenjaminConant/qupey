@@ -6,6 +6,9 @@ angular.module('qupeyApp')
     return {
       getAll: function () {
         return $http.get('/api/stores');
+      },
+      getOne: function (id) {
+        return $http.get('/api/stores/', + id);
       }
     };
   });
