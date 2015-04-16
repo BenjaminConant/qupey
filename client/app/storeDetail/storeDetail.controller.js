@@ -18,13 +18,13 @@ angular.module('qupeyApp')
     $scope.openUseMyselfModal = function() {
         console.log("got to open modal")
         $modal.open({
-            template: '<p>This is the use myself modal</p>'
+            templateUrl: 'app/storeDetail/useMyselfModal.html'
         });
     }
 
     $scope.openShareModal = function() {
         $modal.open({
-            template: '<p>This is the share modal</p>'
+            templateUrl: 'app/storeDetail/shareModal.html'
         })
     }
   });
