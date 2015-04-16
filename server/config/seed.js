@@ -22,7 +22,18 @@ var bestBuyDefaultQupey = new Qupey ({
       },
       expiration: new Date("2015-07-02T20:45:00.000Z"), 
       shareable: true
-    })
+    });
+
+var bestBuyGoldQupey = new Qupey ({
+      name: 'Best Buy Gold Qupey',
+      status: 'gold', 
+      type: {
+        discount: 70, 
+        details: 'Thanks for sending people are way ... take 70% off your next purchase'
+      },
+      expiration: new Date("2015-07-02T20:45:00.000Z"), 
+      shareable: false
+    });
     
 
 var traderJoesDefaultQupey = new Qupey ({
@@ -34,7 +45,18 @@ var traderJoesDefaultQupey = new Qupey ({
       },
       expiration: new Date("2015-07-02T20:45:00.000Z"), 
       shareable: true
-      })
+      });
+
+var traderJoesGoldQupey = new Qupey ({
+      name: 'Trader Joes Gold Qupey',
+      status: 'gold', 
+      type: {
+        discount: 50, 
+        details: 'Thanks for sending hungry mouths to TJ... take 50% off your next purchase'
+      },
+      expiration: new Date("2015-07-02T20:45:00.000Z"), 
+      shareable: false
+    });
    
 var wholeFoodsDefaultQupey = new Qupey ({
         name: 'Whole Foods Default Qupey',
@@ -45,9 +67,20 @@ var wholeFoodsDefaultQupey = new Qupey ({
         },
         expiration: new Date("2015-07-02T20:45:00.000Z"), 
         shareable: true
-      })
+      });
 
-console.log("___________ THIS IS THE QUPEY ", bestBuyDefaultQupey);
+var wholeFoodsGoldQupey = new Qupey ({
+      name: 'Whole Foods Gold Qupey',
+      status: 'gold', 
+      type: {
+        discount: 60, 
+        details: 'Thanks for your friends to Whole Foods... take 60% off your next purchase'
+      },
+      expiration: new Date("2015-07-02T20:45:00.000Z"), 
+      shareable: false
+    });
+
+
 
 
 var bestBuy = new Store ({
@@ -63,7 +96,8 @@ var bestBuy = new Store ({
   description: 'one stop shop for everything you need',
   icon: "http://file.answcdn.com/answ-cld/image/upload/v1/tk/brand_image/cd4fe6a0/14c2f8f0a580c4c93ec51864c5c108e420934096.png",
   background_img: "http://static3.businessinsider.com/image/51bcda1d69bedd1d5400002a/microsoft-plans-to-build-windows-stores-inside-hundreds-of-best-buys.jpg",
-  default_qupey: bestBuyDefaultQupey._id
+  default_qupey: bestBuyDefaultQupey._id,
+  gold_qupey: bestBuyGoldQupey._id
 })
 
 var traderJoes = new Store ({
@@ -79,7 +113,8 @@ var traderJoes = new Store ({
     description: 'an American privately held chain of specialty grocery stores headquartered in Monrovia, California, in Greater Los Angeles',
     icon: "http://chachingonashoestring.com/wp-content/uploads/2013/11/trader-joes.png",
     background_img: "http://static1.1.sqspcdn.com/static/f/503827/12927311/1309201990223/Location-Icon.gif?token=NQD8OuQVNBT18jkpZGl%2FyUBkQT4%3D",
-    default_qupey: traderJoesDefaultQupey._id
+    default_qupey: traderJoesDefaultQupey._id,
+    gold_qupey: traderJoesGoldQupey._id
 })
 
 
@@ -96,7 +131,8 @@ var wholeFoods = new Store ({
     description: 'Eco-minded chain with natural & organic grocery items, housewares & other products (most sell wine)',
     icon: "https://pechemignonkitchen.files.wordpress.com/2014/10/whole-foods-market-logo.png",
     background_img: "http://www.gaiahealthblog.com/wordpress1/wp-content/uploads/2013/08/whole-foods1.jpg",
-    default_qupey: wholeFoodsDefaultQupey._id
+    default_qupey: wholeFoodsDefaultQupey._id,
+    gold_qupey: wholeFoodsGoldQupey._id
 })
     
 
@@ -104,8 +140,11 @@ var wholeFoods = new Store ({
 
 Qupey.find({}).remove(function() {
   bestBuyDefaultQupey.save();
+  bestBuyGoldQupey.save();
   traderJoesDefaultQupey.save();
+  traderJoesGoldQupey.save();
   wholeFoodsDefaultQupey.save();
+  wholeFoodsGoldQupey.save();
 });
 
 Store.find({}).remove(function() {
