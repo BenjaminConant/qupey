@@ -19,8 +19,12 @@ var QupeySchema = new Schema({
   },
   expiration: {type: Date},
   shareable: {type: Boolean, default: false},
-  sender: { type: Schema.Types.ObjectId, ref: 'User' },
-  recipient: { type: Schema.Types.ObjectId, ref: 'User' },
+  shared: [{ 
+    sender: {type: Schema.Types.ObjectId, ref: 'Customer' }, 
+    recipient: {type: Schema.Types.ObjectId, ref: 'Customer'}
+    }],
+  shareCount: {type: Number},
+  redeemedCount: {type: Number},
   store: { type: Schema.Types.ObjectId, ref: 'Store' },
 }, {strict: false});
 

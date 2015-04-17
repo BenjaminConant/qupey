@@ -11,6 +11,12 @@ var Customer = require('../api/customer/customer.model');
 var Owner = require('../api/owner/owner.model');
 var Qupey = require('../api/qupey/qupey.model');
 var Store = require('../api/store/store.model');
+var request = require('request');
+var Promise = require('bluebird'); 
+var requestP = Promise.promisify(require('request')); 
+
+// 'https://www.google.com/m8/feeds/contacts/{userEmail}/full'
+
 
 
 var bestBuyDefaultQupey = new Qupey ({

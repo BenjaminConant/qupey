@@ -9,4 +9,11 @@ var OwnerSchema = baseUser.extend({
   store: { type: Schema.Types.ObjectId, ref: 'Store' }
 });
 
+OwnerSchema.pre('save', function(next){
+	if (this.isNew){
+		this.addRole('Owner')
+	}
+	next(); 
+})
+
 module.exports = mongoose.model('Owner', OwnerSchema);

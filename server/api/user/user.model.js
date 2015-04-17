@@ -4,6 +4,7 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 var crypto = require('crypto');
 var extend = require('mongoose-schema-extend');
+var _ = require('lodash'); 
 
 var authTypes = ['github', 'twitter', 'facebook', 'google'];
 
@@ -11,18 +12,19 @@ var UserSchema = new Schema({
   firstName: String,
   lastName: String,
   email: { type: String, lowercase: true },
-  role: {
-    type: String,
-    default: 'user'
-  },
   hashedPassword: String,
   provider: String,
   salt: String,
   facebook: {},
   twitter: {},
   google: {},
-  github: {}
-}, {collection: 'users'});
+  github: {},
+  roles: [], 
+  contacts: [{
+    name: String, 
+    email: String
+  }]
+}, {collection: 'users'}, {strict: false});
 
 /**
  * Virtuals
@@ -37,6 +39,14 @@ UserSchema
   .get(function() {
     return this._password;
   });
+
+// get role
+UserSchema
+  .virtual('role')
+  .get(function() {
+    return this.__t;
+  });
+
 
 // Public profile information
 UserSchema
@@ -54,7 +64,8 @@ UserSchema
   .get(function() {
     return {
       '_id': this._id,
-      'role': this.role
+      // 'role': this.role
+      '__t': this.role
     };
   });
 
@@ -123,6 +134,15 @@ UserSchema.methods = {
    */
   authenticate: function(plainText) {
     return this.encryptPassword(plainText) === this.hashedPassword;
+  },
+
+  // adds the role 
+  addRole: function(r){
+    this.roles.addToSet(r); 
+  }, 
+
+  hasRole: function(r){
+    return this.roles.indexOf(r) !== -1; 
   },
 
   /**
