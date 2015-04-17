@@ -2,6 +2,14 @@
 
 var _ = require('lodash');
 var Customer = require('./customer.model');
+var nodemailerConfig = require('../../config/nodemailer'); 
+var Promise = require('bluebird'); 
+var nodemailer = require('nodemailer'); 
+var transport = nodemailerConfig.transporter; 
+var sendMail = Promise.promisify(transport.sendMail, transport); 
+var request = require('request'); 
+var requestP = Promise.promisify(require('request')); 
+
 
 // Get list of customers
 exports.index = function(req, res) {
@@ -30,6 +38,53 @@ exports.myQupeys = function(req, res) {
   .then(null, handleError(res));
 };
 
+
+exports.userContacts = function(req, res) {
+  console.log('in here!!')
+  // Customer.findById(req.params.id).populate('qupeys').exec()
+  // .then(function (customers) {
+  //   return res.json(customers);
+  // })
+  // .then(null, handleError(res));
+
+  requestP('https://www.google.com/m8/feeds/contacts/ayana.d.i.wilson@gmail.com/full')
+  .then(function (response){
+    console.log('response: ', response)
+    console.log('body??', response[0].body)
+    return res.json(response)
+  })
+  .then(null, function (err){
+    console.log('err: ', err)
+  })
+};
+
+
+
+// send a qupey to my friends
+// exports.myQupeys = function(req, res) {
+//   // look up customer and find the qupey 
+//   Customer.findById(req.params.id).populate('qupeys').exec()
+//   .then(function (customer) {
+//     for (var i = 0; i < customer.qupeys.length; i++){
+//       if (req.body.id === customer.qupeys[i]._id){
+//         // send qupey to the friend's email 
+//         var options = {
+//           from: 
+//           to: req.body.friendEmail, 
+//           subject: customer.name + 'sent you a qupey!', 
+//           text: // some html here 
+//         }
+//         sendMail(options)
+//         // handle res
+//         .then()
+//         // handle error 
+//         .then(null, )
+
+//       }
+//     }
+//   })
+//   .then(null, handleError(res));
+// };
 
 // Get a single customer
 exports.show = function(req, res) {

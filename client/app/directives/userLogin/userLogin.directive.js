@@ -25,6 +25,10 @@ angular.module('qupeyApp')
 		    $(".user-login-container").height(height);
         });
 
+	    scope.loginOauth = function(provider) {
+      	$window.location.href = '/auth/' + provider;
+    	};
+
       }
     };
   });

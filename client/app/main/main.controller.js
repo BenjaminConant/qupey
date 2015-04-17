@@ -25,4 +25,6 @@ angular.module('qupeyApp')
     $scope.$on('$destroy', function () {
       socket.unsyncUpdates('thing');
     });
+
+  
   });
