@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('qupeyApp')
-  .factory('User', function ($http) {
+  .factory('Customer', function ($http) {
 
     return {
 
@@ -29,6 +29,12 @@ angular.module('qupeyApp')
         $http.get('/api/qupeys/' + id + '/recipient').then(function(response){
           return response.data; 
         })
+      }, 
+
+      addMyQupey: function(id, qupeyId){
+        console.log('in here!')
+        var obj = {qupeyId: qupeyId}
+        return $http.post('/api/customers/' + id + '/addMyQupey', obj)
       }
 
     }

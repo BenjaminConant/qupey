@@ -8,7 +8,7 @@ var _ = require('lodash');
 
 var CustomerSchema = baseUser.extend({
   qupeys: [{ type: Schema.Types.ObjectId, ref: 'Qupey' }],
-  stores: [{ type: Schema.Types.ObjectId, ref: 'Store' }],
+  stores: [{ type: Schema.Types.ObjectId, ref: 'Store' }]
 });
 
 CustomerSchema.pre('save', function(next){

@@ -23,7 +23,9 @@ var UserSchema = new Schema({
   contacts: [{
     name: String, 
     email: String
-  }]
+  }], 
+  qupeys: [{ type: Schema.Types.ObjectId, ref: 'Qupey' }],
+  stores: [{ type: Schema.Types.ObjectId, ref: 'Store' }]
 }, {collection: 'users'}, {strict: false});
 
 /**
