@@ -18,7 +18,8 @@ angular.module('qupeyApp')
     $scope.openUseMyselfModal = function() {
         console.log("got to open modal")
         $modal.open({
-            templateUrl: 'app/storeDetail/useMyselfModal.html'
+            templateUrl: 'app/storeDetail/useMyselfModal.html',
+            controller: 'UseMyselfModalCtrl'
         });
     }
 
