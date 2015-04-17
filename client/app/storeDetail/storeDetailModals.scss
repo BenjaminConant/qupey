@@ -2,8 +2,23 @@
 	text-align: center;
 	font: bold;
 	font-size: 25px;
+	margin-top: 20px;
 }
 
 .m-content {
 	text-align: center;
+	width: 80%;
+	margin: 0 auto;
+	margin-top: 20px;
+}
+
+
+.use-myself-modal-button-container {
+	padding: 20px;
+	button {
+		display: block;
+		margin: 0 auto;
+		margin-top: 10px;
+		width: 60%;
+	}
 }
