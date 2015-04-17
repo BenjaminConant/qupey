@@ -3,8 +3,6 @@
 angular.module('qupeyApp')
   .controller('StoreDetailCtrl', function ($scope, $stateParams, store, $modal) {
     
-
-
     console.log($stateParams);
     store.getOne($stateParams.id)
     	.success(function(s){
@@ -19,13 +17,16 @@ angular.module('qupeyApp')
         console.log("got to open modal")
         $modal.open({
             templateUrl: 'app/storeDetail/useMyselfModal.html',
-            controller: 'UseMyselfModalCtrl'
+            controller: 'UseMyselfModalCtrl',
+            scope: $scope
         });
     }
 
     $scope.openShareModal = function() {
         $modal.open({
-            templateUrl: 'app/storeDetail/shareModal.html'
+            templateUrl: 'app/storeDetail/shareModal.html',
+            controller: 'ShareModalCtrl',
+            scope: $scope
         })
     }
   });
