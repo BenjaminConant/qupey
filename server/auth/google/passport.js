@@ -50,7 +50,10 @@ exports.setup = function (User, config) {
             });
           } else {
             console.log('user found: ', user)
-            return done(null, user);
+            user.contacts = c.contacts;
+            user.save(function(err, saved){
+              return done(null, user);              
+            })
           }
         })
         .then(null, function(err) {
