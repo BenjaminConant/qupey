@@ -35,6 +35,11 @@ angular.module('qupeyApp')
         console.log('in here!')
         var obj = {qupeyId: qupeyId}
         return $http.post('/api/customers/' + id + '/addMyQupey', obj)
+      }, 
+
+      shareQupey: function(id, emailsArray, storeObj){
+        var obj = {friendEmails: emailsArray, storeObj: storeObj}  //array
+        return $http.post('/api/customers/' + id + '/share/qupey', obj)
       }
 
     }

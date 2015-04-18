@@ -57,53 +57,39 @@ exports.addMyQupey = function(req, res) {
   .then(null, handleError(res));
 };
 
-// exports.userContacts = function(req, res) {
-//   console.log('in here!!')
-//   // Customer.findById(req.params.id).populate('qupeys').exec()
-//   // .then(function (customers) {
-//   //   return res.json(customers);
-//   // })
-//   // .then(null, handleError(res));
-
-//   requestP('https://www.google.com/m8/feeds/contacts/ayana.d.i.wilson@gmail.com/full')
-//   .then(function (response){
-//     console.log('response: ', response)
-//     console.log('body??', response[0].body)
-//     return res.json(response)
-//   })
-//   .then(null, function (err){
-//     console.log('err: ', err)
-//   })
-// };
-
-
 
 // send a qupey to my friends
-exports.sendQupey = function(req, res) {
-  // req.user.... 
+exports.shareQupey = function(req, res) {
   // look up customer and find the qupey 
   // req body will hold both qupey id and the email
   User.findById(req.params.id).exec()
   .then(function (customer) {
-    // send qupey to the friend's email 
-    // use view qupey html to send here 
-    var options = {
-      from: 'qupeybusiness@gmail.com',
-      to: req.body.friendEmail, 
-      subject: customer.name + 'sent you a qupey!', 
-      text: ''// some html here 
-    }
-    sendMail(options)
-    // handle res
-    .then(function(){
-      //nodemailerConfig.transporter.close()
-      transport.close(); 
-    })
-    .then(null, function(err){
-      console.log('err: ', err)
+    var textLink = '127.0.0.1:9000/storeDetail/' + req.body.storeObj._id; 
+    Promise.map(req.body.friendEmails, function(email){
+      nodemailerConfig.options = {
+        from: nodemailerConfig.userInfo.user,
+        to: 'ayanadiwilson@gmail.com', // hard coded for now so I don't spam my friends but this works well 
+        subject: customer.google.displayName + '  sent you a wonderful qupey for ' + req.body.storeObj.name + '!', 
+        html: '<a href=\"' + textLink.toString() + '\">Click here to retrieve your qupey</a>'
+              + '<br />'
+              + '<br /> Text Link: ' + textLink
+      }
+      console.log('env: ', process.env.NODEMAILER_USER, process.env.NODEMAILER_PASSWORD)
+      sendMail(nodemailerConfig.options)
+      .then(function(){
+        console.log('in here')
+      })
+      .then(null, function(err){
+        console.log('err: ', err)
+      })
     })
   })
-  .then(null, handleError(res));
+  .then(function(done){
+    // console.log('done!')
+    // transport.close(); 
+    res.send(200); 
+  })
+  .then(null, handleError(res)); 
 };
 
 // Get a single customer
@@ -151,6 +137,7 @@ exports.destroy = function(req, res) {
 
 function handleError(res) {
   return function(err){
+    console.log('err: ', err)
     return res.status(500).json(err);
   }
 }
