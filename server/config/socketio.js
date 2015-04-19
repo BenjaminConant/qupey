@@ -18,6 +18,7 @@ function onConnect(socket) {
   });
 
   // Insert sockets below
+  require('../api/qupeyHash/qupeyHash.socket').register(socket);
   require('../api/qupey/qupey.socket').register(socket);
   require('../api/customer/customer.socket').register(socket);
   require('../api/owner/owner.socket').register(socket);

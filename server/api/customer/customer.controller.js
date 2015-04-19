@@ -4,6 +4,7 @@ var _ = require('lodash');
 var Customer = require('./customer.model');
 var User = require('../user/user.model'); 
 var Qupey = require('../qupey/qupey.model'); 
+var QupeyHash = require('../qupeyHash/qupeyHash.model'); 
 var nodemailerConfig = require('../../config/nodemailer'); 
 var Promise = require('bluebird'); 
 var nodemailer = require('nodemailer'); 
@@ -61,7 +62,7 @@ exports.addMyQupey = function(req, res) {
 // send a qupey to my friends
 exports.shareQupey = function(req, res) {
   // look up customer and find the qupey 
-  // req body will hold both qupey id and the email
+  // req body will hold both qupey id and the emails
   User.findById(req.params.id).exec()
   .then(function (customer) {
     var textLink = '127.0.0.1:9000/storeDetail/' + req.body.storeObj._id; 
@@ -84,9 +85,36 @@ exports.shareQupey = function(req, res) {
       })
     })
   })
-  .then(function(done){
-    // console.log('done!')
-    // transport.close(); 
+  .then(function(){
+    function makeHash(email){
+      User.find({email: email}).exec()
+      .then(function(user){
+        if (!user){
+          // hash is created only for users that don't exist in the database
+          return QupeyHash.create({
+            email: email, 
+            qupeyId: req.body.storeObj.default_qupey._id, 
+            storeId: req.body.storeObj._id
+          })
+        }
+        else {
+          //add the qupey and store id to the user object
+          user.qupeys.push(req.body.storeObj.default_qupey._id); 
+          user.stores.push(req.body.storeObj._id); 
+          return new Promise(function (resolve, reject){
+            user.save(function(err, created){
+              if (err) return reject(err); 
+              resolve(created)
+            })
+          })
+        } //end of else 
+      })  
+    }
+    return Promise.all(req.body.friendEmails.map(makeHash))
+  })
+  .then(function (all){
+    console.log('all!: ', all)
+    transport.close(); 
     res.send(200); 
   })
   .then(null, handleError(res)); 
