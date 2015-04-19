@@ -61,74 +61,83 @@ exports.addMyQupey = function(req, res) {
 
 // send a qupey to my friends
 exports.shareQupey = function(req, res) {
+  var count = 0; 
   // look up customer and find the qupey 
   // req body will hold both qupey id and the emails
   User.findById(req.params.id).exec()
   .then(function (customer) {
-    // should add a check --- if qupey id is in qupeys array, remove and push into shared qupeys 
+    // should add a check --- if qupey id is in qupeys array, remove and push into shared qupeys
+    // if a user shares a qupey, that qupey is not added to their qupeys array but to their shared qupeys array
+    if (customer.sharedQupeys.indexOf(req.body.storeObj.default_qupey._id) === -1){
+      customer.sharedQupeys.addToSet(req.body.storeObj.default_qupey._id)
+      return customer.saveAsync()      
+    }
+    else {
+      return Promise.resolve([customer]); 
+    }
+  })
+  .then(function savedCustomer(customer){
+    customer = customer[0];
     console.log('emails: ', req.body.friendEmails)
     var textLink = '127.0.0.1:9000/storeDetail/' + req.body.storeObj._id; 
+    // this is here for debugging purposes 
     req.body.friendEmails.push('qupeybusiness@gmail.com')
     return Promise.map(req.body.friendEmails, function(email){
       nodemailerConfig.options = {
         from: nodemailerConfig.userInfo.user,
         to: 'ayana.d.i.wilson@gmail.com', // hard coded for now so I don't spam my friends but this works well 
-        subject: customer.google.displayName + '  sent you a fantastic, wonderful qupey for ' + req.body.storeObj.name + '!', 
+        subject: customer.google.displayName + '  sent you an awesome qupey for ' + req.body.storeObj.name + '!', 
         html: '<a href=\"' + textLink.toString() + '\">Click here to retrieve your qupey</a>'
               + '<br />'
               + '<br /> Text Link: ' + textLink
       }
-      console.log('env: ', process.env.NODEMAILER_USER, process.env.NODEMAILER_PASSWORD)
       sendMail(nodemailerConfig.options)
       .then(function(){
-        console.log('in here')
+        count++;
+        console.log('in here') 
+        if (count === req.body.friendEmails.length){
+           transport.close(); 
+            res.send(200);
+        }
         return; 
       })
       .then(null, function(err){
         console.log('err: ', err)
       })
-    })
-  })
-  .then(function(){
-    function makeHash(email){
-      console.log('in make hash')
-      User.findOne({email: email}).exec()
-      .then(function(user){
-        if (!user){
-          console.log('this user is not in the db')
-          console.log('type: ', typeof QupeyHash)
-          console.log('elements: ', email, req.body.storeObj.default_qupey._id, req.body.storeObj._id)
-          console.log('whole object: ', req.body.storeObj)
-          // hash is created only for users that don't exist in the database
-          return QupeyHash.create({
-            email: email, 
-            qupeyId: req.body.storeObj.default_qupey._id, 
-            storeId: req.body.storeObj._id
-          })
-        }
-        else {
-          //add the qupey and store id to the user object
-          console.log('this user is in the db: ', email, req.body.storeObj.default_qupey._id, req.body.storeObj._id)
-          user.qupeys.push(req.body.storeObj.default_qupey._id); 
-          user.stores.push(req.body.storeObj._id); 
-          return new Promise(function (resolve, reject){
-            user.save(function(err, created){
-              if (err) return reject(err); 
-              resolve(created)
+    }) //removed })
+    .then(function(){
+      function makeHash(email){
+        console.log('in make hash: ', email)
+        User.findOne({email: email}).exec()
+        .then(function(user){
+          if (!user){
+            console.log('this user is not in the db')
+            console.log('elements: ', email, req.body.storeObj.default_qupey._id, req.body.storeObj._id)
+            // hash is created only for users that don't exist in the database
+            return QupeyHash.create({
+              email: email, 
+              qupeyId: req.body.storeObj.default_qupey._id, 
+              storeId: req.body.storeObj._id
             })
-          })
-        } //end of else 
-      })  
-    }
-    return Promise.all(req.body.friendEmails.map(makeHash))
-    .then(function (all){
-      console.log('all!: ', all)
-      transport.close(); 
-      res.send(200); 
+          }
+          else {
+            //add the qupey and store id to the user object
+            console.log('this user is in the db: ', email, req.body.storeObj.default_qupey._id, req.body.storeObj._id)
+            user.qupeys.push(req.body.storeObj.default_qupey._id); 
+            user.stores.push(req.body.storeObj._id); 
+            return user.saveAsync();
+          } //end of else 
+        })  
+      }
+      return Promise.join(
+        Promise.map(req.body.friendEmails, function(email){
+          return makeHash(email)
+        }))
     })
   })
   .then(null, handleError(res)); 
 };
+
 
 // Get a single customer
 exports.show = function(req, res) {
