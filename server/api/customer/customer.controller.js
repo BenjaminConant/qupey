@@ -4,6 +4,7 @@ var _ = require('lodash');
 var Customer = require('./customer.model');
 var User = require('../user/user.model'); 
 var Qupey = require('../qupey/qupey.model'); 
+var QupeyHash = require('../qupeyHash/qupeyHash.model'); 
 var nodemailerConfig = require('../../config/nodemailer'); 
 var Promise = require('bluebird'); 
 var nodemailer = require('nodemailer'); 
@@ -61,15 +62,18 @@ exports.addMyQupey = function(req, res) {
 // send a qupey to my friends
 exports.shareQupey = function(req, res) {
   // look up customer and find the qupey 
-  // req body will hold both qupey id and the email
+  // req body will hold both qupey id and the emails
   User.findById(req.params.id).exec()
   .then(function (customer) {
+    // should add a check --- if qupey id is in qupeys array, remove and push into shared qupeys 
+    console.log('emails: ', req.body.friendEmails)
     var textLink = '127.0.0.1:9000/storeDetail/' + req.body.storeObj._id; 
-    Promise.map(req.body.friendEmails, function(email){
+    req.body.friendEmails.push('qupeybusiness@gmail.com')
+    return Promise.map(req.body.friendEmails, function(email){
       nodemailerConfig.options = {
         from: nodemailerConfig.userInfo.user,
-        to: 'ayanadiwilson@gmail.com', // hard coded for now so I don't spam my friends but this works well 
-        subject: customer.google.displayName + '  sent you a wonderful qupey for ' + req.body.storeObj.name + '!', 
+        to: 'ayana.d.i.wilson@gmail.com', // hard coded for now so I don't spam my friends but this works well 
+        subject: customer.google.displayName + '  sent you a fantastic, wonderful qupey for ' + req.body.storeObj.name + '!', 
         html: '<a href=\"' + textLink.toString() + '\">Click here to retrieve your qupey</a>'
               + '<br />'
               + '<br /> Text Link: ' + textLink
@@ -78,16 +82,50 @@ exports.shareQupey = function(req, res) {
       sendMail(nodemailerConfig.options)
       .then(function(){
         console.log('in here')
+        return; 
       })
       .then(null, function(err){
         console.log('err: ', err)
       })
     })
   })
-  .then(function(done){
-    // console.log('done!')
-    // transport.close(); 
-    res.send(200); 
+  .then(function(){
+    function makeHash(email){
+      console.log('in make hash')
+      User.findOne({email: email}).exec()
+      .then(function(user){
+        if (!user){
+          console.log('this user is not in the db')
+          console.log('type: ', typeof QupeyHash)
+          console.log('elements: ', email, req.body.storeObj.default_qupey._id, req.body.storeObj._id)
+          console.log('whole object: ', req.body.storeObj)
+          // hash is created only for users that don't exist in the database
+          return QupeyHash.create({
+            email: email, 
+            qupeyId: req.body.storeObj.default_qupey._id, 
+            storeId: req.body.storeObj._id
+          })
+        }
+        else {
+          //add the qupey and store id to the user object
+          console.log('this user is in the db: ', email, req.body.storeObj.default_qupey._id, req.body.storeObj._id)
+          user.qupeys.push(req.body.storeObj.default_qupey._id); 
+          user.stores.push(req.body.storeObj._id); 
+          return new Promise(function (resolve, reject){
+            user.save(function(err, created){
+              if (err) return reject(err); 
+              resolve(created)
+            })
+          })
+        } //end of else 
+      })  
+    }
+    return Promise.all(req.body.friendEmails.map(makeHash))
+    .then(function (all){
+      console.log('all!: ', all)
+      transport.close(); 
+      res.send(200); 
+    })
   })
   .then(null, handleError(res)); 
 };

@@ -25,6 +25,7 @@ var UserSchema = new Schema({
     email: String
   }], 
   qupeys: [{ type: Schema.Types.ObjectId, ref: 'Qupey' }],
+  sharedQupeys: [{ type: Schema.Types.ObjectId, ref: 'Qupey' }],
   stores: [{ type: Schema.Types.ObjectId, ref: 'Store' }]
 }, {collection: 'users'}, {strict: false});
 
