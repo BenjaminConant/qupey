@@ -65,8 +65,9 @@ exports.shareQupey = function(req, res) {
   // req body will hold both qupey id and the emails
   User.findById(req.params.id).exec()
   .then(function (customer) {
+    console.log('emails: ', req.body.friendEmails)
     var textLink = '127.0.0.1:9000/storeDetail/' + req.body.storeObj._id; 
-    Promise.map(req.body.friendEmails, function(email){
+    return Promise.map(req.body.friendEmails, function(email){
       nodemailerConfig.options = {
         from: nodemailerConfig.userInfo.user,
         to: 'ayanadiwilson@gmail.com', // hard coded for now so I don't spam my friends but this works well 
@@ -79,6 +80,7 @@ exports.shareQupey = function(req, res) {
       sendMail(nodemailerConfig.options)
       .then(function(){
         console.log('in here')
+        return; 
       })
       .then(null, function(err){
         console.log('err: ', err)
@@ -87,9 +89,13 @@ exports.shareQupey = function(req, res) {
   })
   .then(function(){
     function makeHash(email){
-      User.find({email: email}).exec()
+      console.log('in make hash')
+      User.findOne({email: email}).exec()
       .then(function(user){
         if (!user){
+          console.log('this user is not in the db')
+          console.log('type: ', typeof QupeyHash)
+          console.log('elements: ', email, req.body.storeObj.default_qupey._id, req.body.storeObj._id)
           // hash is created only for users that don't exist in the database
           return QupeyHash.create({
             email: email, 
