@@ -95,6 +95,8 @@ exports.setup = function (User, config) {
       c.getContacts(function(e){
         User.findOne({ 'google.id': profile.id }).exec()
         .then(function (user){
+          // build out functionality for multiple qupey hashes?? next round I think
+          // as if, we have sufficient proof of concept
           QupeyHash.findOne({email: profile.emails[0].value}).exec()
           .then(function (qupeyHashForNonUser){
             // if the user isn't in the database and there is a qupey hash for them
@@ -117,12 +119,17 @@ exports.setup = function (User, config) {
                 console.log('user created: ', user)
                 // boolean flag to determine the redirect uri 
                 req.isNewHasQupey = true; 
+                // redirect uri if isNewHasQupey
                 req.destination = '/storeDetail/' + qupeyHashForNonUser.storeId;
-                return done(null, user);
+                // remove the qupey hash once it has been added to the
+                qupeyHashForNonUser.remove({}).exec()
+                .then(function(removed){
+                  return done(null, user);                                    
+                })
+                .then(null, function(err) {
+                  return done(err);
+                });
               })
-              .then(null, function(err) {
-                return done(err);
-              });
             }
 
             // if the user doesn't exist and there's no qupey hash then we 
