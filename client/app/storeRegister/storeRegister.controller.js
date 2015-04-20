@@ -19,7 +19,7 @@ angular.module('qupeyApp')
         })
         .then( function() {
           // Account created, redirect to home
-          $location.path('/');
+          $location.path('/storeHomepage');
         })
         .catch( function(err) {
           err = err.data;

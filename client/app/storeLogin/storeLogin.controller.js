@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('qupeyApp')
-  .controller('StoreLoginCtrl', function ($scope) {
+  .controller('StoreLoginCtrl', function ($scope, Auth, $location) {
     $scope.user = {};
     $scope.errors = {};
 
@@ -15,7 +15,7 @@ angular.module('qupeyApp')
         })
         .then( function() {
           // Logged in, redirect to home
-          $location.path('/');
+          $location.path('/storeHomepage');
         })
         .catch( function(err) {
           $scope.errors.other = err.message;
@@ -26,4 +26,6 @@ angular.module('qupeyApp')
     $scope.loginOauth = function(provider) {
       $window.location.href = '/auth/' + provider;
     };
+
+
   });
