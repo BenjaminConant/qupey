@@ -67,12 +67,12 @@ function setTokenCookie(req, res) {
   if (!req.user) return res.json(404, { message: 'Something went wrong, please try again.'});
   var token = signToken(req.user._id, req.user.role);
   res.cookie('token', JSON.stringify(token));
+  console.log('req boolean: ', req.isNewHasQupey)
   if (req.isNewHasQupey){
-    console.log('destination: ', req.destination)
+    console.log('req: ', req.isNewHasQupey)
     res.redirect(req.destination)
   }
   else {
-    // console.log('CONTACTS: ', req.user.contacts)
     res.redirect('/feed');
   }
 }
