@@ -9,8 +9,7 @@ var _ = require('lodash');
 var authTypes = ['github', 'twitter', 'facebook', 'google'];
 
 var UserSchema = new Schema({
-  firstName: String,
-  lastName: String,
+  name: String,
   email: { type: String, lowercase: true },
   hashedPassword: String,
   provider: String,

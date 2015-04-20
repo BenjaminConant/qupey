@@ -1,0 +1,54 @@
+<div> 
+	<div class="m-header">Create Your Store</div>
+	<div class="m-content">Add your store to Qupey by entering its information in the form below.</div>
+	<div class="text-center use-myself-modal-button-container">
+		<form class="text-left create-store-form">
+			<input placeholder="Store Name" ng-model="store.name" type="text">
+			<br>
+			<input placeholder="Phone Number 212 456 3445" ng-model="store.contactInfo.phone" type="text">
+			<br>
+			<input placeholder="Street ex 345 state street apt 5" ng-model="store.contactInfo.street" type="text">
+			<br>
+			<input placeholder="City" ng-model="store.contactInfo.city" type="text">
+			<br>
+			<input placeholder="Zip Code" ng-model="store.contactInfo.postalCode" type="text">
+			<br>
+			<input placeholder="Tagline ... Short and Snappy" ng-model="store.tagline" type="text">
+			<br>
+			<input placeholder="Description  ... A little bit longer ... sell yourself" ng-model="store.description" type="text">
+			<br>
+			Store Icon 32x32 .png <input placeholder="Store Name" ng-model="store.icon" type="file">
+			<br>
+			Background Image 
+			<input ng-model="store.background_image" type="file">
+			<br>
+			<input placeholder="Qupey Code ... 4 numbers ... your cashiers will use this to redeem qupeys!" ng-model="store.code" type="text">
+			<br>
+		</form>
+
+		<button class="btn btn-lrg btn-success" ng-click="goToQupey()">Create Store</button>
+	</div>
+</div>
+
+<!-- 
+var StoreSchema = new Schema({
+  name: String, 
+  contactInfo: {
+  	phone: String, 
+  	street: String,
+    city: String, 
+    state: String,
+  	postalCode: Number
+  },
+  tagline: String, 
+  icon: String,
+  description: String,
+  background_img: String,
+  store_url: String,
+  logo: String,  
+  category: [String],  
+  code: Number, 
+  gold_qupey: { type: Schema.Types.ObjectId, ref: 'Qupey' },
+  default_qupey: { type: Schema.Types.ObjectId, ref: 'Qupey' },
+  customers: [{ type: Schema.Types.ObjectId, ref: 'Customer' }]
+}, {strict: false}); -->

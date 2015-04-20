@@ -1,3 +1,11 @@
-<div class="col-md-12">
-This is the storeHomepage view.
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<div class="col-sm-offset-1 col-sm-10 col-md-offset-1 col-md-10 col-lg-offset-1 col-lg-10">
+	<h1>My Stores<h2>
+	<div ng-show="!(user.ownedStores.length > 0)" class="lead"> 
+		Looks like you don't have any stores yet ... <button class="btn btn-success" ng-click="openCreateStoreModal()" > Create One </button>
+	</div>
+	<div ng-show="user.ownedStores.length > 0" class="lead"> 
+		<store-owner-stores ng-repeat="store in user.ownedStores"></store-owner-stores>
+	</div>
 </div>
