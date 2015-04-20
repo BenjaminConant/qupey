@@ -17,7 +17,7 @@
 			<br>
 			<input placeholder="Description  ... A little bit longer ... sell yourself" ng-model="store.description" type="text">
 			<br>
-			Store Icon 32x32 .png <input placeholder="Store Name" ng-model="store.icon" type="file">
+			<button ng-click="pickIcon()" class="btn">Add Store Icon </button>
 			<br>
 			Background Image 
 			<input ng-model="store.background_image" type="file">
@@ -29,6 +29,8 @@
 		<button class="btn btn-lrg btn-success" ng-click="goToQupey()">Create Store</button>
 	</div>
 </div>
+
+
 
 <!-- 
 var StoreSchema = new Schema({

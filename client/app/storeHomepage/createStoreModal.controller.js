@@ -9,5 +9,13 @@ angular.module('qupeyApp')
     }).catch(function(err){
     	alert(err);
     })
+    filepicker.setKey("AexhIzqmRpmOjdgcl2UMRz");
+
+    $scope.pickIcon = function () {
+        filepicker.pickAndStore({mimetype:"image/*"},{},
+          function(InkBlobs){
+            console.log(JSON.stringify(InkBlobs));
+        });
+    }
     
   });
