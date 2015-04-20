@@ -96,8 +96,8 @@ exports.shareQupey = function(req, res) {
         count++;
         console.log('in here') 
         if (count === req.body.friendEmails.length){
-           transport.close(); 
-            res.send(200);
+          transport.close(); 
+          res.send(200);
         }
         return; 
       })
