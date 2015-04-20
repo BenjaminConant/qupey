@@ -71,6 +71,7 @@ angular.module('qupeyApp')
           }.bind(this)).$promise;
       },
 
+    
       /**
        * Change password
        *

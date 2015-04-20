@@ -23,7 +23,8 @@ var UserSchema = new Schema({
   contacts: [{
     name: String, 
     email: String
-  }], 
+  }],
+  ownedStores: [ { type: Schema.Types.ObjectId, ref: 'Store' } ], 
   qupeys: [{ type: Schema.Types.ObjectId, ref: 'Qupey' }],
   sharedQupeys: [{ type: Schema.Types.ObjectId, ref: 'Qupey' }],
   stores: [{ type: Schema.Types.ObjectId, ref: 'Store' }]

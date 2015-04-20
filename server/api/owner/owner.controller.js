@@ -11,6 +11,7 @@ exports.index = function(req, res) {
   });
 };
 
+
 // Get a single owner
 exports.show = function(req, res) {
   Owner.findById(req.params.id, function (err, owner) {
