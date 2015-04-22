@@ -71,6 +71,7 @@ angular.module('qupeyApp')
           }.bind(this)).$promise;
       },
 
+    
       /**
        * Change password
        *
@@ -107,7 +108,7 @@ angular.module('qupeyApp')
        * @return {Boolean}
        */
       isLoggedIn: function() {
-        return currentUser.hasOwnProperty('role');
+        return currentUser.hasOwnProperty('roles');
       },
 
       /**

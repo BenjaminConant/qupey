@@ -1,0 +1,55 @@
+<div> 
+	<div class="m-header">Edit {{editStore.name}}</div>
+	<div class="m-content">Add your store to Qupey by entering its information in the form below.</div>
+	<div class="text-center use-myself-modal-button-container">
+		<form class="text-left create-store-form">
+			<input placeholder="Store Name" ng-model="editStore.name" type="text">
+			<br>
+			<input placeholder="Phone Number 212 456 3445" ng-model="editStore.contactInfo.phone" type="text">
+			<br>
+			<input placeholder="Street ex 345 state street apt 5" ng-model="editStore.contactInfo.street" type="text">
+			<br>
+			<input placeholder="City" ng-model="editStore.contactInfo.city" type="text">
+			<br>
+			<input placeholder="Zip Code" ng-model="editStore.contactInfo.postalCode" type="text">
+			<br>
+			<input placeholder="Tagline ... Short and Snappy" ng-model="editStore.tagline" type="text">
+			<br>
+			<input placeholder="Description  ... A little bit longer ... sell yourself" ng-model="editStore.description" type="text">
+			<br>
+			<div class="img-preview">
+				<img ng-show="!editStore.icon" ng-src="{{icon}}" class="icon-preview"/>
+				<img ng-show="editStore.icon" ng-src="{{editStore.icon}}" class="icon-preview"/>
+			</div>
+			<button ng-click="pickIcon()" class="btn">Add Store Icon</button>
+			<br>
+			<div class="img-preview">
+				<img ng-show="!editStore.background_img" ng-src="{{background}}" class="background-preview"/>
+				<img ng-show="editStore.background_img" ng-src="{{editStore.background_img}}" class="background-preview"/>
+			</div>
+			<button ng-click="pickBackground()" class="btn">Add Background Image</button>
+			<br>
+			<h2> Standard Quepy </h2> 
+			<p class="lead"> This is the qupey that you offer to to get new customers in the door! </p>
+			<input placeholder="% off total" type="text" ng-model="defaultQupey.type.discount">
+			<input placeholder="Description of your qupey" type="text" ng-model="defaultQupey.type.details">
+			<p> expiration date </p>
+			<input type="date" ng-model="defaultQupey.expiration">
+			<h2> Gold Qupey </h2> 
+			<p class="lead"> This is the extra awsome Qupey you offer customers who share your qupey and get new people in the door!</p>
+			<input placeholder="% off total" type="text" ng-model="goldQupey.type.discount">
+			<input placeholder="Description of your qupey" type="text" ng-model="goldQupey.type.details">
+			<p> expiration date </p>
+			<input type="date" ng-model="goldQupey.expiration">
+
+			<br>
+			<input placeholder="Qupey Code ... 4 numbers ... your cashiers will use this to redeem qupeys!" ng-model="store.code" type="text">
+			<br>
+		
+		</form>
+
+		<button class="btn btn-lrg btn-success" ng-click="createStore()">Create Store</button>
+	</div>
+</div>
+
+

@@ -9,8 +9,7 @@ var _ = require('lodash');
 var authTypes = ['github', 'twitter', 'facebook', 'google'];
 
 var UserSchema = new Schema({
-  firstName: String,
-  lastName: String,
+  name: String,
   email: { type: String, lowercase: true },
   hashedPassword: String,
   provider: String,
@@ -23,7 +22,8 @@ var UserSchema = new Schema({
   contacts: [{
     name: String, 
     email: String
-  }], 
+  }],
+  ownedStores: [ { type: Schema.Types.ObjectId, ref: 'Store' } ], 
   qupeys: [{ type: Schema.Types.ObjectId, ref: 'Qupey' }],
   sharedQupeys: [{ type: Schema.Types.ObjectId, ref: 'Qupey' }],
   stores: [{ type: Schema.Types.ObjectId, ref: 'Store' }]

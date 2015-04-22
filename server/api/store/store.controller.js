@@ -2,6 +2,11 @@
 
 var _ = require('lodash');
 var Store = require('./store.model');
+var mongoose = require('mongoose');
+var User = require('../user/user.model');
+var Qupey = require('../qupey/qupey.model');
+var Promise = require('bluebird');
+Promise.promisifyAll(mongoose);
 
 // Get list of stores
 exports.index = function(req, res) {
@@ -35,11 +40,34 @@ exports.customers = function(req, res) {
 
 // Creates a new store in the DB.
 exports.create = function(req, res) {
-  Store.create(req.body, function(err, store) {
-    if(err) { return handleError(res, err); }
-    return res.json(201, store);
-  });
+  return User.findById(req.user._id)
+  .exec()
+  .then(function(user){
+    Store.create(req.body.store)
+    .then(function(store){
+      req.body.standard.store = store._id;
+      Qupey.create(req.body.standard)
+      .then(function(standardQupey){
+        req.body.gold.store = store._id;
+        Qupey.create(req.body.gold)
+        .then(function(goldQupey){
+          store.default_qupey = standardQupey._id;
+          store.gold_qupey = goldQupey._id;
+          store.saveAsync()
+          .spread(function(s){
+            user.ownedStores.push(store._id);
+            user.saveAsync()
+            .spread(function(){
+             return res.json(201, s);
+            })
+          })
+        })
+      })
+    })
+  })
+  .then(null, handleError(res));
 };
+
 
 // Updates an existing store in the DB.
 exports.update = function(req, res) {

@@ -40,6 +40,10 @@
       ga('send', 'pageview');
     </script>
 
+    <script type="text/javascript">
+        (function(a){if(window.filepicker){return}var b=a.createElement("script");b.type="text/javascript";b.async=!0;b.src=("https:"===a.location.protocol?"https:":"http:")+"//api.filepicker.io/v1/filepicker.js";var c=a.getElementsByTagName("script")[0];c.parentNode.insertBefore(b,c);var d={};d._queue=[];var e="pick,pickMultiple,pickAndStore,read,write,writeUrl,export,convert,store,storeUrl,remove,stat,setKey,constructWidget,makeDropPane".split(",");var f=function(a,b){return function(){b.push([a,arguments])}};for(var g=0;g<e.length;g++){d[e[g]]=f(e[g],d._queue)}window.filepicker=d})(document);
+    </script>
+
     <!--[if lt IE 9]>
     <script src="bower_components/es5-shim/es5-shim.js"></script>
     <script src="bower_components/json3/lib/json3.min.js"></script>
@@ -61,6 +65,8 @@
       <script src="bower_components/moment/moment.js"></script>
       <script src="bower_components/angular-moment/angular-moment.js"></script>
 
+
+
         <!-- build:js({.tmp,client}) app/app.js -->
         <script src="app/app.js"></script>
           <!-- injector:js -->
@@ -74,6 +80,7 @@
           <script src="app/directives/myStuffItem/myStuffItem.directive.js"></script>
           <script src="app/directives/searchStoreThumbnail/searchStoreThumbnail.directive.js"></script>
           <script src="app/directives/storeDetailQupey/storeDetailQupey.directive.js"></script>
+          <script src="app/directives/storeOwnerStore/storeOwnerStore.directive.js"></script>
           <script src="app/directives/topNav/topNav.directive.js"></script>
           <script src="app/directives/userContact/userContact.directive.js"></script>
           <script src="app/directives/userLogin/userLogin.directive.js"></script>
@@ -91,10 +98,15 @@
           <script src="app/searchStores/searchStores.controller.js"></script>
           <script src="app/searchStores/searchStores.js"></script>
           <script src="app/store.service.js"></script>
+          <script src="app/store/store.service.js"></script>
           <script src="app/storeDetail/shareModal/shareModal.controller.js"></script>
           <script src="app/storeDetail/storeDetail.controller.js"></script>
           <script src="app/storeDetail/storeDetail.js"></script>
           <script src="app/storeDetail/useMyselfModalCtrl/useMyselfModalCtrl.controller.js"></script>
+          <script src="app/storeHomepage/createStoreModal.controller.js"></script>
+          <script src="app/storeHomepage/editStoreModal.controller.js"></script>
+          <script src="app/storeHomepage/storeHomepage.controller.js"></script>
+          <script src="app/storeHomepage/storeHomepage.js"></script>
           <script src="app/storeLogin/storeLogin.controller.js"></script>
           <script src="app/storeLogin/storeLogin.js"></script>
           <script src="app/storeRegister/storeRegister.controller.js"></script>
@@ -107,5 +119,7 @@
           <script src="components/socket/socket.service.js"></script>
           <!-- endinjector -->
         <!-- endbuild -->
+        
+
 </body>
 </html>
