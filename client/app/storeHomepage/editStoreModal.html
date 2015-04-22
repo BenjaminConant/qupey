@@ -1,31 +1,31 @@
 <div> 
-	<div class="m-header">Create Your Store</div>
+	<div class="m-header">Edit {{editStore.name}}</div>
 	<div class="m-content">Add your store to Qupey by entering its information in the form below.</div>
 	<div class="text-center use-myself-modal-button-container">
 		<form class="text-left create-store-form">
-			<input placeholder="Store Name" ng-model="store.name" type="text">
+			<input placeholder="Store Name" ng-model="editStore.name" type="text">
 			<br>
-			<input placeholder="Phone Number 212 456 3445" ng-model="store.contactInfo.phone" type="text">
+			<input placeholder="Phone Number 212 456 3445" ng-model="editStore.contactInfo.phone" type="text">
 			<br>
-			<input placeholder="Street ex 345 state street apt 5" ng-model="store.contactInfo.street" type="text">
+			<input placeholder="Street ex 345 state street apt 5" ng-model="editStore.contactInfo.street" type="text">
 			<br>
-			<input placeholder="City" ng-model="store.contactInfo.city" type="text">
+			<input placeholder="City" ng-model="editStore.contactInfo.city" type="text">
 			<br>
-			<input placeholder="Zip Code" ng-model="store.contactInfo.postalCode" type="text">
+			<input placeholder="Zip Code" ng-model="editStore.contactInfo.postalCode" type="text">
 			<br>
-			<input placeholder="Tagline ... Short and Snappy" ng-model="store.tagline" type="text">
+			<input placeholder="Tagline ... Short and Snappy" ng-model="editStore.tagline" type="text">
 			<br>
-			<input placeholder="Description  ... A little bit longer ... sell yourself" ng-model="store.description" type="text">
+			<input placeholder="Description  ... A little bit longer ... sell yourself" ng-model="editStore.description" type="text">
 			<br>
 			<div class="img-preview">
-				<img ng-show="!store.icon" ng-src="{{icon}}" class="icon-preview"/>
-				<img ng-show="store.icon" ng-src="{{store.icon}}" class="icon-preview"/>
+				<img ng-show="!editStore.icon" ng-src="{{icon}}" class="icon-preview"/>
+				<img ng-show="editStore.icon" ng-src="{{editStore.icon}}" class="icon-preview"/>
 			</div>
 			<button ng-click="pickIcon()" class="btn">Add Store Icon</button>
 			<br>
 			<div class="img-preview">
-				<img ng-show="!store.background_img" ng-src="{{background}}" class="background-preview"/>
-				<img ng-show="store.background_img" ng-src="{{store.background_img}}" class="background-preview"/>
+				<img ng-show="!editStore.background_img" ng-src="{{background}}" class="background-preview"/>
+				<img ng-show="editStore.background_img" ng-src="{{editStore.background_img}}" class="background-preview"/>
 			</div>
 			<button ng-click="pickBackground()" class="btn">Add Background Image</button>
 			<br>
@@ -53,26 +53,3 @@
 </div>
 
 
-
-<!-- 
-var StoreSchema = new Schema({
-  name: String, 
-  contactInfo: {
-  	phone: String, 
-  	street: String,
-    city: String, 
-    state: String,
-  	postalCode: Number
-  },
-  tagline: String, 
-  icon: String,
-  description: String,
-  background_img: String,
-  store_url: String,
-  logo: String,  
-  category: [String],  
-  code: Number, 
-  gold_qupey: { type: Schema.Types.ObjectId, ref: 'Qupey' },
-  default_qupey: { type: Schema.Types.ObjectId, ref: 'Qupey' },
-  customers: [{ type: Schema.Types.ObjectId, ref: 'Customer' }]
-}, {strict: false}); -->

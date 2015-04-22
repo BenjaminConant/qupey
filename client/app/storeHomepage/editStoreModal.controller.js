@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('qupeyApp')
-  .controller('CreateStoreModalCtrl', function ($scope, Auth, $modal, store, $modalInstance, $rootScope) {
+  .controller('EditStoreModalCtrl', function ($scope, Auth, $modal, store, $modalInstance, $rootScope) {
     $scope.user = {};
     $scope.icon = "http://placehold.it/100&text=no+icon+yet+:(";
     $scope.background = "http://placehold.it/200&text=no+background+yet+:(";    

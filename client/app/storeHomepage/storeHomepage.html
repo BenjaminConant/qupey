@@ -6,6 +6,9 @@
 		Looks like you don't have any stores yet ... <button class="btn btn-success" ng-click="openCreateStoreModal()" > Create One </button>
 	</div>
 	<div ng-show="user.ownedStores.length > 0" class="lead"> 
-		<store-owner-stores ng-repeat="store in user.ownedStores"></store-owner-stores>
+		<store-owner-store ng-repeat="store in user.ownedStores"></store-owner-store>
+		<div class="lead"> 
+			 <button class="btn btn-success" ng-click="openCreateStoreModal()" > Create New Store </button>
+		</div>
 	</div>
 </div>
