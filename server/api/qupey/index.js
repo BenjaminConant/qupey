@@ -11,6 +11,7 @@ var router = express.Router();
 // });
 
 router.get('/', controller.index);
+router.get('/getwithstore/:id', controller.getWithStore);
 router.get('/:id', controller.show);
 router.get('/:id/sender', controller.sender);
 router.get('/:id/recipient', controller.recipient);

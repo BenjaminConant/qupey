@@ -1,0 +1,32 @@
+<div class="container store-detail-qupey-container">
+	<div class="row top store-info">
+		<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+			<img class="store-icon" ng-src="{{qupey.store.icon}}"/>
+		</div>
+		<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+			<div class="lead">{{qupey.store.name}}</div>
+		</div>
+	</div>
+	<div class="row top">
+		<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+			<span class="percentage">{{qupey.type.discount}}%</span> <span class="off">OFF</span>
+		</div>
+		<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+			<div class="store-details">{{qupey.type.details}}</div>
+		</div>
+	</div>
+	<div class="row bottom">
+		<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 less-right-padding">
+			EXPIRES IN {{qupey.expiration | amDifference : null : 'days'}} DAYS
+		</div>
+		<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 open-modal" ng-click="openRedeemQupey()">
+			<div class="text-center">| Redeem</div>
+		</div>
+		<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 open-modal" ng-click="openShareModal()">
+			| <span class="glyphicon glyphicon-share-alt"></span> SHARE
+		</div>
+	</div>
+</div>
+
+
+

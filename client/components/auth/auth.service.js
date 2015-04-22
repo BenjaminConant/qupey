@@ -111,6 +111,11 @@ angular.module('qupeyApp')
         return currentUser.hasOwnProperty('roles');
       },
 
+      getCurrentUserWithQupeys: function () {
+        console.log("herllo ther")
+        return $http.get('api/users/withqupeys');
+      },
+
       /**
        * Waits for currentUser to resolve before checking if user is logged in
        */

@@ -39,6 +39,19 @@ exports.recipient = function(req, res) {
   .then(null, handleError(res));
 };
 
+//gets a qupey with a populated store
+exports.getWithStore = function (req, res) {
+ 
+  Qupey.findById(req.params.id)
+  .populate('store')
+  .exec()
+  .then(function(qupey){
+    res.json(200, qupey)
+  })
+  .then(null, handleError(res))
+};
+
+
 // Creates a new qupey in the DB.
 exports.create = function(req, res) {
   Qupey.create(req.body, function(err, qupey) {
