@@ -11,12 +11,28 @@ angular.module('qupeyApp')
  			console.log(err);
  		})
 
+    // $scope.shareDetails = {
+    //   show: false
+    // } 
+
+    // $scope.toggleDetail = function($index) {
+    //   $scope.activePosition = $scope.activePosition == $index ? -1 : $index;
+    // }
+
+    $scope.showForm = function() {
+      $scope.shareDetails = !$scope.shareDetails;
+    }
+
    	console.log($modalInstance);
 		$scope.thing = "FDSAFDSAFDSAFDSAFDAS"
 
 		$scope.backToBrowsing = function(){
     	$modalInstance.close();
     }
+
+    // $scope.showForm = function(){
+    //   $scope.shareDetails.show = true; 
+    // }
 
     $scope.addContact = function(contact){
       console.log('contact: ', contact)
