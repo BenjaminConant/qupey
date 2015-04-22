@@ -11,7 +11,10 @@ angular.module('qupeyApp')
         return $http.delete('/api/stores/' + storeId);
       }, 
       getAll: function () {
-        return $http.get('/api/stores/';
+        return $http.get('/api/stores/');
+      },
+      getOne: function (id) {
+        return $http.get('/api/stores/' + id);
       }
 
     };

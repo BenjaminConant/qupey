@@ -5,6 +5,8 @@ var Store = require('../store/store.model');
 var passport = require('passport');
 var config = require('../../config/environment');
 var jwt = require('jsonwebtoken');
+var deepPopulate = require('mongoose-deep-populate');
+
 
 var validationError = function(res, err) {
   return res.json(422, err);
@@ -86,13 +88,27 @@ exports.changePassword = function(req, res, next) {
  */
 exports.me = function(req, res, next) {
   var userId = req.user._id;
-  User.findOne({_id: userId}, '-salt -hashedPassword').populate('ownedStores')
+  User.findOne({_id: userId}, '-salt -hashedPassword')
+  .populate('ownedStores')
+  .populate('qupeys')
   .exec(function(err, user) { // don't ever give out the password or salt
     if (err) return next(err);
     if (!user) return res.json(401);
     return res.json(user);
   })
 };
+
+exports.meWithQupeys = function(req, res, next){
+  var userId = req.user._id;
+  User.findOne({_id: userId}, '-salt -hashedPassword')
+  .deepPopulate('qupeys.store')
+  .exec(function(err, user) { // don't ever give out the password or salt
+    console.log("fdsafdsa", user);
+    if (err) return next(err);
+    if (!user) return res.json(401);
+    return res.json(user);
+  })
+}
 
 /**
  * Authentication callback

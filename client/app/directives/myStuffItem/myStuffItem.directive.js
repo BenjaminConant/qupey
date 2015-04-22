@@ -8,7 +8,7 @@ angular.module('qupeyApp')
       link: function (scope, element, attrs) {
       	scope.goToPath = function(path){
       		console.log(path);
-      		if (path === '/feed'){
+      		if (path === '/feed' || path === '/myQupeys'){
       			$location.path(path);
       		}
       	}
