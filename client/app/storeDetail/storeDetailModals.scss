@@ -24,7 +24,15 @@
 }
 
 .user-contacts-container {
+	margin-top: 20px;
 	padding: 20px;
+	background-color: #6893CD;
 	max-height: 200px;
 	overflow: scroll;
+	overflow-x: hidden !important;
+}
+
+.selected {
+	// border: 2px solid black !important;
+	background-color: #aaa; 
 }

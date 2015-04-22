@@ -1,11 +1,33 @@
-<div> 
-	<div class="m-header">Share {{store.name}}'s Qupey</div>
-	<div class="m-content">Evolutions Qupey has been saved to your account. Go to seetings > my qupies to view. Why not take a second to share this Qupey with a friend? If they redeem it, Evolution will send you an even bigger discount. </div>
-	<div class="user-contacts-container"> 
+<div id='shareModal'> 
+	<!-- <div class="m-header">Share {{store.name}}'s Qupey</div> -->
+	<div id="header-row">
+		<div class="m-percent">25%<div>OFF</div></div>
+		<div class="m-content">Evolutions Qupey has been saved to your account. Go to settings > my qupies to view. Why not take a second to share this Qupey with a friend? If they redeem it, Evolution will send you an even bigger discount. </div>
+	</div>
+	<hr id="line">
+	<div class='row'>
+	
+	<!-- <div class='col-md-6 col-md-push-4 col-sm-6 col-sm-push-4 col-xs-6 col-xs-push-4'>			 -->
+		<p class='share'>Share this qupey</p>
+	<!-- 	</div> -->
+		<div class='social'>
+			<ul>
+				 <li class="social-btn"><a href='#'><img id='logo' class="logo-image" src="http://s30.postimg.org/trg20tg01/Qupey.png"/></a></li> 
+				 <li class="social-btn"><a href='#'><i id='facbook' class="fa fa-facebook fa-4x"></i></a></li> 
+				 <li class="social-btn"><a href='#'><i id='twitter' class="fa fa-twitter fa-4x"></i></a></li> 
+				  <li class="social-btn"><a href='#'><i ng-click='showForm()' id='google' class="fa fa-google-plus fa-4x"></i></a></li>  
+			</ul>
+		</div>
+
+		<p class='share'>Send via text message</p>
+		<input class="form-control" id="text-input" type="text">
+
+	</div>
+	<div ng-if='shareDetails' class="user-contacts-container"> 
 		<user-contact ng-repeat="contact in user.contacts | hasContactName"></user-contact> 
 	</div>
 	<div class="text-center use-myself-modal-button-container">
-		<button class="btn btn-lrg btn-success" ng-click="shareQupey()"> Share Qupey! </button>
-		<button class="btn btn-lrg btn-primary" ng-click="backToBrowsing()"> Back To Browsing </button>
+		<button class="modal-buttons" ng-click="shareQupey()"> Share Qupey! </button>
+		<button class="modal-buttons" ng-click="backToBrowsing()"> Back To Browsing </button>
 	</div>
 </div>
