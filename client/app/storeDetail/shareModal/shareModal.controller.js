@@ -6,37 +6,28 @@ angular.module('qupeyApp')
  			console.log('user: ', user)
  			$scope.user = user;
       $scope.userId = user._id; 
- 		})
- 		.catch(function(err){
- 			console.log(err);
- 		})
-
-    // $scope.shareDetails = {
-    //   show: false
-    // } 
-
-    // $scope.toggleDetail = function($index) {
-    //   $scope.activePosition = $scope.activePosition == $index ? -1 : $index;
-    // }
+    })
+    .catch(function(err){
+      console.log(err);
+    })
 
     $scope.showForm = function() {
+      for (var i = 0, len = $scope.user.contacts.length; i < len; i++){
+        $scope.user.contacts[i].isSelected = false; 
+      }
       $scope.shareDetails = !$scope.shareDetails;
     }
 
    	console.log($modalInstance);
-		$scope.thing = "FDSAFDSAFDSAFDSAFDAS"
 
 		$scope.backToBrowsing = function(){
-    	$modalInstance.close();
+      $modalInstance.close();
     }
 
-    // $scope.showForm = function(){
-    //   $scope.shareDetails.show = true; 
-    // }
 
     $scope.addContact = function(contact){
       console.log('contact: ', contact)
-      // console.log('parent: ', scope.$parent)
+      contact.isSelected = contact.isSelected ? false : true; 
       $scope.emails.push(contact.email)
     }
 
