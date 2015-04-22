@@ -2,9 +2,10 @@
 
 var _ = require('lodash');
 var Store = require('./store.model');
-var mongoose = require('mongoose')
-var User = require('../user/user.model')
-var Promise = require('bluebird')
+var mongoose = require('mongoose');
+var User = require('../user/user.model');
+var Qupey = require('../qupey/qupey.model');
+var Promise = require('bluebird');
 Promise.promisifyAll(mongoose);
 
 // Get list of stores
@@ -42,30 +43,31 @@ exports.create = function(req, res) {
   return User.findById(req.user._id)
   .exec()
   .then(function(user){
-    Store.create(req.body)
+    Store.create(req.body.store)
     .then(function(store){
-      user.ownedStores.push(store._id);
-      console.log(user);
-      user.saveAsync()
-      .spread(function(us){
-        return res.json(201, store);
+      req.body.standard.store = store._id;
+      Qupey.create(req.body.standard)
+      .then(function(standardQupey){
+        req.body.gold.store = store._id;
+        Qupey.create(req.body.gold)
+        .then(function(goldQupey){
+          store.default_qupey = standardQupey._id;
+          store.gold_qupey = goldQupey._id;
+          store.saveAsync()
+          .spread(function(s){
+            user.ownedStores.push(store._id);
+            user.saveAsync()
+            .spread(function(){
+             return res.json(201, s);
+            })
+          })
+        })
       })
-      .then(null, handleError(res));
     })
-  });
+  })
+  .then(null, handleError(res));
 };
 
-//    function(err, user){
-//     Store.create(req.body, function(err, store) {
-//       user.ownedStores.push(store._id);
-//       user.save(function(err, user){
-//         console.log(user)
-//         if(err) { return handleError(res, err); }
-//         return res.json(201, store);
-//       })
-//     });
-//   })
-// };
 
 // Updates an existing store in the DB.
 exports.update = function(req, res) {

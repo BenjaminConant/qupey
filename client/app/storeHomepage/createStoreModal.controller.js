@@ -35,7 +35,23 @@ angular.module('qupeyApp')
     }
 
     $scope.createStore =  function () {
-        store.create($scope.store)
+        console.log("stores", $scope.store);
+        console.log("default qupey", $scope.defaultQupey);
+        console.log("gold qupey",  $scope.goldQupey);
+
+        $scope.defaultQupey.status = "default";
+        $scope.defaultQupey.shareable = true;
+        $scope.goldQupey.status = "gold";
+        $scope.goldQupey.shareable = false;
+
+        var createStore = {
+            store: $scope.store, 
+            standard: $scope.defaultQupey, 
+            gold: $scope.goldQupey
+        };
+
+
+        store.create(createStore)
         .success(function(store){
             $rootScope.$broadcast('createdStore', store);
             console.log(store);

@@ -5,11 +5,13 @@ angular.module('qupeyApp')
 
     return {
       create: function (store) {
-        console.log("got here");
         return $http.post('/api/stores', store);
       },
       remove: function (storeId) {
         return $http.delete('/api/stores/' + storeId);
+      }, 
+      getAll: function () {
+        return $http.get('/api/stores/';
       }
 
     };
