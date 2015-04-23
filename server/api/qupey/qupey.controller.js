@@ -66,17 +66,13 @@ exports.redeem = function (req, res) {
   var qupey; 
   User.findById(req.user._id).exec()
   .then(function(user){
-
     user.qupeys.pull(req.params.id);
-
     return user.saveAsync();
   })
   .then(function(){
-
     return Qupey.findById(req.params.id).exec()
   })
   .then(function(qupey){
-
     qupey.redeemCount++;
     return qupey.saveAsync()
   })
@@ -92,9 +88,9 @@ exports.redeem = function (req, res) {
       // if there is a sharer add the store's Gold Qupey to the shareers array
       console.log("got to store find by id, 94");
       qupey.shared.forEach(function(share){
-        console.log("share recipient", share.recipient, "req.user._id", req.user._id);
-        console.log('TYPE: ', typeof share.recipient, typeof req.user._id)
-        if (share.recipient.toString() === req.user._id.toString()){
+        console.log("share recipient", share.recipient, "req.user._id", req.user.email);
+        console.log('TYPE: ', typeof share.recipient, typeof req.user.email)
+        if (share.recipient === req.user.email) {
           senders.push(share.sender)
           console.log("in if 100", share.sender);
         }
@@ -102,23 +98,27 @@ exports.redeem = function (req, res) {
       console.log('senders array: ', senders)
       if (senders.length > 0){
         var count = 0; 
+        if (typeof sender === 'string'){
         senders.forEach(function(sender){
           console.log('sender in for each: ', sender)
-          User.findById(sender).exec()
-          .then(function(u){
-           if (u) console.log('we have a user:', u.email, "we have a store", store)
-            u.qupeys.push(store.gold_qupey.toString());
-            return u.saveAsync()
+            User.find({email: sender}).exec()
+            .then(function(u){
+              console.log('u id: ', u._id)
+             if (u) console.log('we have a user:', u.email, "we have a store", store)
+              u.qupeys.push(store.gold_qupey.toString());
+              return u.saveAsync()
+            })
+            .then(function(u){
+              u = u[0]; 
+              console.log('u in then: ', u.email)
+                count++;
+                if (count === senders.length){
+                  res.status(200).end(); 
+                }              
+            })            
           })
-          .then(function(u){
-            u = u[0]; 
-            console.log('u in then: ', u.email)
-              count++;
-              if (count === senders.length){
-                res.status(200).end(); 
-              }              
-          })            
-        })
+        //end of typeof check
+        }
         // end of senders length if 
       }
 

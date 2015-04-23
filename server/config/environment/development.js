@@ -14,5 +14,5 @@ module.exports = {
   	callbackURL: 'http://127.0.0.1:9000/auth/google/oauth2callback'
   },
 
-  seedDB: true
+  seedDB: false
 };

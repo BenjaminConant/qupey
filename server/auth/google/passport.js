@@ -51,7 +51,7 @@ exports.setup = function (User, config) {
                 contacts: c.contacts
               })
               .then(function(user) {
-                // console.log('user created: ', user)
+                console.log('user: ', user.email, user.qupeys)
                 // boolean flag to determine the redirect uri 
                 req.isNewHasQupey = true; 
                 // redirect uri if isNewHasQupey
@@ -68,6 +68,27 @@ exports.setup = function (User, config) {
             }
 
             // if the user doesn't exist and there's no qupey hash then we 
+            // just create the user, no data to add 
+            else if (!user && !qupeyHashForNonUser){
+              User.create({
+                name: profile.displayName,
+                email: profile.emails[0].value,
+                roles: ['User', 'Customer'],
+                username: profile.username,
+                provider: 'google',
+                google: profile._json, 
+                contacts: c.contacts
+              })
+              .then(function(user) {
+                // console.log('user created: ', user)
+                return done(null, user);
+              })
+              .then(null, function(err) {
+                return done(err);
+              });
+            }
+
+             // if the user doesn't exist and there's no qupey hash then we 
             // just create the user, no data to add 
             else if (!user && !qupeyHashForNonUser){
               User.create({
