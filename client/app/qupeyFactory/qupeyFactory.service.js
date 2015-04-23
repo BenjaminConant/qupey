@@ -11,6 +11,10 @@ angular.module('qupeyApp')
     return {
       getQupeyWithStore: function (id) {
         return $http.get('/api/qupeys/getwithstore/' + id);
+      }, 
+      redeem: function (id) {
+        console.log("got to factory", id);
+        return $http.post('/api/qupeys/redeem/' + id);
       }
     };
   });

@@ -1,9 +1,9 @@
 'use strict';
 
 angular.module('qupeyApp')
-  .controller('PresentQupeyCtrl', function ($scope, $stateParams, qupeyFactory, $location) {
-    qupeyFactory
-    .getQupeyWithStore($stateParams.id)
+  .controller('PresentQupeyCtrl', function ($scope, $stateParams, qupeyFactory, $location, $modal) {
+    $scope.qupey;
+    qupeyFactory.getQupeyWithStore($stateParams.id)
     .then(function(res){
     	$scope.qupey = res.data;
     	console.log($scope.qupey);
@@ -12,8 +12,19 @@ angular.module('qupeyApp')
     	console.log(err);
     })
 
-    $scope.goToRedeem = function(){
-    	$location.path('/redeemQupey/' + $scope.qupey._id);
+    $scope.redeemQupey = function() { 
+        qupeyFactory.redeem($scope.qupey._id)
+        .then(function(res){
+            console.log(res.status);
+            console.log("got here to the success");
+            $modal.open({
+                template: '<h1>success!</h1>'
+            })
+        })
+        .then(null, function(err) {
+            console.log(err);
+        })
+    
     }
   
 

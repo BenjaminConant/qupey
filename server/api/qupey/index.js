@@ -11,7 +11,8 @@ var router = express.Router();
 // });
 
 router.get('/', controller.index);
-router.get('/getwithstore/:id', controller.getWithStore);
+router.post('/redeem/:id', auth.isAuthenticated(), controller.redeem);
+router.get('/getwithstore/:id',auth.isAuthenticated(), controller.getWithStore);
 router.get('/:id', controller.show);
 router.get('/:id/sender', controller.sender);
 router.get('/:id/recipient', controller.recipient);
