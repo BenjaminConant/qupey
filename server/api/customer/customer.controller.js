@@ -81,7 +81,6 @@ exports.shareQupey = function(req, res) {
     console.log('emails: ', req.body.friendEmails)
     var textLink = '127.0.0.1:9000/storeDetail/' + req.body.storeObj._id; 
     // this is here for debugging purposes 
-    req.body.friendEmails.push('qupeybusiness@gmail.com')
     return Promise.map(req.body.friendEmails, function(email){
       nodemailerConfig.options = {
         from: nodemailerConfig.userInfo.user,
