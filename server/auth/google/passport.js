@@ -21,10 +21,10 @@ exports.setup = function (User, config) {
       });
 
       c.on('error', function(e){
-        console.log('error', e);
+        // console.log('error', e);
       });
       c.on('contactsReceived', function (contacts) {
-        console.log('contacts: ' + contacts);
+        // console.log('contacts: ' + contacts);
       });
       // figure out how to parse information 
       c.getContacts(function(e){
@@ -37,8 +37,8 @@ exports.setup = function (User, config) {
             // if the user isn't in the database and there is a qupey hash for them
             // we created the user and then add the qupeyhash data to the user obj
             if (!user && qupeyHashForNonUser) {
-              console.log('should be in here!!: ', qupeyHashForNonUser)
-              console.log('elements:', profile.emails[0].value)
+              // console.log('should be in here!!: ', qupeyHashForNonUser)
+              // console.log('elements:', profile.emails[0].value)
               User.create({
                 name: profile.displayName,
                 email: profile.emails[0].value,
@@ -51,7 +51,7 @@ exports.setup = function (User, config) {
                 contacts: c.contacts
               })
               .then(function(user) {
-                console.log('user created: ', user)
+                // console.log('user created: ', user)
                 // boolean flag to determine the redirect uri 
                 req.isNewHasQupey = true; 
                 // redirect uri if isNewHasQupey
@@ -80,7 +80,7 @@ exports.setup = function (User, config) {
                 contacts: c.contacts
               })
               .then(function(user) {
-                console.log('user created: ', user)
+                // console.log('user created: ', user)
                 return done(null, user);
               })
               .then(null, function(err) {
@@ -96,11 +96,11 @@ exports.setup = function (User, config) {
             }
           })
           .then(null, function(err){
-            console.log('err: ', err)
+            // console.log('err: ', err)
           })
         })
         .then(null, function(err){
-          console.log('err: ', err)
+          // console.log('err: ', err)
         })
       //end of getContacts 
       })

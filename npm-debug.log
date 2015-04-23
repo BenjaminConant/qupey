@@ -1,0 +1,1007 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'install' ]
+2 info using npm@2.1.11
+3 info using node@v0.10.32
+4 verbose node symlink /usr/local/bin/node
+5 verbose install where, deps [ '/Users/benconant/Dev/Qupey/qupey_app',
+5 verbose install   [ 'bluebird',
+5 verbose install     'body-parser',
+5 verbose install     'composable-middleware',
+5 verbose install     'compression',
+5 verbose install     'connect-mongo',
+5 verbose install     'cookie-parser',
+5 verbose install     'ejs',
+5 verbose install     'errorhandler',
+5 verbose install     'express',
+5 verbose install     'express-jwt',
+5 verbose install     'express-session',
+5 verbose install     'google-contacts',
+5 verbose install     'jsonwebtoken',
+5 verbose install     'lodash',
+5 verbose install     'method-override',
+5 verbose install     'mongoose',
+5 verbose install     'mongoose-bird',
+5 verbose install     'mongoose-deep-populate',
+5 verbose install     'mongoose-schema-extend',
+5 verbose install     'morgan',
+5 verbose install     'nodemailer',
+5 verbose install     'passport',
+5 verbose install     'passport-facebook',
+5 verbose install     'passport-google-oauth',
+5 verbose install     'passport-local',
+5 verbose install     'passport-twitter',
+5 verbose install     'request',
+5 verbose install     'serve-favicon',
+5 verbose install     'socket.io',
+5 verbose install     'socket.io-client',
+5 verbose install     'socketio-jwt',
+5 verbose install     'grunt',
+5 verbose install     'grunt-autoprefixer',
+5 verbose install     'grunt-wiredep',
+5 verbose install     'grunt-concurrent',
+5 verbose install     'grunt-contrib-clean',
+5 verbose install     'grunt-contrib-concat',
+5 verbose install     'grunt-contrib-copy',
+5 verbose install     'grunt-contrib-cssmin',
+5 verbose install     'grunt-contrib-htmlmin',
+5 verbose install     'grunt-contrib-imagemin',
+5 verbose install     'grunt-contrib-jshint',
+5 verbose install     'grunt-contrib-uglify',
+5 verbose install     'grunt-contrib-watch',
+5 verbose install     'grunt-google-cdn',
+5 verbose install     'grunt-newer',
+5 verbose install     'grunt-ng-annotate',
+5 verbose install     'grunt-rev',
+5 verbose install     'grunt-svgmin',
+5 verbose install     'grunt-usemin',
+5 verbose install     'grunt-env',
+5 verbose install     'grunt-node-inspector',
+5 verbose install     'grunt-nodemon',
+5 verbose install     'grunt-angular-templates',
+5 verbose install     'grunt-dom-munger',
+5 verbose install     'grunt-protractor-runner',
+5 verbose install     'grunt-asset-injector',
+5 verbose install     'grunt-karma',
+5 verbose install     'grunt-build-control',
+5 verbose install     'grunt-mocha-test',
+5 verbose install     'grunt-contrib-sass',
+5 verbose install     'jit-grunt',
+5 verbose install     'time-grunt',
+5 verbose install     'grunt-express-server',
+5 verbose install     'grunt-open',
+5 verbose install     'open',
+5 verbose install     'jshint-stylish',
+5 verbose install     'connect-livereload',
+5 verbose install     'karma-ng-scenario',
+5 verbose install     'karma-firefox-launcher',
+5 verbose install     'karma-script-launcher',
+5 verbose install     'karma-html2js-preprocessor',
+5 verbose install     'karma-ng-jade2js-preprocessor',
+5 verbose install     'karma-jasmine',
+5 verbose install     'karma-chrome-launcher',
+5 verbose install     'requirejs',
+5 verbose install     'karma-requirejs',
+5 verbose install     'karma-coffee-preprocessor',
+5 verbose install     'karma-jade-preprocessor',
+5 verbose install     'karma-phantomjs-launcher',
+5 verbose install     'karma',
+5 verbose install     'karma-ng-html2js-preprocessor',
+5 verbose install     'supertest',
+5 verbose install     'should' ] ]
+6 verbose install where, peers [ '/Users/benconant/Dev/Qupey/qupey_app', [] ]
+7 info preinstall qupey@0.0.0
+8 verbose already installed skipping express-session@~1.0.2 /Users/benconant/Dev/Qupey/qupey_app
+9 verbose already installed skipping google-contacts@0.0.2 /Users/benconant/Dev/Qupey/qupey_app
+10 verbose already installed skipping jsonwebtoken@^0.3.0 /Users/benconant/Dev/Qupey/qupey_app
+11 verbose already installed skipping lodash@^2.4.1 /Users/benconant/Dev/Qupey/qupey_app
+12 verbose already installed skipping method-override@~1.0.0 /Users/benconant/Dev/Qupey/qupey_app
+13 verbose already installed skipping mongoose@~3.8.8 /Users/benconant/Dev/Qupey/qupey_app
+14 silly cache add args [ 'mongoose-bird@0.0.1', null ]
+15 verbose cache add spec mongoose-bird@0.0.1
+16 silly cache add parsed spec { raw: 'mongoose-bird@0.0.1',
+16 silly cache add   scope: null,
+16 silly cache add   name: 'mongoose-bird',
+16 silly cache add   rawSpec: '0.0.1',
+16 silly cache add   spec: '0.0.1',
+16 silly cache add   type: 'version' }
+17 verbose addNamed mongoose-bird@0.0.1
+18 silly addNamed semver.valid 0.0.1
+19 silly addNamed semver.validRange 0.0.1
+20 silly mapToRegistry name mongoose-bird
+21 silly mapToRegistry using default registry
+22 silly mapToRegistry registry https://registry.npmjs.org/
+23 silly mapToRegistry uri https://registry.npmjs.org/mongoose-bird
+24 verbose addNameVersion registry:https://registry.npmjs.org/mongoose-bird not in flight; fetching
+25 verbose already installed skipping mongoose-deep-populate@^1.1.0 /Users/benconant/Dev/Qupey/qupey_app
+26 verbose already installed skipping mongoose-schema-extend@^0.1.7 /Users/benconant/Dev/Qupey/qupey_app
+27 verbose already installed skipping morgan@~1.0.0 /Users/benconant/Dev/Qupey/qupey_app
+28 verbose already installed skipping nodemailer@^1.3.0 /Users/benconant/Dev/Qupey/qupey_app
+29 verbose already installed skipping passport@~0.2.0 /Users/benconant/Dev/Qupey/qupey_app
+30 silly cache add args [ 'passport-facebook@latest', null ]
+31 verbose cache add spec passport-facebook@latest
+32 silly cache add args [ 'passport-google-oauth@latest', null ]
+33 verbose cache add spec passport-google-oauth@latest
+34 verbose already installed skipping passport-local@~0.1.6 /Users/benconant/Dev/Qupey/qupey_app
+35 silly cache add args [ 'passport-twitter@latest', null ]
+36 verbose cache add spec passport-twitter@latest
+37 verbose already installed skipping request@^2.55.0 /Users/benconant/Dev/Qupey/qupey_app
+38 verbose already installed skipping serve-favicon@~2.0.1 /Users/benconant/Dev/Qupey/qupey_app
+39 verbose already installed skipping socket.io@^1.0.6 /Users/benconant/Dev/Qupey/qupey_app
+40 verbose already installed skipping socket.io-client@^1.0.6 /Users/benconant/Dev/Qupey/qupey_app
+41 silly cache add parsed spec { raw: 'passport-facebook@latest',
+41 silly cache add   scope: null,
+41 silly cache add   name: 'passport-facebook',
+41 silly cache add   rawSpec: 'latest',
+41 silly cache add   spec: 'latest',
+41 silly cache add   type: 'tag' }
+42 verbose addNamed passport-facebook@latest
+43 silly addNamed semver.valid null
+44 silly addNamed semver.validRange null
+45 info addNameTag [ 'passport-facebook', 'latest' ]
+46 silly mapToRegistry name passport-facebook
+47 silly mapToRegistry using default registry
+48 silly mapToRegistry registry https://registry.npmjs.org/
+49 silly mapToRegistry uri https://registry.npmjs.org/passport-facebook
+50 verbose addNameTag registry:https://registry.npmjs.org/passport-facebook not in flight; fetching
+51 silly cache add parsed spec { raw: 'passport-google-oauth@latest',
+51 silly cache add   scope: null,
+51 silly cache add   name: 'passport-google-oauth',
+51 silly cache add   rawSpec: 'latest',
+51 silly cache add   spec: 'latest',
+51 silly cache add   type: 'tag' }
+52 verbose addNamed passport-google-oauth@latest
+53 silly addNamed semver.valid null
+54 silly addNamed semver.validRange null
+55 info addNameTag [ 'passport-google-oauth', 'latest' ]
+56 silly mapToRegistry name passport-google-oauth
+57 silly mapToRegistry using default registry
+58 silly mapToRegistry registry https://registry.npmjs.org/
+59 silly mapToRegistry uri https://registry.npmjs.org/passport-google-oauth
+60 verbose addNameTag registry:https://registry.npmjs.org/passport-google-oauth not in flight; fetching
+61 silly cache add parsed spec { raw: 'passport-twitter@latest',
+61 silly cache add   scope: null,
+61 silly cache add   name: 'passport-twitter',
+61 silly cache add   rawSpec: 'latest',
+61 silly cache add   spec: 'latest',
+61 silly cache add   type: 'tag' }
+62 verbose addNamed passport-twitter@latest
+63 silly addNamed semver.valid null
+64 silly addNamed semver.validRange null
+65 info addNameTag [ 'passport-twitter', 'latest' ]
+66 silly mapToRegistry name passport-twitter
+67 silly mapToRegistry using default registry
+68 silly mapToRegistry registry https://registry.npmjs.org/
+69 silly mapToRegistry uri https://registry.npmjs.org/passport-twitter
+70 verbose addNameTag registry:https://registry.npmjs.org/passport-twitter not in flight; fetching
+71 verbose already installed skipping socketio-jwt@^2.0.2 /Users/benconant/Dev/Qupey/qupey_app
+72 verbose already installed skipping grunt@~0.4.4 /Users/benconant/Dev/Qupey/qupey_app
+73 verbose already installed skipping grunt-autoprefixer@~0.7.2 /Users/benconant/Dev/Qupey/qupey_app
+74 verbose already installed skipping grunt-wiredep@~1.8.0 /Users/benconant/Dev/Qupey/qupey_app
+75 verbose request uri https://registry.npmjs.org/mongoose-bird
+76 verbose request no auth needed
+77 info attempt registry request try #1 at 14:38:47
+78 verbose request id 8f8ac102560a0762
+79 verbose etag "AO5AB2F7GEKNF8WTYF780PETE"
+80 http request GET https://registry.npmjs.org/mongoose-bird
+81 verbose already installed skipping grunt-concurrent@~0.5.0 /Users/benconant/Dev/Qupey/qupey_app
+82 verbose already installed skipping grunt-contrib-clean@~0.5.0 /Users/benconant/Dev/Qupey/qupey_app
+83 verbose already installed skipping grunt-contrib-concat@~0.4.0 /Users/benconant/Dev/Qupey/qupey_app
+84 verbose already installed skipping grunt-contrib-copy@~0.5.0 /Users/benconant/Dev/Qupey/qupey_app
+85 verbose already installed skipping grunt-contrib-cssmin@~0.9.0 /Users/benconant/Dev/Qupey/qupey_app
+86 verbose already installed skipping grunt-contrib-htmlmin@~0.2.0 /Users/benconant/Dev/Qupey/qupey_app
+87 verbose already installed skipping grunt-contrib-imagemin@~0.7.1 /Users/benconant/Dev/Qupey/qupey_app
+88 verbose already installed skipping grunt-contrib-jshint@~0.10.0 /Users/benconant/Dev/Qupey/qupey_app
+89 verbose already installed skipping grunt-contrib-uglify@~0.4.0 /Users/benconant/Dev/Qupey/qupey_app
+90 verbose already installed skipping grunt-contrib-watch@~0.6.1 /Users/benconant/Dev/Qupey/qupey_app
+91 verbose already installed skipping grunt-google-cdn@~0.4.0 /Users/benconant/Dev/Qupey/qupey_app
+92 verbose already installed skipping grunt-newer@~0.7.0 /Users/benconant/Dev/Qupey/qupey_app
+93 verbose already installed skipping grunt-ng-annotate@^0.2.3 /Users/benconant/Dev/Qupey/qupey_app
+94 verbose already installed skipping grunt-rev@~0.1.0 /Users/benconant/Dev/Qupey/qupey_app
+95 verbose already installed skipping grunt-svgmin@~0.4.0 /Users/benconant/Dev/Qupey/qupey_app
+96 verbose already installed skipping grunt-usemin@~2.1.1 /Users/benconant/Dev/Qupey/qupey_app
+97 verbose already installed skipping grunt-env@~0.4.1 /Users/benconant/Dev/Qupey/qupey_app
+98 verbose already installed skipping grunt-node-inspector@~0.1.5 /Users/benconant/Dev/Qupey/qupey_app
+99 verbose already installed skipping grunt-nodemon@~0.2.0 /Users/benconant/Dev/Qupey/qupey_app
+100 verbose already installed skipping grunt-angular-templates@^0.5.4 /Users/benconant/Dev/Qupey/qupey_app
+101 verbose already installed skipping grunt-dom-munger@^3.4.0 /Users/benconant/Dev/Qupey/qupey_app
+102 verbose already installed skipping grunt-protractor-runner@^1.1.0 /Users/benconant/Dev/Qupey/qupey_app
+103 verbose request uri https://registry.npmjs.org/passport-facebook
+104 verbose request no auth needed
+105 info attempt registry request try #1 at 14:38:47
+106 verbose etag "D0RPTA2OQDYF2NXDK9C8DRP10"
+107 http request GET https://registry.npmjs.org/passport-facebook
+108 verbose request uri https://registry.npmjs.org/passport-google-oauth
+109 verbose request no auth needed
+110 info attempt registry request try #1 at 14:38:47
+111 verbose etag "8ICS6HTVCRGSX6FAHP8Q2ZW2Z"
+112 http request GET https://registry.npmjs.org/passport-google-oauth
+113 verbose request uri https://registry.npmjs.org/passport-twitter
+114 verbose request no auth needed
+115 info attempt registry request try #1 at 14:38:47
+116 verbose etag "3035PXF90QJ55HHKQTK2VM80B"
+117 http request GET https://registry.npmjs.org/passport-twitter
+118 verbose already installed skipping grunt-asset-injector@^0.1.0 /Users/benconant/Dev/Qupey/qupey_app
+119 verbose already installed skipping grunt-karma@~0.8.2 /Users/benconant/Dev/Qupey/qupey_app
+120 silly cache add args [ 'grunt-build-control@git+https://github.com/DaftMonk/grunt-build-control',
+120 silly cache add   null ]
+121 verbose cache add spec grunt-build-control@git+https://github.com/DaftMonk/grunt-build-control
+122 verbose already installed skipping grunt-mocha-test@~0.10.2 /Users/benconant/Dev/Qupey/qupey_app
+123 verbose already installed skipping grunt-contrib-sass@^0.7.3 /Users/benconant/Dev/Qupey/qupey_app
+124 silly cache add parsed spec { raw: 'grunt-build-control@git+https://github.com/DaftMonk/grunt-build-control',
+124 silly cache add   scope: null,
+124 silly cache add   name: 'grunt-build-control',
+124 silly cache add   rawSpec: 'git+https://github.com/DaftMonk/grunt-build-control',
+124 silly cache add   spec: 'https://github.com/DaftMonk/grunt-build-control',
+124 silly cache add   type: 'git' }
+125 verbose addRemoteGit u="https://github.com/DaftMonk/grunt-build-control" silent=false
+126 silly addRemoteGit parsed { protocol: 'https:',
+126 silly addRemoteGit   slashes: true,
+126 silly addRemoteGit   auth: null,
+126 silly addRemoteGit   host: 'github.com',
+126 silly addRemoteGit   port: null,
+126 silly addRemoteGit   hostname: 'github.com',
+126 silly addRemoteGit   hash: null,
+126 silly addRemoteGit   search: '',
+126 silly addRemoteGit   query: {},
+126 silly addRemoteGit   pathname: '/DaftMonk/grunt-build-control',
+126 silly addRemoteGit   path: '/DaftMonk/grunt-build-control',
+126 silly addRemoteGit   href: 'https://github.com/DaftMonk/grunt-build-control' }
+127 verbose addRemoteGit https://github.com/DaftMonk/grunt-build-control not in flight; cloning
+128 verbose addRemoteGit [ 'https://github.com/DaftMonk/grunt-build-control', 'master' ]
+129 verbose already installed skipping jit-grunt@^0.5.0 /Users/benconant/Dev/Qupey/qupey_app
+130 verbose already installed skipping time-grunt@~0.3.1 /Users/benconant/Dev/Qupey/qupey_app
+131 verbose already installed skipping grunt-express-server@~0.4.17 /Users/benconant/Dev/Qupey/qupey_app
+132 verbose already installed skipping grunt-open@~0.2.3 /Users/benconant/Dev/Qupey/qupey_app
+133 verbose already installed skipping open@~0.0.4 /Users/benconant/Dev/Qupey/qupey_app
+134 verbose already installed skipping jshint-stylish@~0.1.5 /Users/benconant/Dev/Qupey/qupey_app
+135 verbose already installed skipping connect-livereload@~0.4.0 /Users/benconant/Dev/Qupey/qupey_app
+136 verbose already installed skipping karma-ng-scenario@~0.1.0 /Users/benconant/Dev/Qupey/qupey_app
+137 verbose already installed skipping karma-firefox-launcher@~0.1.3 /Users/benconant/Dev/Qupey/qupey_app
+138 verbose already installed skipping karma-script-launcher@~0.1.0 /Users/benconant/Dev/Qupey/qupey_app
+139 verbose already installed skipping karma-html2js-preprocessor@~0.1.0 /Users/benconant/Dev/Qupey/qupey_app
+140 verbose already installed skipping karma-ng-jade2js-preprocessor@^0.1.2 /Users/benconant/Dev/Qupey/qupey_app
+141 verbose already installed skipping karma-jasmine@~0.1.5 /Users/benconant/Dev/Qupey/qupey_app
+142 verbose already installed skipping karma-chrome-launcher@~0.1.3 /Users/benconant/Dev/Qupey/qupey_app
+143 verbose already installed skipping requirejs@~2.1.11 /Users/benconant/Dev/Qupey/qupey_app
+144 verbose already installed skipping karma-requirejs@~0.2.1 /Users/benconant/Dev/Qupey/qupey_app
+145 verbose already installed skipping karma-coffee-preprocessor@~0.2.1 /Users/benconant/Dev/Qupey/qupey_app
+146 verbose already installed skipping karma-jade-preprocessor@0.0.11 /Users/benconant/Dev/Qupey/qupey_app
+147 verbose already installed skipping karma-phantomjs-launcher@~0.1.4 /Users/benconant/Dev/Qupey/qupey_app
+148 verbose already installed skipping karma@~0.12.9 /Users/benconant/Dev/Qupey/qupey_app
+149 verbose already installed skipping karma-ng-html2js-preprocessor@~0.1.0 /Users/benconant/Dev/Qupey/qupey_app
+150 verbose already installed skipping supertest@~0.11.0 /Users/benconant/Dev/Qupey/qupey_app
+151 verbose already installed skipping should@~3.3.1 /Users/benconant/Dev/Qupey/qupey_app
+152 verbose already installed skipping bluebird@^2.9.24 /Users/benconant/Dev/Qupey/qupey_app
+153 verbose already installed skipping body-parser@~1.5.0 /Users/benconant/Dev/Qupey/qupey_app
+154 verbose already installed skipping composable-middleware@^0.3.0 /Users/benconant/Dev/Qupey/qupey_app
+155 verbose already installed skipping compression@~1.0.1 /Users/benconant/Dev/Qupey/qupey_app
+156 verbose already installed skipping connect-mongo@^0.4.1 /Users/benconant/Dev/Qupey/qupey_app
+157 verbose already installed skipping cookie-parser@~1.0.1 /Users/benconant/Dev/Qupey/qupey_app
+158 verbose already installed skipping ejs@~0.8.4 /Users/benconant/Dev/Qupey/qupey_app
+159 verbose already installed skipping errorhandler@~1.0.0 /Users/benconant/Dev/Qupey/qupey_app
+160 verbose already installed skipping express@~4.0.0 /Users/benconant/Dev/Qupey/qupey_app
+161 verbose already installed skipping express-jwt@^0.1.3 /Users/benconant/Dev/Qupey/qupey_app
+162 info git [ 'config', '--get', 'remote.origin.url' ]
+163 http 304 https://registry.npmjs.org/mongoose-bird
+164 silly get cb [ 304,
+164 silly get   { date: 'Thu, 23 Apr 2015 18:38:48 GMT',
+164 silly get     via: '1.1 varnish',
+164 silly get     'last-modified': 'Thu, 23 Apr 2015 18:38:48 GMT',
+164 silly get     'cache-control': 'max-age=60',
+164 silly get     etag: '"AO5AB2F7GEKNF8WTYF780PETE"',
+164 silly get     age: '0',
+164 silly get     connection: 'keep-alive',
+164 silly get     'x-served-by': 'cache-atl6221-ATL',
+164 silly get     'x-cache': 'MISS',
+164 silly get     'x-cache-hits': '0',
+164 silly get     'x-timer': 'S1429814328.300605,VS0,VE28',
+164 silly get     vary: 'Accept' } ]
+165 verbose etag https://registry.npmjs.org/mongoose-bird from cache
+166 http 304 https://registry.npmjs.org/passport-google-oauth
+167 silly get cb [ 304,
+167 silly get   { date: 'Thu, 23 Apr 2015 18:38:48 GMT',
+167 silly get     via: '1.1 varnish',
+167 silly get     'last-modified': 'Thu, 23 Apr 2015 18:38:48 GMT',
+167 silly get     'cache-control': 'max-age=60',
+167 silly get     etag: '"8ICS6HTVCRGSX6FAHP8Q2ZW2Z"',
+167 silly get     age: '0',
+167 silly get     connection: 'keep-alive',
+167 silly get     'x-served-by': 'cache-atl6227-ATL',
+167 silly get     'x-cache': 'HIT',
+167 silly get     'x-cache-hits': '1',
+167 silly get     'x-timer': 'S1429814328.304598,VS0,VE30',
+167 silly get     vary: 'Accept' } ]
+168 verbose etag https://registry.npmjs.org/passport-google-oauth from cache
+169 silly addNameTag next cb for passport-google-oauth with tag latest
+170 verbose addNamed passport-google-oauth@0.2.0
+171 silly addNamed semver.valid 0.2.0
+172 silly addNamed semver.validRange 0.2.0
+173 silly cache afterAdd passport-google-oauth@0.2.0
+174 verbose afterAdd /Users/benconant/.npm/passport-google-oauth/0.2.0/package/package.json not in flight; writing
+175 silly cache afterAdd mongoose-bird@0.0.1
+176 verbose afterAdd /Users/benconant/.npm/mongoose-bird/0.0.1/package/package.json not in flight; writing
+177 verbose afterAdd /Users/benconant/.npm/passport-google-oauth/0.2.0/package/package.json written
+178 info already installed passport-google-oauth@0.2.0
+179 verbose afterAdd /Users/benconant/.npm/mongoose-bird/0.0.1/package/package.json written
+180 http 200 https://registry.npmjs.org/passport-twitter
+181 silly get cb [ 200,
+181 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+181 silly get     etag: '"6U5IS2JBYKS2U9X66ORSC0XNZ"',
+181 silly get     'content-type': 'application/json',
+181 silly get     'cache-control': 'max-age=60',
+181 silly get     'content-length': '16246',
+181 silly get     'accept-ranges': 'bytes',
+181 silly get     date: 'Thu, 23 Apr 2015 18:38:48 GMT',
+181 silly get     via: '1.1 varnish',
+181 silly get     age: '0',
+181 silly get     connection: 'keep-alive',
+181 silly get     'x-served-by': 'cache-atl6225-ATL',
+181 silly get     'x-cache': 'HIT',
+181 silly get     'x-cache-hits': '1',
+181 silly get     'x-timer': 'S1429814328.322022,VS0,VE77',
+181 silly get     vary: 'Accept' } ]
+182 silly addNameTag next cb for passport-twitter with tag latest
+183 verbose addNamed passport-twitter@1.0.3
+184 silly addNamed semver.valid 1.0.3
+185 silly addNamed semver.validRange 1.0.3
+186 silly cache afterAdd passport-twitter@1.0.3
+187 verbose afterAdd /Users/benconant/.npm/passport-twitter/1.0.3/package/package.json not in flight; writing
+188 verbose afterAdd /Users/benconant/.npm/passport-twitter/1.0.3/package/package.json written
+189 info already installed passport-twitter@1.0.3
+190 http 304 https://registry.npmjs.org/passport-facebook
+191 silly get cb [ 304,
+191 silly get   { date: 'Thu, 23 Apr 2015 18:38:48 GMT',
+191 silly get     via: '1.1 varnish',
+191 silly get     'last-modified': 'Thu, 23 Apr 2015 18:38:48 GMT',
+191 silly get     'cache-control': 'max-age=60',
+191 silly get     etag: '"D0RPTA2OQDYF2NXDK9C8DRP10"',
+191 silly get     age: '0',
+191 silly get     connection: 'keep-alive',
+191 silly get     'x-served-by': 'cache-atl6226-ATL',
+191 silly get     'x-cache': 'HIT',
+191 silly get     'x-cache-hits': '1',
+191 silly get     'x-timer': 'S1429814328.667083,VS0,VE77',
+191 silly get     vary: 'Accept' } ]
+192 verbose etag https://registry.npmjs.org/passport-facebook from cache
+193 silly addNameTag next cb for passport-facebook with tag latest
+194 verbose addNamed passport-facebook@2.0.0
+195 silly addNamed semver.valid 2.0.0
+196 silly addNamed semver.validRange 2.0.0
+197 silly cache afterAdd passport-facebook@2.0.0
+198 verbose afterAdd /Users/benconant/.npm/passport-facebook/2.0.0/package/package.json not in flight; writing
+199 verbose afterAdd /Users/benconant/.npm/passport-facebook/2.0.0/package/package.json written
+200 info already installed passport-facebook@2.0.0
+201 verbose git remote.origin.url https://github.com/DaftMonk/grunt-build-control
+202 info git [ 'fetch', '-a', 'origin' ]
+203 verbose git fetch -a origin (https://github.com/DaftMonk/grunt-build-control)
+204 info git [ 'rev-list', '-n1', 'master' ]
+205 verbose git rev-list -n1 master 3d03ebbe49f8f963ef43c50af1084a15f56611fa
+206 verbose resolved git url git+https://github.com/DaftMonk/grunt-build-control#3d03ebbe49f8f963ef43c50af1084a15f56611fa
+207 info git [ 'clone',
+207 info git   '/Users/benconant/.npm/_git-remotes/https-github-com-DaftMonk-grunt-build-control-7e4d577b',
+207 info git   '/var/folders/f_/332bntls7k326fnmsc2xzp1m0000gn/T/npm-71596-201c116f/1429814329013-0.4377605651970953/3d03ebbe49f8f963ef43c50af1084a15f56611fa' ]
+208 verbose git clone from /Users/benconant/.npm/_git-remotes/https-github-com-DaftMonk-grunt-build-control-7e4d577b
+209 verbose git clone Cloning into '/var/folders/f_/332bntls7k326fnmsc2xzp1m0000gn/T/npm-71596-201c116f/1429814329013-0.4377605651970953/3d03ebbe49f8f963ef43c50af1084a15f56611fa'...
+209 verbose git clone done.
+210 info git [ 'checkout', '3d03ebbe49f8f963ef43c50af1084a15f56611fa' ]
+211 verbose git checkout Note: checking out '3d03ebbe49f8f963ef43c50af1084a15f56611fa'.
+211 verbose git checkout
+211 verbose git checkout You are in 'detached HEAD' state. You can look around, make experimental
+211 verbose git checkout changes and commit them, and you can discard any commits you make in this
+211 verbose git checkout state without impacting any branches by performing another checkout.
+211 verbose git checkout
+211 verbose git checkout If you want to create a new branch to retain commits you create, you may
+211 verbose git checkout do so (now or later) by using -b with the checkout command again. Example:
+211 verbose git checkout
+211 verbose git checkout   git checkout -b new_branch_name
+211 verbose git checkout
+211 verbose git checkout HEAD is now at 3d03ebb... Merge remote-tracking branch 'upstream/master'
+212 verbose tar pack [ '/Users/benconant/.npm/grunt-build-control/0.1.3/package.tgz',
+212 verbose tar pack   '/var/folders/f_/332bntls7k326fnmsc2xzp1m0000gn/T/npm-71596-201c116f/1429814329013-0.4377605651970953/3d03ebbe49f8f963ef43c50af1084a15f56611fa' ]
+213 verbose tarball /Users/benconant/.npm/grunt-build-control/0.1.3/package.tgz
+214 verbose folder /var/folders/f_/332bntls7k326fnmsc2xzp1m0000gn/T/npm-71596-201c116f/1429814329013-0.4377605651970953/3d03ebbe49f8f963ef43c50af1084a15f56611fa
+215 verbose addLocalTarball adding from inside cache /Users/benconant/.npm/grunt-build-control/0.1.3/package.tgz
+216 silly cache afterAdd grunt-build-control@0.1.3
+217 verbose afterAdd /Users/benconant/.npm/grunt-build-control/0.1.3/package/package.json not in flight; writing
+218 verbose afterAdd /Users/benconant/.npm/grunt-build-control/0.1.3/package/package.json written
+219 silly install resolved [ { name: 'mongoose-bird',
+219 silly install resolved     version: '0.0.1',
+219 silly install resolved     description: 'blue bird support for mongoose',
+219 silly install resolved     author: { name: 'Rafael Almeida', email: 'pentateu@gmail.com' },
+219 silly install resolved     repository:
+219 silly install resolved      { type: 'git',
+219 silly install resolved        url: 'git://git@github.com:pentateu/mongoose-bird.git' },
+219 silly install resolved     license: 'MIT',
+219 silly install resolved     engines: { node: '~0.10' },
+219 silly install resolved     dependencies: { bluebird: '~2.3.1', mongoose: '~3.8.3' },
+219 silly install resolved     devDependencies:
+219 silly install resolved      { grunt: 'latest',
+219 silly install resolved        'grunt-contrib-jshint': 'latest',
+219 silly install resolved        'grunt-contrib-nodeunit': 'latest',
+219 silly install resolved        'grunt-debug-task': '^0.1.5',
+219 silly install resolved        nodeunit: 'latest',
+219 silly install resolved        'pow-mongodb-fixtures': 'latest' },
+219 silly install resolved     directories: { lib: './lib' },
+219 silly install resolved     main: './lib/mongoose_bird',
+219 silly install resolved     gitHead: '96617bada9cb1de075d3cb86afdf21291f0be545',
+219 silly install resolved     bugs: { url: 'https://github.com/pentateu/mongoose-bird/issues' },
+219 silly install resolved     homepage: 'https://github.com/pentateu/mongoose-bird',
+219 silly install resolved     _id: 'mongoose-bird@0.0.1',
+219 silly install resolved     scripts: {},
+219 silly install resolved     _shasum: '60907ca52818ebeedc36d045cda1021c15d05e89',
+219 silly install resolved     _from: 'mongoose-bird@0.0.1',
+219 silly install resolved     _npmVersion: '1.4.23',
+219 silly install resolved     _npmUser: { name: 'pentateu', email: 'rafael@iswe.co.nz' },
+219 silly install resolved     maintainers: [ [Object] ],
+219 silly install resolved     dist:
+219 silly install resolved      { shasum: '60907ca52818ebeedc36d045cda1021c15d05e89',
+219 silly install resolved        tarball: 'http://registry.npmjs.org/mongoose-bird/-/mongoose-bird-0.0.1.tgz' },
+219 silly install resolved     _resolved: 'https://registry.npmjs.org/mongoose-bird/-/mongoose-bird-0.0.1.tgz',
+219 silly install resolved     readme: 'ERROR: No README data found!' },
+219 silly install resolved   { name: 'grunt-build-control',
+219 silly install resolved     description: 'Automate version control tasks for your project\'s built code. Keep built code in sync with source code, maintain multiple branches of built code, commit with automatic messages, and push to remote repositories.',
+219 silly install resolved     version: '0.1.3',
+219 silly install resolved     homepage: 'https://github.com/robwierzbowski/grunt-build-control',
+219 silly install resolved     author:
+219 silly install resolved      { name: 'Rob Wierzbowski',
+219 silly install resolved        email: 'hello@robwierzbowski.com',
+219 silly install resolved        url: 'http://robwierzbowski' },
+219 silly install resolved     repository:
+219 silly install resolved      { type: 'git',
+219 silly install resolved        url: 'git://github.com/robwierzbowski/grunt-build-control.git' },
+219 silly install resolved     bugs: { url: 'https://github.com/robwierzbowski/grunt-build-control/issues' },
+219 silly install resolved     licenses: [ [Object] ],
+219 silly install resolved     main: 'Gruntfile.js',
+219 silly install resolved     engines: { node: '>= 0.10.0' },
+219 silly install resolved     scripts: { test: 'grunt test' },
+219 silly install resolved     dependencies: { shelljs: '~0.2.6' },
+219 silly install resolved     devDependencies:
+219 silly install resolved      { 'grunt-contrib-jshint': '~0.1.1',
+219 silly install resolved        'grunt-contrib-clean': '~0.4.0',
+219 silly install resolved        'grunt-contrib-nodeunit': '~0.1.2',
+219 silly install resolved        grunt: '~0.4.1' },
+219 silly install resolved     peerDependencies: { grunt: '~0.4.1' },
+219 silly install resolved     keywords: [ 'gruntplugin' ],
+219 silly install resolved     gitHead: '3d03ebbe49f8f963ef43c50af1084a15f56611fa',
+219 silly install resolved     readme: '# grunt-build-control\n\n> Version control built code.\n\n### HELP WRITE TESTS FOR THIS TASK\n\nFor continued development, this library needs test coverage. If you like writing tests and like this Grunt task, please take a look at [issue #19](https://github.com/robwierzbowski/grunt-build-control/issues/19) and consider helping with a pull request. Any assistance is appreciated.\n\n## Getting started\n\nThis plugin requires [Grunt](http://gruntjs.com/) `~0.4.0` and [Git](http://git-scm.com/) `> 1.8`.\n\nIf you haven\'t used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide which explains how to create a [Gruntfile](http://gruntjs.com/sample-gruntfile) as well as install and use Grunt plugins. Once you\'re familiar with Grunt you can install the plugin with the command:\n\n```shell\nnpm install grunt-build-control --save-dev\n```\n\nAfter the plugin has been installed, load it in your Gruntfile with:\n\n```js\ngrunt.loadNpmTasks(\'grunt-build-control\');\n```\n\n## buildcontrol task\n\n_Run this task with the `grunt buildcontrol` command._\n\nAutomate version control tasks for your project\'s built code. \n\nKeep built code in sync with source code, maintain multiple branches of built code, commit with automatic messages, and push to remote repositories.\n\n### Setup\n\nYour project must have a compile or build process that outputs code to a subdirectory of the main project.\n\nAdd the build directory to the main project\'s .gitignore, and make sure the build process doesn\'t delete .git directories inside the build directory. If you\'re using a [Yeoman](http://yeoman.io) generator these steps are taken care of for you already.\n\n### Options\n\n#### dir\n\nType: `String`  \nDefault: `dist`  \n\nThe directory that contains your built code.\n\n#### branch\n\nType: `String`  \nDefault: `dist`  \n\nThe branch to commit to.\n\n#### remote\n\nType: `String`  \nDefault: `../`  \n\nThe remote to push to. Common examples include a distribution repository (Heroku or Scalr), your main project\'s remote (gh-pages branch on Github), or the local project repository itself (`../`).\n\n#### commit\n\nType: `Boolean`  \nDefault: `false`  \n\nCommits built code to `branch`. A new commit is only created if the built code has changed.\n\n#### tag\n\nType: `Boolean` or `String`  \nDefault: `false`  \n\nIf set to a string, adds its value as a lightweight git tag to the local built repo. Try loading your project\'s package.json as a variable and tagging with `pkg.version`.\n\n#### push\n\nType: `Boolean`  \nDefault: `false`  \n\nPushes `branch` to `remote`. If `tag` is set, pushes the specified tag as well.\n\n#### message\n\nType: `String`  \nDefault: `Built %sourceName% from commit %sourceCommit% on branch %sourceBranch%  `\n\nThe commit message to use when committing. It must be a safe commit message for the command line, with special characters and double quotes escaped.\n\nYou can use the following tokens to print information about the main project:\n\n- `%sourceName%`: The main project\'s name, read from package.json or the project directory\n- `%sourceBranch%`: The main project\'s current branch\n- `%sourceCommit%`: The main project\'s most recent commit\n\n#### connectCommits\n\nType: `Boolean`  \nDefault: `true`  \n\nMake sure that every commit on the built code branch matches a commit on the main project branch. If the main project\'s working directory has uncommitted changes, a commit task will throw an error.\n\n### Usage\n\nA common use of grunt-build-control is to commit and push built code to the GitHub pages branch of the main repository, or to the master branch of a git-based deployment server like Heroku. \n\n```js\n// Project configuration.\nvar pkg = require(\'./package.json\');\n\ngrunt.initConfig({\n\n  // Various Grunt tasks...\n\n  buildcontrol: {\n    options: {\n      dir: \'dist\',\n      commit: true,\n      push: true,\n      message: \'Built %sourceName% from commit %sourceCommit% on branch %sourceBranch%\'\n    },\n    pages: {\n      options: {\n        remote: \'git@github.com:example_user/example_webapp.git\',\n        branch: \'gh-pages\'\n      }\n    },\n    heroku: {\n      options: {\n        remote: \'git@heroku.com:example-heroku-webapp-1988.git\',\n        branch: \'master\',\n        tag: pkg.version\n      }\n    },\n    local: {\n      options: {\n        remote: \'../\',\n        branch: \'build\'\n      }\n    }\n  }\n});\n\ngrunt.registerTask(\'build\', [\n  // Collection of tasks that build code to the \'dist\' directory...\n]);\n```\n\nIn this example a user is working on a Yeoman-based web app, with their project\'s source code hosted at `git@github.com:example_user/example_webapp.git`. To deploy they first run `grunt build` to build a minified, optimized version of their app into the \'dist\' directory. \n\nRunning `grunt buildcontrol:pages` commits the built code to the gh-pages branch of the \'dist/.git\' repository and pushes to the gh-pages branch of `git@github.com:example_user/example_webapp.git`. \n\nRunning `grunt buildcontrol:heroku` will commit the built code to the master branch of the \'dist/.git\' repository, tag the latest commit in \'dist/.git\' with the value of `pkg.version` if the tag doesn\'t already exist, and push refs and tags to the master branch of `git@heroku.com:example-heroku-webapp-1988.git`.\n\nRunning `grunt buildcontrol:local` will commit the built code to the build branch of the \'dist/.git\' repository and push to the build branch of the local source code repository. The local project repository can then be synced with a remote.\n\n#### Working with .gitignores\n\nYou may wish to commit files or directories that are ignored globally or in the source repository (e.g., bower_compontents), or make file inclusion and exclusion the responsibility of the build process alone.\n\nIn order to scope gitignore rules to the build directory only, create a file named \'gitignore\' in your source directory: \n\n```shell\n# Unignore everything\n!**/*\n\n# Re-ignore things\n...your ignore rules here\n```\n\nThen copy it to the build directory during your build process as \'.gitignore\'.\n\n#### Notes\n\nGrunt-build-control deploys to git endpoints. If you want to deploy to a private server [this tutorial by @curtisblackwell ](http://curtisblackwell.com/blog/my-deploy-method-brings-most-of-the-boys-to-the-yard) is a good place to start.\n\n`buildcontrol` will add commits on top of the existing history of the remote branch if available.\n\n`buildcontrol` is a synchronous task, and fetches from your remote before each commit or push. Depending on the location of your remote, the size of commits, and network speed it can be a long running task.\n\nIt\'s best to run `buildcontrol` manually after your build process or as the last step in a build and deploy task.\n\nIf a git conflict occurs (usually because another user has force-pushed to the deployment server) delete the built code directory and run build and build control again.\n\nDon\'t check out built code branches while in the main project directory. Differences in untracked files will cause issues.\n\n<!-- \n## Todo:\n\n- replace as many porcelain commands as possible with plumbing.\n- describe or list similar projects with limitations?  \n  https://npmjs.org/package/grunt-github-pages  \n  https://npmjs.org/package/grunt-git-dist  \n  https://npmjs.org/package/grunt-git-selective-deploy  \n\n-->\n \n## Contribute\n\nPost bugs and feature requests to the [Github issue tracker](https://github.com/robwierzbowski/grunt-build-control/issues). In lieu of a formal styleguide, take care to maintain the existing coding style. Lint and test your code using [Grunt](https://github.com/gruntjs/grunt).\n\n## Release History\n\n- 2013-11-29 v0.1.2: Add defaults for all properties.\n- 2013-10-19 v0.1.1: Stable initial release.\n\n## License\n\n[MIT](http://en.wikipedia.org/wiki/MIT_License)\n\n\n\n[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/robwierzbowski/grunt-build-control/trend.png)](https://bitdeli.com/free "Bitdeli Badge")\n\n',
+219 silly install resolved     readmeFilename: 'README.md',
+219 silly install resolved     _id: 'grunt-build-control@0.1.3',
+219 silly install resolved     _shasum: 'e84d862f79017f5026fc20ff6d03bfe6ee341bcb',
+219 silly install resolved     _from: '../../../../../var/folders/f_/332bntls7k326fnmsc2xzp1m0000gn/T/npm-71596-201c116f/1429814329013-0.4377605651970953/3d03ebbe49f8f963ef43c50af1084a15f56611fa',
+219 silly install resolved     _resolved: 'git+https://github.com/DaftMonk/grunt-build-control#3d03ebbe49f8f963ef43c50af1084a15f56611fa' } ]
+220 info install mongoose-bird@0.0.1 into /Users/benconant/Dev/Qupey/qupey_app
+221 info install grunt-build-control@0.1.3 into /Users/benconant/Dev/Qupey/qupey_app
+222 info installOne mongoose-bird@0.0.1
+223 verbose installOne of mongoose-bird to /Users/benconant/Dev/Qupey/qupey_app not in flight; installing
+224 info installOne grunt-build-control@0.1.3
+225 verbose installOne of grunt-build-control to /Users/benconant/Dev/Qupey/qupey_app not in flight; installing
+226 verbose lock using /Users/benconant/.npm/_locks/mongoose-bird-53ee68d442e0f5a6.lock for /Users/benconant/Dev/Qupey/qupey_app/node_modules/mongoose-bird
+227 silly install write writing mongoose-bird 0.0.1 to /Users/benconant/Dev/Qupey/qupey_app/node_modules/mongoose-bird
+228 silly cache addNamed cb mongoose-bird@0.0.1
+229 verbose unbuild node_modules/mongoose-bird
+230 verbose lock using /Users/benconant/.npm/_locks/grunt-build-control-d4de0c30037b6bfc.lock for /Users/benconant/Dev/Qupey/qupey_app/node_modules/grunt-build-control
+231 verbose gentlyRm vacuuming /Users/benconant/Dev/Qupey/qupey_app/node_modules/mongoose-bird
+232 silly install write writing grunt-build-control 0.1.3 to /Users/benconant/Dev/Qupey/qupey_app/node_modules/grunt-build-control
+233 verbose tar unpack /Users/benconant/.npm/mongoose-bird/0.0.1/package.tgz
+234 verbose tar unpacking to /Users/benconant/Dev/Qupey/qupey_app/node_modules/mongoose-bird
+235 verbose gentlyRm vacuuming /Users/benconant/Dev/Qupey/qupey_app/node_modules/mongoose-bird
+236 silly gunzTarPerm modes [ '755', '644' ]
+237 silly cache addNamed cb grunt-build-control@0.1.3
+238 verbose unbuild node_modules/grunt-build-control
+239 info preuninstall grunt-build-control@0.1.3
+240 info uninstall grunt-build-control@0.1.3
+241 verbose unbuild rmStuff grunt-build-control@0.1.3 from /Users/benconant/Dev/Qupey/qupey_app/node_modules
+242 info postuninstall grunt-build-control@0.1.3
+243 silly gunzTarPerm extractEntry package.json
+244 verbose gentlyRm vacuuming /Users/benconant/Dev/Qupey/qupey_app/node_modules/grunt-build-control
+245 silly gentlyRm purging /Users/benconant/Dev/Qupey/qupey_app/node_modules/grunt-build-control
+246 silly gunzTarPerm extractEntry .npmignore
+247 silly gunzTarPerm extractEntry README.md
+248 verbose unlock done using /Users/benconant/.npm/_locks/grunt-build-control-d4de0c30037b6bfc.lock for /Users/benconant/Dev/Qupey/qupey_app/node_modules/grunt-build-control
+249 silly gunzTarPerm extractEntry Gruntfile.js
+250 silly gunzTarPerm extractEntry index.js
+251 silly gunzTarPerm extractEntry libs/mongoose_bird.js
+252 silly gunzTarPerm extractEntry tests/fixtures.js
+253 silly gunzTarPerm extractEntry tests/mongooseq_test.js
+254 info preinstall mongoose-bird@0.0.1
+255 silly prepareForInstallMany adding bluebird@~2.3.1 from mongoose-bird dependencies
+256 silly cache add args [ 'bluebird@~2.3.1', null ]
+257 verbose cache add spec bluebird@~2.3.1
+258 silly cache add parsed spec { raw: 'bluebird@~2.3.1',
+258 silly cache add   scope: null,
+258 silly cache add   name: 'bluebird',
+258 silly cache add   rawSpec: '~2.3.1',
+258 silly cache add   spec: '>=2.3.1 <2.4.0',
+258 silly cache add   type: 'range' }
+259 verbose addNamed bluebird@>=2.3.1 <2.4.0
+260 silly addNamed semver.valid null
+261 silly addNamed semver.validRange >=2.3.1 <2.4.0
+262 silly addNameRange { name: 'bluebird', range: '>=2.3.1 <2.4.0', hasData: false }
+263 silly mapToRegistry name bluebird
+264 silly mapToRegistry using default registry
+265 silly mapToRegistry registry https://registry.npmjs.org/
+266 silly mapToRegistry uri https://registry.npmjs.org/bluebird
+267 verbose addNameRange registry:https://registry.npmjs.org/bluebird not in flight; fetching
+268 verbose request uri https://registry.npmjs.org/bluebird
+269 verbose request no auth needed
+270 info attempt registry request try #1 at 14:38:49
+271 verbose etag "97C9XZG1RZ9R2E2I18L0L7Q49"
+272 http request GET https://registry.npmjs.org/bluebird
+273 http 304 https://registry.npmjs.org/bluebird
+274 silly get cb [ 304,
+274 silly get   { date: 'Thu, 23 Apr 2015 18:38:49 GMT',
+274 silly get     via: '1.1 varnish',
+274 silly get     'last-modified': 'Thu, 23 Apr 2015 18:38:27 GMT',
+274 silly get     'cache-control': 'max-age=60',
+274 silly get     etag: '"97C9XZG1RZ9R2E2I18L0L7Q49"',
+274 silly get     age: '30',
+274 silly get     connection: 'keep-alive',
+274 silly get     'x-served-by': 'cache-atl6233-ATL',
+274 silly get     'x-cache': 'HIT',
+274 silly get     'x-cache-hits': '2',
+274 silly get     'x-timer': 'S1429814329.746886,VS0,VE0',
+274 silly get     vary: 'Accept' } ]
+275 verbose etag https://registry.npmjs.org/bluebird from cache
+276 silly addNameRange number 2 { name: 'bluebird', range: '>=2.3.1 <2.4.0', hasData: true }
+277 silly addNameRange versions [ 'bluebird',
+277 silly addNameRange   [ '0.7.1-1',
+277 silly addNameRange     '0.7.1-2',
+277 silly addNameRange     '0.7.1-3',
+277 silly addNameRange     '0.7.1-4',
+277 silly addNameRange     '0.7.1-5',
+277 silly addNameRange     '0.7.2-0',
+277 silly addNameRange     '0.7.3-0',
+277 silly addNameRange     '0.7.4-0',
+277 silly addNameRange     '0.7.4-1',
+277 silly addNameRange     '0.7.5-0',
+277 silly addNameRange     '0.7.6-0',
+277 silly addNameRange     '0.7.7-0',
+277 silly addNameRange     '0.7.7-1',
+277 silly addNameRange     '0.7.8-0',
+277 silly addNameRange     '0.7.8-1',
+277 silly addNameRange     '0.7.9-0',
+277 silly addNameRange     '0.7.9-1',
+277 silly addNameRange     '0.7.10-0',
+277 silly addNameRange     '0.7.10-1',
+277 silly addNameRange     '0.7.11-0',
+277 silly addNameRange     '0.7.12-0',
+277 silly addNameRange     '0.7.12-1',
+277 silly addNameRange     '0.7.12-2',
+277 silly addNameRange     '0.8.0-0',
+277 silly addNameRange     '0.8.0-1',
+277 silly addNameRange     '0.8.0-2',
+277 silly addNameRange     '0.8.0-3',
+277 silly addNameRange     '0.8.1-0',
+277 silly addNameRange     '0.8.2-0',
+277 silly addNameRange     '0.8.2-1',
+277 silly addNameRange     '0.8.2-2',
+277 silly addNameRange     '0.8.3-0',
+277 silly addNameRange     '0.8.3-1',
+277 silly addNameRange     '0.8.3-2',
+277 silly addNameRange     '0.8.3-3',
+277 silly addNameRange     '0.8.4-0',
+277 silly addNameRange     '0.8.4-1',
+277 silly addNameRange     '0.8.5-0',
+277 silly addNameRange     '0.8.5-1',
+277 silly addNameRange     '0.9.0-0',
+277 silly addNameRange     '0.9.1-0',
+277 silly addNameRange     '0.9.1-1',
+277 silly addNameRange     '0.9.2-0',
+277 silly addNameRange     '0.9.2-1',
+277 silly addNameRange     '0.9.3-0',
+277 silly addNameRange     '0.9.4-0',
+277 silly addNameRange     '0.9.4-1',
+277 silly addNameRange     '0.9.5-0',
+277 silly addNameRange     '0.9.6-0',
+277 silly addNameRange     '0.9.7-0',
+277 silly addNameRange     '0.9.8-0',
+277 silly addNameRange     '0.9.9-0',
+277 silly addNameRange     '0.9.10-0',
+277 silly addNameRange     '0.9.10-1',
+277 silly addNameRange     '0.9.11-0',
+277 silly addNameRange     '0.9.11-1',
+277 silly addNameRange     '0.10.0-0',
+277 silly addNameRange     '0.10.0-1',
+277 silly addNameRange     '0.10.1-0',
+277 silly addNameRange     '0.10.2-0',
+277 silly addNameRange     '0.10.2-1',
+277 silly addNameRange     '0.10.3-0',
+277 silly addNameRange     '0.10.4-0',
+277 silly addNameRange     '0.10.4-1',
+277 silly addNameRange     '0.10.5-0',
+277 silly addNameRange     '0.10.6-0',
+277 silly addNameRange     '0.10.7-0',
+277 silly addNameRange     '0.10.8-0',
+277 silly addNameRange     '0.10.9-0',
+277 silly addNameRange     '0.10.9-1',
+277 silly addNameRange     '0.10.10-0',
+277 silly addNameRange     '0.10.11-0',
+277 silly addNameRange     '0.10.11-1',
+277 silly addNameRange     '0.10.11-2',
+277 silly addNameRange     '0.10.11-4',
+277 silly addNameRange     '0.10.12-0',
+277 silly addNameRange     '0.10.13-0',
+277 silly addNameRange     '0.10.13-1',
+277 silly addNameRange     '0.10.14-0',
+277 silly addNameRange     '0.11.0-0',
+277 silly addNameRange     '0.11.1-0',
+277 silly addNameRange     '0.11.2-0',
+277 silly addNameRange     '0.11.3-0',
+277 silly addNameRange     '0.11.4-0',
+277 silly addNameRange     '0.11.4-1',
+277 silly addNameRange     '0.11.5-0',
+277 silly addNameRange     '0.11.5-1',
+277 silly addNameRange     '0.11.6-0',
+277 silly addNameRange     '1.0.0',
+277 silly addNameRange     '1.0.1',
+277 silly addNameRange     '1.0.2',
+277 silly addNameRange     '1.0.3',
+277 silly addNameRange     '1.0.4',
+277 silly addNameRange     '1.0.5',
+277 silly addNameRange     '1.0.7',
+277 silly addNameRange     '1.0.8',
+277 silly addNameRange     '1.1.0',
+277 silly addNameRange     '1.1.1',
+277 silly addNameRange     '1.2.0',
+277 silly addNameRange     '1.2.1',
+277 silly addNameRange     '1.2.2',
+277 silly addNameRange     '1.2.3',
+277 silly addNameRange     '1.2.4',
+277 silly addNameRange     '2.0.2',
+277 silly addNameRange     '2.0.3',
+277 silly addNameRange     '2.0.4',
+277 silly addNameRange     '2.0.5',
+277 silly addNameRange     '2.0.6',
+277 silly addNameRange     '2.0.7',
+277 silly addNameRange     '2.1.1',
+277 silly addNameRange     '2.1.2',
+277 silly addNameRange     '2.1.3',
+277 silly addNameRange     '2.2.0',
+277 silly addNameRange     '2.2.1',
+277 silly addNameRange     '2.2.2',
+277 silly addNameRange     '2.3.0',
+277 silly addNameRange     '2.3.1',
+277 silly addNameRange     '2.3.2',
+277 silly addNameRange     '2.3.3',
+277 silly addNameRange     '2.3.4',
+277 silly addNameRange     '2.3.5',
+277 silly addNameRange     '0.11.6',
+277 silly addNameRange     '2.3.6',
+277 silly addNameRange     '2.3.9',
+277 silly addNameRange     '2.3.10',
+277 silly addNameRange     '2.3.11',
+277 silly addNameRange     '2.4.0',
+277 silly addNameRange     '2.4.1',
+277 silly addNameRange     '2.4.2',
+277 silly addNameRange     '2.4.3',
+277 silly addNameRange     '2.5.0',
+277 silly addNameRange     '2.5.1',
+277 silly addNameRange     '2.5.2',
+277 silly addNameRange     '2.5.3',
+277 silly addNameRange     '2.6.0',
+277 silly addNameRange     '2.6.1',
+277 silly addNameRange     '2.6.2',
+277 silly addNameRange     '2.6.3',
+277 silly addNameRange     '2.6.4',
+277 silly addNameRange     '2.7.0',
+277 silly addNameRange     '2.7.1',
+277 silly addNameRange     '2.8.0',
+277 silly addNameRange     '2.8.1',
+277 silly addNameRange     '2.8.2',
+277 silly addNameRange     '2.9.0',
+277 silly addNameRange     '2.9.1',
+277 silly addNameRange     '2.9.2',
+277 silly addNameRange     '2.9.3',
+277 silly addNameRange     '2.9.4',
+277 silly addNameRange     '2.9.5',
+277 silly addNameRange     '2.9.6',
+277 silly addNameRange     '2.9.7',
+277 silly addNameRange     '2.9.8',
+277 silly addNameRange     '2.9.9',
+277 silly addNameRange     '2.9.10',
+277 silly addNameRange     '2.9.11',
+277 silly addNameRange     '2.9.12',
+277 silly addNameRange     '2.9.13',
+277 silly addNameRange     '2.9.14',
+277 silly addNameRange     '2.9.15',
+277 silly addNameRange     '2.9.16',
+277 silly addNameRange     '2.9.17',
+277 silly addNameRange     '2.9.18',
+277 silly addNameRange     '2.9.19',
+277 silly addNameRange     '2.9.20',
+277 silly addNameRange     '2.9.21',
+277 silly addNameRange     '2.9.22',
+277 silly addNameRange     '2.9.23',
+277 silly addNameRange     '2.9.24' ] ]
+278 verbose addNamed bluebird@2.3.11
+279 silly addNamed semver.valid 2.3.11
+280 silly addNamed semver.validRange 2.3.11
+281 silly cache afterAdd bluebird@2.3.11
+282 verbose afterAdd /Users/benconant/.npm/bluebird/2.3.11/package/package.json not in flight; writing
+283 verbose afterAdd /Users/benconant/.npm/bluebird/2.3.11/package/package.json written
+284 silly install resolved [ { name: 'bluebird',
+284 silly install resolved     description: 'Full featured Promises/A+ implementation with exceptionally good performance',
+284 silly install resolved     version: '2.3.11',
+284 silly install resolved     keywords:
+284 silly install resolved      [ 'promise',
+284 silly install resolved        'performance',
+284 silly install resolved        'promises',
+284 silly install resolved        'promises-a',
+284 silly install resolved        'promises-aplus',
+284 silly install resolved        'async',
+284 silly install resolved        'await',
+284 silly install resolved        'deferred',
+284 silly install resolved        'deferreds',
+284 silly install resolved        'future',
+284 silly install resolved        'flow control',
+284 silly install resolved        'dsl',
+284 silly install resolved        'fluent interface' ],
+284 silly install resolved     scripts: { test: 'grunt test', prepublish: 'grunt build' },
+284 silly install resolved     homepage: 'https://github.com/petkaantonov/bluebird',
+284 silly install resolved     repository:
+284 silly install resolved      { type: 'git',
+284 silly install resolved        url: 'git://github.com/petkaantonov/bluebird.git' },
+284 silly install resolved     bugs: { url: 'http://github.com/petkaantonov/bluebird/issues' },
+284 silly install resolved     license: 'MIT',
+284 silly install resolved     author:
+284 silly install resolved      { name: 'Petka Antonov',
+284 silly install resolved        email: 'petka_antonov@hotmail.com',
+284 silly install resolved        url: 'http://github.com/petkaantonov/' },
+284 silly install resolved     devDependencies:
+284 silly install resolved      { grunt: '~0.4.1',
+284 silly install resolved        'grunt-contrib-jshint': '~0.10.0',
+284 silly install resolved        'grunt-contrib-watch': 'latest',
+284 silly install resolved        'grunt-contrib-connect': 'latest',
+284 silly install resolved        'grunt-contrib-concat': 'latest',
+284 silly install resolved        'grunt-saucelabs': '~8.3.1',
+284 silly install resolved        acorn: '~0.6.0',
+284 silly install resolved        mocha: '~1.20.1',
+284 silly install resolved        q: '~1.0.1',
+284 silly install resolved        when: '~3.2.3',
+284 silly install resolved        deferred: '~0.7.1',
+284 silly install resolved        rsvp: '~3.0.9',
+284 silly install resolved        avow: '~2.0.1',
+284 silly install resolved        jsdom: '~0.11.0',
+284 silly install resolved        'jquery-browserify': '~1.8.1',
+284 silly install resolved        sinon: '~1.7.3',
+284 silly install resolved        kew: '~0.4.0',
+284 silly install resolved        browserify: '~4.2.0',
+284 silly install resolved        concurrent: '~0.3.2',
+284 silly install resolved        'text-table': '~0.2.0',
+284 silly install resolved        'grunt-cli': '~0.1.9',
+284 silly install resolved        'jshint-stylish': '~0.2.0',
+284 silly install resolved        'semver-utils': '~1.1.0',
+284 silly install resolved        rimraf: '~2.2.6',
+284 silly install resolved        mkdirp: '~0.5.0' },
+284 silly install resolved     main: './js/main/bluebird.js',
+284 silly install resolved     files: [ 'js/browser', 'js/main', 'js/zalgo', 'LICENSE', 'zalgo.js' ],
+284 silly install resolved     gitHead: 'bd97da362617dcc0a29b719e1bab3165353ef786',
+284 silly install resolved     _id: 'bluebird@2.3.11',
+284 silly install resolved     _shasum: '15bb78ed32abf27b090640c0f85e4b91f615c8b6',
+284 silly install resolved     _from: 'bluebird@>=2.3.1 <2.4.0',
+284 silly install resolved     _npmVersion: '1.4.21',
+284 silly install resolved     _npmUser: { name: 'esailija', email: 'petka_antonov@hotmail.com' },
+284 silly install resolved     maintainers: [ [Object] ],
+284 silly install resolved     dist:
+284 silly install resolved      { shasum: '15bb78ed32abf27b090640c0f85e4b91f615c8b6',
+284 silly install resolved        tarball: 'http://registry.npmjs.org/bluebird/-/bluebird-2.3.11.tgz' },
+284 silly install resolved     directories: {},
+284 silly install resolved     _resolved: 'https://registry.npmjs.org/bluebird/-/bluebird-2.3.11.tgz',
+284 silly install resolved     readme: 'ERROR: No README data found!' } ]
+285 info install bluebird@2.3.11 into /Users/benconant/Dev/Qupey/qupey_app/node_modules/mongoose-bird
+286 info installOne bluebird@2.3.11
+287 verbose installOne of bluebird to /Users/benconant/Dev/Qupey/qupey_app/node_modules/mongoose-bird not in flight; installing
+288 verbose lock using /Users/benconant/.npm/_locks/bluebird-12da53034cd93d57.lock for /Users/benconant/Dev/Qupey/qupey_app/node_modules/mongoose-bird/node_modules/bluebird
+289 silly install write writing bluebird 2.3.11 to /Users/benconant/Dev/Qupey/qupey_app/node_modules/mongoose-bird/node_modules/bluebird
+290 silly cache addNamed cb bluebird@2.3.11
+291 verbose unbuild node_modules/mongoose-bird/node_modules/bluebird
+292 verbose gentlyRm vacuuming /Users/benconant/Dev/Qupey/qupey_app/node_modules/mongoose-bird/node_modules/bluebird
+293 verbose tar unpack /Users/benconant/.npm/bluebird/2.3.11/package.tgz
+294 verbose tar unpacking to /Users/benconant/Dev/Qupey/qupey_app/node_modules/mongoose-bird/node_modules/bluebird
+295 verbose gentlyRm vacuuming /Users/benconant/Dev/Qupey/qupey_app/node_modules/mongoose-bird/node_modules/bluebird
+296 silly gunzTarPerm modes [ '755', '644' ]
+297 silly gunzTarPerm extractEntry package.json
+298 silly gunzTarPerm modified mode [ 'package.json', 436, 420 ]
+299 silly gunzTarPerm extractEntry README.md
+300 silly gunzTarPerm modified mode [ 'README.md', 436, 420 ]
+301 silly gunzTarPerm extractEntry LICENSE
+302 silly gunzTarPerm modified mode [ 'LICENSE', 436, 420 ]
+303 silly gunzTarPerm extractEntry js/browser/bluebird.js
+304 silly gunzTarPerm modified mode [ 'js/browser/bluebird.js', 436, 420 ]
+305 silly gunzTarPerm extractEntry js/main/any.js
+306 silly gunzTarPerm modified mode [ 'js/main/any.js', 436, 420 ]
+307 silly gunzTarPerm extractEntry js/main/finally.js
+308 silly gunzTarPerm modified mode [ 'js/main/finally.js', 436, 420 ]
+309 silly gunzTarPerm extractEntry js/main/generators.js
+310 silly gunzTarPerm modified mode [ 'js/main/generators.js', 436, 420 ]
+311 silly gunzTarPerm extractEntry js/main/join.js
+312 silly gunzTarPerm modified mode [ 'js/main/join.js', 436, 420 ]
+313 silly gunzTarPerm extractEntry js/main/map.js
+314 silly gunzTarPerm modified mode [ 'js/main/map.js', 436, 420 ]
+315 silly gunzTarPerm extractEntry js/main/filter.js
+316 silly gunzTarPerm modified mode [ 'js/main/filter.js', 436, 420 ]
+317 silly gunzTarPerm extractEntry js/main/progress.js
+318 silly gunzTarPerm modified mode [ 'js/main/progress.js', 436, 420 ]
+319 silly gunzTarPerm extractEntry js/main/promise.js
+320 silly gunzTarPerm modified mode [ 'js/main/promise.js', 436, 420 ]
+321 silly gunzTarPerm extractEntry js/main/promise_array.js
+322 silly gunzTarPerm modified mode [ 'js/main/promise_array.js', 436, 420 ]
+323 silly gunzTarPerm extractEntry js/main/promise_resolver.js
+324 silly gunzTarPerm modified mode [ 'js/main/promise_resolver.js', 436, 420 ]
+325 silly gunzTarPerm extractEntry js/main/promisify.js
+326 silly gunzTarPerm modified mode [ 'js/main/promisify.js', 436, 420 ]
+327 silly gunzTarPerm extractEntry js/main/es5.js
+328 silly gunzTarPerm modified mode [ 'js/main/es5.js', 436, 420 ]
+329 silly gunzTarPerm extractEntry js/main/props.js
+330 silly gunzTarPerm modified mode [ 'js/main/props.js', 436, 420 ]
+331 silly gunzTarPerm extractEntry js/main/errors_api_rejection.js
+332 silly gunzTarPerm modified mode [ 'js/main/errors_api_rejection.js', 436, 420 ]
+333 silly gunzTarPerm extractEntry js/main/queue.js
+334 silly gunzTarPerm modified mode [ 'js/main/queue.js', 436, 420 ]
+335 silly gunzTarPerm extractEntry js/main/errors.js
+336 silly gunzTarPerm modified mode [ 'js/main/errors.js', 436, 420 ]
+337 silly gunzTarPerm extractEntry js/main/race.js
+338 silly gunzTarPerm modified mode [ 'js/main/race.js', 436, 420 ]
+339 silly gunzTarPerm extractEntry js/main/each.js
+340 silly gunzTarPerm modified mode [ 'js/main/each.js', 436, 420 ]
+341 silly gunzTarPerm extractEntry js/main/reduce.js
+342 silly gunzTarPerm modified mode [ 'js/main/reduce.js', 436, 420 ]
+343 silly gunzTarPerm extractEntry js/main/direct_resolve.js
+344 silly gunzTarPerm modified mode [ 'js/main/direct_resolve.js', 436, 420 ]
+345 silly gunzTarPerm extractEntry js/main/schedule.js
+346 silly gunzTarPerm modified mode [ 'js/main/schedule.js', 436, 420 ]
+347 silly gunzTarPerm extractEntry js/main/catch_filter.js
+348 silly gunzTarPerm modified mode [ 'js/main/catch_filter.js', 436, 420 ]
+349 silly gunzTarPerm extractEntry js/main/settle.js
+350 silly gunzTarPerm modified mode [ 'js/main/settle.js', 436, 420 ]
+351 silly gunzTarPerm extractEntry js/main/captured_trace.js
+352 silly gunzTarPerm modified mode [ 'js/main/captured_trace.js', 436, 420 ]
+353 silly gunzTarPerm extractEntry js/main/some.js
+354 silly gunzTarPerm modified mode [ 'js/main/some.js', 436, 420 ]
+355 silly gunzTarPerm extractEntry js/main/cancel.js
+356 silly gunzTarPerm modified mode [ 'js/main/cancel.js', 436, 420 ]
+357 silly gunzTarPerm extractEntry js/main/synchronous_inspection.js
+358 silly gunzTarPerm modified mode [ 'js/main/synchronous_inspection.js', 436, 420 ]
+359 silly gunzTarPerm extractEntry js/main/call_get.js
+360 silly gunzTarPerm modified mode [ 'js/main/call_get.js', 436, 420 ]
+361 silly gunzTarPerm extractEntry js/main/thenables.js
+362 silly gunzTarPerm modified mode [ 'js/main/thenables.js', 436, 420 ]
+363 silly gunzTarPerm extractEntry js/main/bluebird.js
+364 silly gunzTarPerm modified mode [ 'js/main/bluebird.js', 436, 420 ]
+365 silly gunzTarPerm extractEntry js/main/timers.js
+366 silly gunzTarPerm modified mode [ 'js/main/timers.js', 436, 420 ]
+367 silly gunzTarPerm extractEntry js/main/async.js
+368 silly gunzTarPerm modified mode [ 'js/main/async.js', 436, 420 ]
+369 silly gunzTarPerm extractEntry js/main/using.js
+370 silly gunzTarPerm modified mode [ 'js/main/using.js', 436, 420 ]
+371 silly gunzTarPerm extractEntry js/main/assert.js
+372 silly gunzTarPerm modified mode [ 'js/main/assert.js', 436, 420 ]
+373 silly gunzTarPerm extractEntry js/main/util.js
+374 silly gunzTarPerm modified mode [ 'js/main/util.js', 436, 420 ]
+375 silly gunzTarPerm extractEntry js/main/nodeify.js
+376 silly gunzTarPerm modified mode [ 'js/main/nodeify.js', 436, 420 ]
+377 silly gunzTarPerm extractEntry js/zalgo/any.js
+378 silly gunzTarPerm modified mode [ 'js/zalgo/any.js', 436, 420 ]
+379 silly gunzTarPerm extractEntry js/zalgo/finally.js
+380 silly gunzTarPerm modified mode [ 'js/zalgo/finally.js', 436, 420 ]
+381 silly gunzTarPerm extractEntry js/zalgo/generators.js
+382 silly gunzTarPerm modified mode [ 'js/zalgo/generators.js', 436, 420 ]
+383 silly gunzTarPerm extractEntry js/zalgo/join.js
+384 silly gunzTarPerm modified mode [ 'js/zalgo/join.js', 436, 420 ]
+385 silly gunzTarPerm extractEntry js/zalgo/map.js
+386 silly gunzTarPerm modified mode [ 'js/zalgo/map.js', 436, 420 ]
+387 silly gunzTarPerm extractEntry js/zalgo/filter.js
+388 silly gunzTarPerm modified mode [ 'js/zalgo/filter.js', 436, 420 ]
+389 silly gunzTarPerm extractEntry js/zalgo/progress.js
+390 silly gunzTarPerm modified mode [ 'js/zalgo/progress.js', 436, 420 ]
+391 silly gunzTarPerm extractEntry js/zalgo/promise.js
+392 silly gunzTarPerm modified mode [ 'js/zalgo/promise.js', 436, 420 ]
+393 silly gunzTarPerm extractEntry js/zalgo/promise_array.js
+394 silly gunzTarPerm modified mode [ 'js/zalgo/promise_array.js', 436, 420 ]
+395 silly gunzTarPerm extractEntry js/zalgo/promise_resolver.js
+396 silly gunzTarPerm modified mode [ 'js/zalgo/promise_resolver.js', 436, 420 ]
+397 silly gunzTarPerm extractEntry js/zalgo/promisify.js
+398 silly gunzTarPerm modified mode [ 'js/zalgo/promisify.js', 436, 420 ]
+399 silly gunzTarPerm extractEntry js/zalgo/es5.js
+400 silly gunzTarPerm modified mode [ 'js/zalgo/es5.js', 436, 420 ]
+401 silly gunzTarPerm extractEntry js/zalgo/props.js
+402 silly gunzTarPerm modified mode [ 'js/zalgo/props.js', 436, 420 ]
+403 silly gunzTarPerm extractEntry js/zalgo/errors_api_rejection.js
+404 silly gunzTarPerm modified mode [ 'js/zalgo/errors_api_rejection.js', 436, 420 ]
+405 silly gunzTarPerm extractEntry js/zalgo/queue.js
+406 silly gunzTarPerm modified mode [ 'js/zalgo/queue.js', 436, 420 ]
+407 silly gunzTarPerm extractEntry js/zalgo/errors.js
+408 silly gunzTarPerm modified mode [ 'js/zalgo/errors.js', 436, 420 ]
+409 silly gunzTarPerm extractEntry js/zalgo/race.js
+410 silly gunzTarPerm modified mode [ 'js/zalgo/race.js', 436, 420 ]
+411 silly gunzTarPerm extractEntry js/zalgo/each.js
+412 silly gunzTarPerm modified mode [ 'js/zalgo/each.js', 436, 420 ]
+413 silly gunzTarPerm extractEntry js/zalgo/reduce.js
+414 silly gunzTarPerm modified mode [ 'js/zalgo/reduce.js', 436, 420 ]
+415 silly gunzTarPerm extractEntry js/zalgo/direct_resolve.js
+416 silly gunzTarPerm modified mode [ 'js/zalgo/direct_resolve.js', 436, 420 ]
+417 silly gunzTarPerm extractEntry js/zalgo/schedule.js
+418 silly gunzTarPerm modified mode [ 'js/zalgo/schedule.js', 436, 420 ]
+419 silly gunzTarPerm extractEntry js/zalgo/catch_filter.js
+420 silly gunzTarPerm modified mode [ 'js/zalgo/catch_filter.js', 436, 420 ]
+421 silly gunzTarPerm extractEntry js/zalgo/settle.js
+422 silly gunzTarPerm modified mode [ 'js/zalgo/settle.js', 436, 420 ]
+423 silly gunzTarPerm extractEntry js/zalgo/captured_trace.js
+424 silly gunzTarPerm modified mode [ 'js/zalgo/captured_trace.js', 436, 420 ]
+425 silly gunzTarPerm extractEntry js/zalgo/some.js
+426 silly gunzTarPerm modified mode [ 'js/zalgo/some.js', 436, 420 ]
+427 silly gunzTarPerm extractEntry js/zalgo/cancel.js
+428 silly gunzTarPerm modified mode [ 'js/zalgo/cancel.js', 436, 420 ]
+429 silly gunzTarPerm extractEntry js/zalgo/synchronous_inspection.js
+430 silly gunzTarPerm modified mode [ 'js/zalgo/synchronous_inspection.js', 436, 420 ]
+431 silly gunzTarPerm extractEntry js/zalgo/call_get.js
+432 silly gunzTarPerm modified mode [ 'js/zalgo/call_get.js', 436, 420 ]
+433 silly gunzTarPerm extractEntry js/zalgo/thenables.js
+434 silly gunzTarPerm modified mode [ 'js/zalgo/thenables.js', 436, 420 ]
+435 silly gunzTarPerm extractEntry js/zalgo/bluebird.js
+436 silly gunzTarPerm modified mode [ 'js/zalgo/bluebird.js', 436, 420 ]
+437 silly gunzTarPerm extractEntry js/zalgo/timers.js
+438 silly gunzTarPerm modified mode [ 'js/zalgo/timers.js', 436, 420 ]
+439 silly gunzTarPerm extractEntry js/zalgo/async.js
+440 silly gunzTarPerm modified mode [ 'js/zalgo/async.js', 436, 420 ]
+441 silly gunzTarPerm extractEntry js/zalgo/using.js
+442 silly gunzTarPerm modified mode [ 'js/zalgo/using.js', 436, 420 ]
+443 silly gunzTarPerm extractEntry js/zalgo/assert.js
+444 silly gunzTarPerm modified mode [ 'js/zalgo/assert.js', 436, 420 ]
+445 silly gunzTarPerm extractEntry js/zalgo/util.js
+446 silly gunzTarPerm modified mode [ 'js/zalgo/util.js', 436, 420 ]
+447 silly gunzTarPerm extractEntry js/zalgo/nodeify.js
+448 silly gunzTarPerm modified mode [ 'js/zalgo/nodeify.js', 436, 420 ]
+449 info preinstall bluebird@2.3.11
+450 silly install resolved []
+451 verbose about to build /Users/benconant/Dev/Qupey/qupey_app/node_modules/mongoose-bird/node_modules/bluebird
+452 info build /Users/benconant/Dev/Qupey/qupey_app/node_modules/mongoose-bird/node_modules/bluebird
+453 verbose linkStuff [ false,
+453 verbose linkStuff   false,
+453 verbose linkStuff   false,
+453 verbose linkStuff   '/Users/benconant/Dev/Qupey/qupey_app/node_modules/mongoose-bird/node_modules' ]
+454 info linkStuff bluebird@2.3.11
+455 verbose linkBins bluebird@2.3.11
+456 verbose linkMans bluebird@2.3.11
+457 verbose rebuildBundles bluebird@2.3.11
+458 info install bluebird@2.3.11
+459 info postinstall bluebird@2.3.11
+460 verbose unlock done using /Users/benconant/.npm/_locks/bluebird-12da53034cd93d57.lock for /Users/benconant/Dev/Qupey/qupey_app/node_modules/mongoose-bird/node_modules/bluebird
+461 verbose about to build /Users/benconant/Dev/Qupey/qupey_app/node_modules/mongoose-bird
+462 info build /Users/benconant/Dev/Qupey/qupey_app/node_modules/mongoose-bird
+463 verbose linkStuff [ false,
+463 verbose linkStuff   false,
+463 verbose linkStuff   false,
+463 verbose linkStuff   '/Users/benconant/Dev/Qupey/qupey_app/node_modules' ]
+464 info linkStuff mongoose-bird@0.0.1
+465 verbose linkBins mongoose-bird@0.0.1
+466 verbose linkMans mongoose-bird@0.0.1
+467 verbose rebuildBundles mongoose-bird@0.0.1
+468 verbose rebuildBundles [ 'bluebird' ]
+469 info install mongoose-bird@0.0.1
+470 info postinstall mongoose-bird@0.0.1
+471 verbose unlock done using /Users/benconant/.npm/_locks/mongoose-bird-53ee68d442e0f5a6.lock for /Users/benconant/Dev/Qupey/qupey_app/node_modules/mongoose-bird
+472 verbose stack Error: EACCES, unlink '/Users/benconant/Dev/Qupey/qupey_app/node_modules/grunt-build-control/node_modules/.bin/shjs'
+473 verbose cwd /Users/benconant/Dev/Qupey/qupey_app
+474 error Darwin 14.1.0
+475 error argv "node" "/usr/local/bin/npm" "install"
+476 error node v0.10.32
+477 error npm  v2.1.11
+478 error path /Users/benconant/Dev/Qupey/qupey_app/node_modules/grunt-build-control/node_modules/.bin/shjs
+479 error code EACCES
+480 error errno 3
+481 error Error: EACCES, unlink '/Users/benconant/Dev/Qupey/qupey_app/node_modules/grunt-build-control/node_modules/.bin/shjs'
+481 error  { [Error: EACCES, unlink '/Users/benconant/Dev/Qupey/qupey_app/node_modules/grunt-build-control/node_modules/.bin/shjs']
+481 error   errno: 3,
+481 error   code: 'EACCES',
+481 error   path: '/Users/benconant/Dev/Qupey/qupey_app/node_modules/grunt-build-control/node_modules/.bin/shjs' }
+482 error Please try running this command again as root/Administrator.
+483 verbose exit [ 3, true ]
+484 verbose unbuild node_modules/grunt-build-control
+485 verbose gentlyRm vacuuming /Users/benconant/Dev/Qupey/qupey_app/node_modules/grunt-build-control
+486 silly gentlyRm purging /Users/benconant/Dev/Qupey/qupey_app/node_modules/grunt-build-control
+487 error error rolling back Error: EACCES, unlink '/Users/benconant/Dev/Qupey/qupey_app/node_modules/grunt-build-control/node_modules/.bin/shjs'
+487 error error rolling back  { [Error: EACCES, unlink '/Users/benconant/Dev/Qupey/qupey_app/node_modules/grunt-build-control/node_modules/.bin/shjs']
+487 error error rolling back   errno: 3,
+487 error error rolling back   code: 'EACCES',
+487 error error rolling back   path: '/Users/benconant/Dev/Qupey/qupey_app/node_modules/grunt-build-control/node_modules/.bin/shjs' }

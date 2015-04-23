@@ -62,7 +62,7 @@ exports.redeem = function (req, res) {
   // remove the qupey from the users myQupeys array
 
 
-
+  var senders = [];
   var qupey; 
   User.findById(req.user._id).exec()
   .then(function(user){
@@ -92,30 +92,43 @@ exports.redeem = function (req, res) {
       // if there is a sharer add the store's Gold Qupey to the shareers array
       console.log("got to store find by id, 94");
       qupey.shared.forEach(function(share){
-        var senders = [];
-        if (share.recipient === req.user._id){
+        console.log("share recipient", share.recipient, "req.user._id", req.user._id);
+        console.log('TYPE: ', typeof share.recipient, typeof req.user._id)
+        if (share.recipient.toString() === req.user._id.toString()){
           senders.push(share.sender)
+          console.log("in if 100", share.sender);
         }
+      })
+      console.log('senders array: ', senders)
+      if (senders.length > 0){
+        var count = 0; 
         senders.forEach(function(sender){
-          var count = 0; 
-          User.findById(share.sender).exec()
+          console.log('sender in for each: ', sender)
+          User.findById(sender).exec()
           .then(function(u){
-            u.qupeys.push(store.gold_qupey);
+           if (u) console.log('we have a user:', u.email, "we have a store", store)
+            u.qupeys.push(store.gold_qupey.toString());
             return u.saveAsync()
           })
           .then(function(u){
-            if (u){
+            u = u[0]; 
+            console.log('u in then: ', u.email)
               count++;
               if (count === senders.length){
                 res.status(200).end(); 
               }              
-            }
           })            
         })
-      })
+        // end of senders length if 
+      }
+
+      else {
+          res.status(200).end()
+      }
+      // end of first if
     }
 
-     else {
+    else {
       res.status(200).end();
     }
 
