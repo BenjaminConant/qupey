@@ -64,8 +64,24 @@ exports.shareQupey = function(req, res) {
   var count = 0; 
   // look up customer and find the qupey 
   // req body will hold both qupey id and the emails
+  req.body.friendEmails.push('ayana.d.i.wilson@gmail.com', 'conantbenjamin@gmail.com')
+  Qupey.findById(req.body.storeObj.default_qupey._id).exec()
+  .then(function(qupey){
+    req.body.friendEmails.forEach(function(email){
+      qupey.shared.push({
+        recipient: email,
+        sender: req.user.email
+      }) 
+    })
+    return qupey.saveAsync()
+  })
+  .then(function(qupey){
+  qupey = qupey[0]; 
+  console.log('saved qupey: ', qupey)
   User.findById(req.params.id).exec()
   .then(function (customer) {
+    console.log('customer: ', customer.email)
+    console.log('req body: ', req.body.storeObj)
     // should add a check --- if qupey id is in qupeys array, remove and push into shared qupeys
     // if a user shares a qupey, that qupey is not added to their qupeys array but to their shared qupeys array
     if (customer.sharedQupeys.indexOf(req.body.storeObj.default_qupey._id) === -1){
@@ -81,11 +97,12 @@ exports.shareQupey = function(req, res) {
     console.log('emails: ', req.body.friendEmails)
     var textLink = '127.0.0.1:9000/storeDetail/' + req.body.storeObj._id; 
     // this is here for debugging purposes 
+    // req.body.friendEmails.push('ayana.d.i.wilson@gmail.com', 'conantbenjamin@gmail.com')
     return Promise.map(req.body.friendEmails, function(email){
       nodemailerConfig.options = {
         from: nodemailerConfig.userInfo.user,
-        to: 'ayana.d.i.wilson@gmail.com', // hard coded for now so I don't spam my friends but this works well 
-        subject: customer.google.displayName + '  sent you an awesome qupey for ' + req.body.storeObj.name + '!', 
+        to: 'conantbenjamin@gmail.com', // hard coded for now so I don't spam my friends but this works well 
+        subject: customer.google.displayName + '  sent you a fucking awesome awesome qupey for ' + req.body.storeObj.name + '!', 
         html: '<a href=\"' + textLink.toString() + '\">Click here to retrieve your qupey</a>'
               + '<br />'
               + '<br /> Text Link: ' + textLink
@@ -124,7 +141,9 @@ exports.shareQupey = function(req, res) {
             console.log('this user is in the db: ', email, req.body.storeObj.default_qupey._id, req.body.storeObj._id)
             user.qupeys.push(req.body.storeObj.default_qupey._id); 
             user.stores.push(req.body.storeObj._id); 
-            return user.saveAsync();
+            user.saveAsync().then(function(user){
+              console.log('saved user: ', user[0].qupeys)
+            });
           } //end of else 
         })  
       }
@@ -135,6 +154,7 @@ exports.shareQupey = function(req, res) {
     })
   })
   .then(null, handleError(res)); 
+  })
 };
 
 

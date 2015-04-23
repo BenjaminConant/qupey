@@ -66,17 +66,13 @@ exports.redeem = function (req, res) {
   var qupey; 
   User.findById(req.user._id).exec()
   .then(function(user){
-
     user.qupeys.pull(req.params.id);
-
     return user.saveAsync();
   })
   .then(function(){
-
     return Qupey.findById(req.params.id).exec()
   })
   .then(function(qupey){
-
     qupey.redeemCount++;
     return qupey.saveAsync()
   })
@@ -92,9 +88,9 @@ exports.redeem = function (req, res) {
       // if there is a sharer add the store's Gold Qupey to the shareers array
       console.log("got to store find by id, 94");
       qupey.shared.forEach(function(share){
-        console.log("share recipient", share.recipient, "req.user._id", req.user._id);
-        console.log('TYPE: ', typeof share.recipient, typeof req.user._id)
-        if (share.recipient.toString() === req.user._id.toString()){
+        console.log("share recipient", share.recipient, "req.user._id", req.user.email);
+        console.log('TYPE: ', typeof share.recipient, typeof req.user.email)
+        if (share.recipient.toString() === req.user.email.toString()){
           senders.push(share.sender)
           console.log("in if 100", share.sender);
         }
@@ -104,8 +100,9 @@ exports.redeem = function (req, res) {
         var count = 0; 
         senders.forEach(function(sender){
           console.log('sender in for each: ', sender)
-          User.findById(sender).exec()
+          User.find({email: sender}).exec()
           .then(function(u){
+            console.log('u id: ', u._id)
            if (u) console.log('we have a user:', u.email, "we have a store", store)
             u.qupeys.push(store.gold_qupey.toString());
             return u.saveAsync()
