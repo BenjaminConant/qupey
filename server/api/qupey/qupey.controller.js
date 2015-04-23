@@ -2,6 +2,12 @@
 
 var _ = require('lodash');
 var Qupey = require('./qupey.model');
+var User = require('../user/user.model');
+var Store = require('../store/store.model');
+var mongoose = require('mongoose');
+var Promise = require('bluebird');
+Promise.promisifyAll(mongoose);
+
 
 // Get list of qupeys
 exports.index = function(req, res) {
@@ -41,7 +47,6 @@ exports.recipient = function(req, res) {
 
 //gets a qupey with a populated store
 exports.getWithStore = function (req, res) {
- 
   Qupey.findById(req.params.id)
   .populate('store')
   .exec()
@@ -50,6 +55,75 @@ exports.getWithStore = function (req, res) {
   })
   .then(null, handleError(res))
 };
+
+
+
+exports.redeem = function (req, res) {
+  // remove the qupey from the users myQupeys array
+
+
+
+  var qupey; 
+  User.findById(req.user._id).exec()
+  .then(function(user){
+
+    user.qupeys.pull(req.params.id);
+
+    return user.saveAsync();
+  })
+  .then(function(){
+
+    return Qupey.findById(req.params.id).exec()
+  })
+  .then(function(qupey){
+
+    qupey.redeemCount++;
+    return qupey.saveAsync()
+  })
+  .then(function(qupey){
+    var qupey = qupey[0];
+    Store.findById(qupey.store).exec()
+    .then(function (store){
+     console.log("got to the last thing", store);
+     console.log(qupey);
+    if (qupey.shared.length > 0) {
+      // i am redeeming a qupey that has been shared with me.
+      // increment the cupey redeem  count 
+      // if there is a sharer add the store's Gold Qupey to the shareers array
+      console.log("got to store find by id, 94");
+      qupey.shared.forEach(function(share){
+        var senders = [];
+        if (share.recipient === req.user._id){
+          senders.push(share.sender)
+        }
+        senders.forEach(function(sender){
+          var count = 0; 
+          User.findById(share.sender).exec()
+          .then(function(u){
+            u.qupeys.push(store.gold_qupey);
+            return u.saveAsync()
+          })
+          .then(function(u){
+            if (u){
+              count++;
+              if (count === senders.length){
+                res.status(200).end(); 
+              }              
+            }
+          })            
+        })
+      })
+    }
+
+     else {
+      res.status(200).end();
+    }
+
+  })
+  })
+  .then(null, handleError(res))
+};
+
 
 
 // Creates a new qupey in the DB.
