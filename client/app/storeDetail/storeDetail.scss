@@ -50,7 +50,7 @@
 }
 
 .store-detail-line-break {
-	border-color: black;
+	border: 1px solid #6795CA;
 	width: 70%;
 	text-align: center;
 	margin: 0 auto;
@@ -66,6 +66,8 @@
 .store-detail-our-qupeys-description {
 	font-style: italic;
 	color: #002765;
+	padding-left: 30px;
+	padding-right: 30px; 
 }
 
 

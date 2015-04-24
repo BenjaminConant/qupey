@@ -1,8 +1,8 @@
 <div id='shareModal'> 
 	<!-- <div class="m-header">Share {{store.name}}'s Qupey</div> -->
 	<div id="header-row">
-		<div class="m-percent">25%<div>OFF</div></div>
-		<div class="m-content">Evolutions Qupey has been saved to your account. Go to settings > my qupies to view. Why not take a second to share this Qupey with a friend? If they redeem it, Evolution will send you an even bigger discount. </div>
+		<div class="m-percent">{{store.default_qupey.type.discount}}%<div>OFF</div></div>
+		<div class="m-content">{{store.name}}'s' Qupey has been saved to your account. Go to settings > my qupies to view. Why not take a second to share this Qupey with a friend? If they redeem it, {{store.name}} will send you an even bigger discount. </div>
 	</div>
 	<hr id="line">
 	<div class='row'>
