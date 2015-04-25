@@ -107,9 +107,9 @@ exports.shareQupey = function(req, res) {
         from: nodemailerConfig.userInfo.user,
         to: email,
         subject: customer.google.displayName + '  sent you an awesome qupey for ' + req.body.storeObj.name + '!', 
-        html: '<p>Hey there,</p>'
-              '<p>Just writing to let you know that your friend '+customer.google.displayName+' has sent you a '+ req.body.storeObj.name+ ' Qupey. This awesome Qupey will allow you to take ' +req.body.storeObj.defaultQupey.type.discount+ '% of your next trip to ' + req.body.storeObj.name+ '. Enjoy! </p>'
-              '<a href=\"' + textLink.toString() + '\">Your Qupey</a>'
+        html: '<p>Hey there,</p>' +
+              + '<p>Just writing to let you know that your friend '+customer.google.displayName+' has sent you a '+ req.body.storeObj.name+ ' Qupey. This awesome Qupey will allow you to take ' +req.body.storeObj.defaultQupey.type.discount+ '% of your next trip to ' + req.body.storeObj.name+ '. Enjoy! </p>'
+              + '<a href=\"' + textLink.toString() + '\">Your Qupey</a>'
               + '<br />'
               + '<br /> Text Link: ' + textLink
       }
