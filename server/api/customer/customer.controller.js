@@ -101,8 +101,8 @@ exports.shareQupey = function(req, res) {
     return Promise.map(req.body.friendEmails, function(email){
       nodemailerConfig.options = {
         from: nodemailerConfig.userInfo.user,
-        to: 'conantbenjamin@gmail.com', // hard coded for now so I don't spam my friends but this works well 
-        subject: customer.google.displayName + '  sent you a fucking awesome awesome qupey for ' + req.body.storeObj.name + '!', 
+        to: email,
+        subject: customer.google.displayName + '  sent you an awesome qupey for ' + req.body.storeObj.name + '!', 
         html: '<a href=\"' + textLink.toString() + '\">Click here to retrieve your qupey</a>'
               + '<br />'
               + '<br /> Text Link: ' + textLink
