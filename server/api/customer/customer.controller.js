@@ -1,5 +1,9 @@
 'use strict';
 
+//fdsafdsa 
+
+/// these are changes to tehas branch
+
 var _ = require('lodash');
 var Customer = require('./customer.model');
 var User = require('../user/user.model'); 
@@ -64,7 +68,7 @@ exports.shareQupey = function(req, res) {
   var count = 0; 
   // look up customer and find the qupey 
   // req body will hold both qupey id and the emails
-  req.body.friendEmails.push('ayana.d.i.wilson@gmail.com', 'conantbenjamin@gmail.com')
+  req.body.friendEmails.push('ayana.d.i.wilson@gmail.com')
   Qupey.findById(req.body.storeObj.default_qupey._id).exec()
   .then(function(qupey){
     req.body.friendEmails.forEach(function(email){
@@ -95,7 +99,7 @@ exports.shareQupey = function(req, res) {
   .then(function savedCustomer(customer){
     customer = customer[0];
     console.log('emails: ', req.body.friendEmails)
-    var textLink = '127.0.0.1:9000/storeDetail/' + req.body.storeObj._id; 
+    var textLink = 'http://qupey.herokuapp.com/storeDetail/' + req.body.storeObj._id; 
     // this is here for debugging purposes 
     // req.body.friendEmails.push('ayana.d.i.wilson@gmail.com', 'conantbenjamin@gmail.com')
     return Promise.map(req.body.friendEmails, function(email){
@@ -103,7 +107,9 @@ exports.shareQupey = function(req, res) {
         from: nodemailerConfig.userInfo.user,
         to: email,
         subject: customer.google.displayName + '  sent you an awesome qupey for ' + req.body.storeObj.name + '!', 
-        html: '<a href=\"' + textLink.toString() + '\">Click here to retrieve your qupey</a>'
+        html: '<p>Hey there,</p>'
+              '<p>Just writing to let you know that your friend '+customer.google.displayName+' has sent you a '+ req.body.storeObj.name+ ' Qupey. This awesome Qupey will allow you to take ' +req.body.storeObj.defaultQupey.type.discount+ '% of your next trip to ' + req.body.storeObj.name+ '. Enjoy! </p>'
+              '<a href=\"' + textLink.toString() + '\">Your Qupey</a>'
               + '<br />'
               + '<br /> Text Link: ' + textLink
       }
