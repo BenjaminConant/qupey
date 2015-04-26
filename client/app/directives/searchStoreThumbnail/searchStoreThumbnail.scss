@@ -11,11 +11,10 @@
 }
 
 .search-store-thumbnail-image {
-	height: 45px; 
-	width: 45px; 
+	height: 60px; 
+	width: 60px; 
+	margin-top: 5px;
 }
-
-
 
 .search-store-thumbnail-image-container {
 	display: inline-block;
@@ -26,13 +25,15 @@
 .search-store-thumbnail-text-container {
 	display: inline-block;
 	width: 85%;
-	padding-left: 15px;
+	padding-left: 35px;
 }
 
 .search-store-thumbnail-text-title {
 	font-weight: bold;
+	font-size: 30px;
 }
 
 .search-store-thumbnail-text-content {
 	font-style: italic;
+	font-size: 13px;
 }
