@@ -73,7 +73,7 @@ function setTokenCookie(req, res) {
     res.redirect(req.destination)
   }
   else {
-    res.redirect('/feed');
+    res.redirect('/searchStores');
   }
 }
 
