@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('qupeyApp')
-  .controller('MainCtrl', function ($scope, $http, socket, store) {
+  .controller('MainCtrl', function ($scope, $http, socket) {
 
     var vm = this; 
   
