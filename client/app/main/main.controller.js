@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('qupeyApp')
-  .controller('MainCtrl', function ($scope, $http, socket) {
+  .controller('MainCtrl', function ($scope, $http, socket, store) {
 
     var vm = this; 
   
@@ -28,5 +28,4 @@ angular.module('qupeyApp')
       socket.unsyncUpdates('thing');
     });
 
-  
   });
