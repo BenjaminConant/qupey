@@ -1,7 +1,8 @@
 <top-nav></top-nav>
-<div class="col-md-12 store-detail-col">
+<div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 .col-xs-12 store-detail-col">
 	<div class="store-detail-container">
-		<img class="store-detail-background-image" ng-src="{{store.background_img}}"/>
+		<!-- <img class="store-detail-background-image" ng-src="{{store.background_img}}"/> -->
+		<div ng-if="store.background_img" ng-style="{'background-image':'url({{store.background_img}})'}" class="store-detail-background-image"></div>
 		<div class="text-center store-detail-icon-image-container">
 			<img class="store-detail-icon-image" ng-src="{{store.icon}}"/>
 		</div>
@@ -11,12 +12,14 @@
 		<div class="text-center">
 			<div class="store-detail-store-description">{{store.description}}</div>
 		</div>
-		<hr class="store-detail-line-break">
 		<div class="text-center">
+			<br>
+			<hr class="store-detail-line-break">
+			<br>
 			<div class="store-detail-our-qupeys">Our Qupeys</div>
 		</div>
 		<div class="text-center">
-			<div class="store-detail-our-qupeys-description">Use these for yourself or share them with friends. If your friends redeem them well send you even bigger deals!</div>
+			<div class="store-detail-our-qupeys-description">Use these for yourself or share them with friends. <br> If your friends redeem them well send you even bigger deals!</div>
 		</div>
 	</div>
 	<store-detail-qupey></store-detail-qupey>

@@ -1,8 +1,21 @@
 .store-icon {
-	width: 40px;
-	height: 40px;
+	width: 60px;
+	height: 60px;
+	padding-left: 0px;
 }
 
 .store-info {
-	background: black !important;
+	
+}
+
+.store-name {
+	margin-bottom: 0px !important;
+}
+
+.tagline {
+	font-style: italic;
+}
+
+.no-pad-left {
+	padding-left: 0px;
 }

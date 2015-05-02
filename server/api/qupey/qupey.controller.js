@@ -96,7 +96,7 @@ exports.redeem = function (req, res) {
       console.log('senders array: ', senders)
       if (senders.length > 0){
         var count = 0; 
-        if (typeof sender === 'string'){
+        // if (typeof sender === 'string'){
         senders.forEach(function(sender){
           console.log('sender in for each: ', sender)
             User.findOne({email: sender}).exec()
@@ -116,7 +116,7 @@ exports.redeem = function (req, res) {
             })            
           })
         //end of typeof check
-        }
+        // }
         // end of senders length if 
       }
 

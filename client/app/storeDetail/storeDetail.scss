@@ -1,3 +1,9 @@
+body {
+	background-color: rgb(164, 197, 233);
+	height: 100vh;
+	color: #092E72;
+}
+
 .store-details {
 	padding-top: 10px;
 	font-weight: 200;
@@ -20,17 +26,18 @@
 
 .store-detail-background-image  {
 	width: 100%;
+	height: 200px;
 }
 
 .store-detail-icon-image-container {
-	margin-top: -23px;
+	margin-top: -39px;
 }
 
 .store-detail-icon-image {
 	 border: 3px solid white;
 	 border-radius: 5px;
-	 width: 45px;
-	 height: 45px;
+	 width: 75px;
+	 height: 75px;
 	 background-color: white;
 }
 
@@ -45,12 +52,17 @@
 	padding-right: 30px; 
 	color: white;
 	font-weight: 200;
+	font-size: large;
 	
 }
 
 .store-detail-line-break {
-	border-color: black;
+	border: 1px solid #6795CA;
 	width: 70%;
+	text-align: center;
+	margin: 0 auto;
+	margin-top: 10px;
+	margin: 0 auto;
 }
 
 .store-detail-our-qupeys {
@@ -61,6 +73,8 @@
 .store-detail-our-qupeys-description {
 	font-style: italic;
 	color: #002765;
+	padding-left: 30px;
+	padding-right: 30px; 
 }
 
 

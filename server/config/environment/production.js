@@ -19,5 +19,9 @@ module.exports = {
             process.env.MONGOHQ_URL ||
             process.env.OPENSHIFT_MONGODB_DB_URL+process.env.OPENSHIFT_APP_NAME ||
             'mongodb://localhost/qupey'
+  },
+
+  google: {
+    callbackURL : 'http://qupey.herokuapp.com/auth/google/oauth2callback'
   }
 };

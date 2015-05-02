@@ -57,7 +57,7 @@ var all = {
   google: {
     clientID:     process.env.GOOGLE_ID,
     clientSecret: process.env.GOOGLE_SECRET,
-    callbackURL:  process.env.GOOGLE_CALLBACK_IRL, 
+    callbackURL:  process.env.GOOGLE_CALLBACK_URL
   }
 };
 
