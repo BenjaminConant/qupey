@@ -95,14 +95,15 @@ exports.shareQupey = function(req, res) {
   .then(function savedCustomer(customer){
     customer = customer[0];
     console.log('emails: ', req.body.friendEmails)
-    var textLink = '127.0.0.1:9000/storeDetail/' + req.body.storeObj._id; 
+    //'127.0.0.1:9000/storeDetail/' + req.body.storeObj._id; 
+    var textLink = 'http://qupey.herokuapp.com/storeDetail/' + req.body.storeObj._id; 
     // this is here for debugging purposes 
     // req.body.friendEmails.push('ayana.d.i.wilson@gmail.com', 'conantbenjamin@gmail.com')
     return Promise.map(req.body.friendEmails, function(email){
       nodemailerConfig.options = {
         from: nodemailerConfig.userInfo.user,
         to: 'conantbenjamin@gmail.com', // hard coded for now so I don't spam my friends but this works well 
-        subject: customer.google.displayName + '  sent you a fucking awesome awesome qupey for ' + req.body.storeObj.name + '!', 
+        subject: customer.google.displayName + '  sent you an awesome qupey for ' + req.body.storeObj.name + '!', 
         html: '<a href=\"' + textLink.toString() + '\">Click here to retrieve your qupey</a>'
               + '<br />'
               + '<br /> Text Link: ' + textLink
