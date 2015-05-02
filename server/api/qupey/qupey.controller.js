@@ -88,8 +88,6 @@ exports.redeem = function (req, res) {
       // if there is a sharer add the store's Gold Qupey to the shareers array
       console.log("got to store find by id, 94");
       qupey.shared.forEach(function(share){
-        console.log("share recipient", share.recipient, "req.user._id", req.user.email);
-        console.log('TYPE: ', typeof share.recipient, typeof req.user.email)
         if (share.recipient === req.user.email) {
           senders.push(share.sender)
           console.log("in if 100", share.sender);

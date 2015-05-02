@@ -69,6 +69,40 @@ exports.create = function(req, res) {
 };
 
 
+// Creates a new store in the DB.
+// exports.create = function(req, res) {
+//   var store, user; 
+//   User.findById(req.user._id).exec()
+//   .then(function(user){
+//     user = user; 
+//     return Store.create(req.body.store)
+//   })
+//   .then(function(store){
+//     store = store; 
+//     req.body.standard.store = store._id;
+//     return Qupey.create(req.body.standard)
+//   })
+//   .then(function(standardQupey){
+//     req.body.gold.store = store._id;
+//     return Qupey.create(req.body.gold)
+//   })
+//   .then(function(goldQupey){
+//     store.default_qupey = standardQupey._id;
+//     store.gold_qupey = goldQupey._id;
+//     return store.saveAsync()
+//   })       
+//   .spread(function(s){
+//     store = s; 
+//     user.ownedStores.push(store._id);
+//     return user.saveAsync()
+//   })
+//   .spread(function(){
+//     return res.json(201, store);
+//   })
+//   .then(null, handleError(res));
+// };
+
+
 // Updates an existing store in the DB.
 exports.update = function(req, res) {
   if(req.body._id) { delete req.body._id; }

@@ -2,6 +2,8 @@
 
 angular.module('qupeyApp')
   .controller('MainCtrl', function ($scope, $http, socket) {
+
+    var vm = this; 
   
     $scope.awesomeThings = [];
 
@@ -26,5 +28,4 @@ angular.module('qupeyApp')
       socket.unsyncUpdates('thing');
     });
 
-  
   });

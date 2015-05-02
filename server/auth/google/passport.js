@@ -1,3 +1,4 @@
+
 var passport = require('passport');
 var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 var GoogleContacts = require('google-contacts').GoogleContacts;
@@ -88,26 +89,26 @@ exports.setup = function (User, config) {
               });
             }
 
-             // if the user doesn't exist and there's no qupey hash then we 
-            // just create the user, no data to add 
-            else if (!user && !qupeyHashForNonUser){
-              User.create({
-                name: profile.displayName,
-                email: profile.emails[0].value,
-                roles: ['User', 'Customer'],
-                username: profile.username,
-                provider: 'google',
-                google: profile._json, 
-                contacts: c.contacts
-              })
-              .then(function(user) {
-                // console.log('user created: ', user)
-                return done(null, user);
-              })
-              .then(null, function(err) {
-                return done(err);
-              });
-            }
+            //  // if the user doesn't exist and there's no qupey hash then we 
+            // // just create the user, no data to add 
+            // else if (user && !qupeyHashForNonUser){
+            //   User.create({
+            //     name: profile.displayName,
+            //     email: profile.emails[0].value,
+            //     roles: ['User', 'Customer'],
+            //     username: profile.username,
+            //     provider: 'google',
+            //     google: profile._json, 
+            //     contacts: c.contacts
+            //   })
+            //   .then(function(user) {
+            //     // console.log('user created: ', user)
+            //     return done(null, user);
+            //   })
+            //   .then(null, function(err) {
+            //     return done(err);
+            //   });
+            // }
             // if the user exists then there will never be a qupey hash for them 
             else {
               user.contacts = c.contacts;
