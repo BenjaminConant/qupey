@@ -1,9 +1,5 @@
 'use strict';
 
-//fdsafdsa 
-
-/// these are changes to tehas branch
-
 var _ = require('lodash');
 var Customer = require('./customer.model');
 var User = require('../user/user.model'); 
@@ -49,14 +45,12 @@ exports.myQupeys = function(req, res) {
 
 // add my qupey to my array 
 exports.addMyQupey = function(req, res) {
-  // console.log('id: ', req.params.id, 'body: ', req.body.qupeyId)
   User.findById(req.params.id).exec()
   .then(function (customer) {
     customer.qupeys.push(req.body.qupeyId)
     return customer.saveAsync()  //promisified mongoose returns [saved]
   })
   .then(function(saved){
-    // console.log('saved: ', saved)
     return res.json(saved[0]);    
   })
   .then(null, handleError(res));
