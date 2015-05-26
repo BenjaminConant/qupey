@@ -10,6 +10,8 @@ var router = express.Router();
 // 	next();
 // });
 
+//change this
+
 router.get('/', controller.index);
 router.post('/redeem/:id', auth.isAuthenticated(), controller.redeem);
 router.get('/getwithstore/:id',auth.isAuthenticated(), controller.getWithStore);
